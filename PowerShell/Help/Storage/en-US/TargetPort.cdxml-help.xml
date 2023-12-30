@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-TargetPort</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>TargetPort</command:noun>
+      <maml:description>
+        <maml:para>Returns a TargetPort object associated with a specific port address and connection type.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-TargetPort cmdlet returns a TargetPort object associated with a specific port address and connection type.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-TargetPort</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
+          <maml:name>FriendlyName</maml:name>
+          <maml:description>
+            <maml:para>Specifies a friendly name for a disk. The friendly name may be defined by a user and is not guaranteed to be unique.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ConnectionType</maml:name>
+          <maml:description>
+            <maml:para>Specifies the type of the connection. The acceptable values for this parameter are:iSCSI, SAS, Fibre Channel, and so on.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Other</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">FibreChannel</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ParallelSCSI</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SSA</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">IEEE1394</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RDMA</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">iSCSI</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SAS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ADT</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">ConnectionType[]</command:parameterValue>
+          <dev:type>
+            <maml:name>ConnectionType[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-TargetPort</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ConnectionType</maml:name>
+          <maml:description>
+            <maml:para>Specifies the type of the connection. The acceptable values for this parameter are:iSCSI, SAS, Fibre Channel, and so on.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Other</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">FibreChannel</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ParallelSCSI</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SSA</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">IEEE1394</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RDMA</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">iSCSI</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SAS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ADT</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">ConnectionType[]</command:parameterValue>
+          <dev:type>
+            <maml:name>ConnectionType[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>PortAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies a string containing the port address to query.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-TargetPort</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>MaskingSet</maml:name>
+          <maml:description>
+            <maml:para>Accepts a MaskingSet object as input. The Masking Set CIM object is exposed by the Get-MaskingSet (https://technet.microsoft.com/library/a7ef71fd-f7f6-4231-8799-0e96dd9eac84)cmdlet.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-TargetPort</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>StorageSubSystem</maml:name>
+          <maml:description>
+            <maml:para>Accepts a StorageSubsystem object as input. The Storage Subsystem CIM object is exposed by the Get-StorageSubsystem (https://technet.microsoft.com/library/ea364a0b-06d6-4653-b41c-be69b8038b54)cmdlet.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-TargetPort</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>TargetPortal</maml:name>
+          <maml:description>
+            <maml:para>Accepts a TargetPortal object as input. The Target Portal CIM object is exposed by the Get-TargetPortal cmdlet.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-TargetPort</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id">
+          <maml:name>UniqueId</maml:name>
+          <maml:description>
+            <maml:para>Specifies an ID used to uniquely identify a Disk object in the system. The ID persists through restarts.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-TargetPort</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>VirtualDisk</maml:name>
+          <maml:description>
+            <maml:para>Accepts a VirtualDisk object as input. The Virtual Disk CIM object is exposed by the Get-VirtualDisk (https://technet.microsoft.com/library/0eeba53f-6468-485f-a680-49260b4c83f0)cmdlet.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>ConnectionType</maml:name>
+        <maml:description>
+          <maml:para>Specifies the type of the connection. The acceptable values for this parameter are:iSCSI, SAS, Fibre Channel, and so on.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">ConnectionType[]</command:parameterValue>
+        <dev:type>
+          <maml:name>ConnectionType[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
+        <maml:name>FriendlyName</maml:name>
+        <maml:description>
+          <maml:para>Specifies a friendly name for a disk. The friendly name may be defined by a user and is not guaranteed to be unique.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>MaskingSet</maml:name>
+        <maml:description>
+          <maml:para>Accepts a MaskingSet object as input. The Masking Set CIM object is exposed by the Get-MaskingSet (https://technet.microsoft.com/library/a7ef71fd-f7f6-4231-8799-0e96dd9eac84)cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>PortAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies a string containing the port address to query.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>StorageSubSystem</maml:name>
+        <maml:description>
+          <maml:para>Accepts a StorageSubsystem object as input. The Storage Subsystem CIM object is exposed by the Get-StorageSubsystem (https://technet.microsoft.com/library/ea364a0b-06d6-4653-b41c-be69b8038b54)cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>TargetPortal</maml:name>
+        <maml:description>
+          <maml:para>Accepts a TargetPortal object as input. The Target Portal CIM object is exposed by the Get-TargetPortal cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id">
+        <maml:name>UniqueId</maml:name>
+        <maml:description>
+          <maml:para>Specifies an ID used to uniquely identify a Disk object in the system. The ID persists through restarts.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>VirtualDisk</maml:name>
+        <maml:description>
+          <maml:para>Accepts a VirtualDisk object as input. The Virtual Disk CIM object is exposed by the Get-VirtualDisk (https://technet.microsoft.com/library/0eeba53f-6468-485f-a680-49260b4c83f0)cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#ROOT/Microsoft/Windows/Storage/MSFT_MaskingSet</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#ROOT/Microsoft/Windows/Storage/MSFT_StorageSubsystem</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#ROOT/Microsoft/Windows/Storage/MSFT_TargetPortal</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#ROOT/Microsoft/Windows/Storage/MSFT_VirtualDisk</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#ROOT/Microsoft/Windows/Storage/MSFT_TargetPort</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>* When used in Failover Cluster, cmdlets from the Storage module operate on cluster level (all servers in the cluster).</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; $StorageSubsystem = Get-StorageSubsystem
+PS C:\&gt; Get-Targetport -StorageSubsystem $StorageSubsystem</dev:code>
+        <dev:remarks>
+          <maml:para>This example returns a list of target ports on the specified storage subsystem.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/storage/get-targetport?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

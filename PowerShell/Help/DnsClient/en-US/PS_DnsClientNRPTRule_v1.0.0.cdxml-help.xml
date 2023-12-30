@@ -1,0 +1,2249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Add-DnsClientNrptRule</command:name>
+      <command:verb>Add</command:verb>
+      <command:noun>DnsClientNrptRule</command:noun>
+      <maml:description>
+        <maml:para>Adds a rule to the NRPT.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Add-DnsClientNrptRule cmdlet adds a Name Resolution Policy Table (NRPT) rule for the specified namespace.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Add-DnsClientNrptRule</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+          <maml:name>Namespace</maml:name>
+          <maml:description>
+            <maml:para>Specifies the DNS namespace.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete. </maml:para>
+            <maml:para>The cmdlet immediately returns an object that represents the job and then displays the command prompt.  You can continue to work in the session while the job completes.  To manage the job, use the `*-Job` cmdlets.  To get the job results, use the Receive-Job (https://go.microsoft.com/fwlink/?LinkID=113372)cmdlet. </maml:para>
+            <maml:para>For more information about Windows PowerShell background jobs, see about_Jobs (https://go.microsoft.com/fwlink/?LinkID=113251).</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>Comment</maml:name>
+          <maml:description>
+            <maml:para>Stores administrator notes.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessEnabled">
+          <maml:name>DAEnable</maml:name>
+          <maml:description>
+            <maml:para>Indicates the rule state for DirectAccess.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessQueryIPSSECEncryption">
+          <maml:name>DAIPsecEncryptionType</maml:name>
+          <maml:description>
+            <maml:para>Specifies the Internet Protocol security (IPsec) encryption setting for DirectAccess. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- None</maml:para>
+            <maml:para>- Low</maml:para>
+            <maml:para>- Medium</maml:para>
+            <maml:para>- High</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false"></command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">None</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Low</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Medium</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">High</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessQueryIPsecRequired">
+          <maml:name>DAIPsecRequired</maml:name>
+          <maml:description>
+            <maml:para>Indicates that IPsec is required for DirectAccess.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessDnsServers">
+          <maml:name>DANameServers</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of DNS servers to query when DirectAccess is enabled.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessProxyName">
+          <maml:name>DAProxyServerName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the proxy server to use when connecting to the Internet. This parameter is only applicable if the DAProxyType parameter is set to UseProxyName.</maml:para>
+            <maml:para>Acceptable formats are:</maml:para>
+            <maml:para>- hostname:port</maml:para>
+            <maml:para>- IPv4 address:port</maml:para>
+            <maml:para>- IPv6 address:port</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessProxyType">
+          <maml:name>DAProxyType</maml:name>
+          <maml:description>
+            <maml:para>Specifies the proxy server type to be used when connecting to the Internet. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- NoProxy</maml:para>
+            <maml:para>- UseDefault</maml:para>
+            <maml:para>- UseProxyName</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false"></command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NoProxy</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">UseDefault</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">UseProxyName</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DisplayName</maml:name>
+          <maml:description>
+            <maml:para>Specifies an optional friendly name for the NRPT rule.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DnsSecEnabled">
+          <maml:name>DnsSecEnable</maml:name>
+          <maml:description>
+            <maml:para>Enables Domain Name System Security Extensions (DNSSEC) on the rule.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DnsSecQueryIPsecEncryption">
+          <maml:name>DnsSecIPsecEncryptionType</maml:name>
+          <maml:description>
+            <maml:para>Specifies the IPsec tunnel encryption settings.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false"></command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">None</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Low</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Medium</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">High</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DnsSecQueryIPsecRequired">
+          <maml:name>DnsSecIPsecRequired</maml:name>
+          <maml:description>
+            <maml:para>Indicates the DNS client must set up an IPsec connection to the DNS server.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DnsSecValidationRequired</maml:name>
+          <maml:description>
+            <maml:para>Indicates that DNSSEC validation is required.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>GpoName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the Group Policy Object (GPO). </maml:para>
+            <maml:para>- If this parameter and the Server parameter are specified, then the NRPT rule is added in the GPO of domain. The Server parameter specifies the domain controller (DC).  - If neither this parameter nor the Server parameter is specified, then the NRPT rule is added for local client computer.  - If this parameter is specified and the Server parameter is not specified, then the DC of the domain specified by this parameter value is found and NRPT rule is added to the GPO.  - If this parameter is not specified and the Server parameter is specified, then an error is displayed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="IPsecCARestriction">
+          <maml:name>IPsecTrustAuthority</maml:name>
+          <maml:description>
+            <maml:para>Specifies the certification authority to validate the IPsec channel.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>NameEncoding</maml:name>
+          <maml:description>
+            <maml:para>Specifies the encoding format for host names in the DNS query. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Disable</maml:para>
+            <maml:para>- Utf8WithMapping</maml:para>
+            <maml:para>- Utf8WithoutMapping</maml:para>
+            <maml:para>- Punycode</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disable</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Utf8WithMapping</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Utf8WithoutMapping</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Punycode</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>NameServers</maml:name>
+          <maml:description>
+            <maml:para>Specifies the DNS servers to which the DNS query is sent when DirectAccess is disabled.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>Server</maml:name>
+          <maml:description>
+            <maml:para>Specifies the server hosting the GPO. This parameter is only applicable with the GpoName parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete. </maml:para>
+          <maml:para>The cmdlet immediately returns an object that represents the job and then displays the command prompt.  You can continue to work in the session while the job completes.  To manage the job, use the `*-Job` cmdlets.  To get the job results, use the Receive-Job (https://go.microsoft.com/fwlink/?LinkID=113372)cmdlet. </maml:para>
+          <maml:para>For more information about Windows PowerShell background jobs, see about_Jobs (https://go.microsoft.com/fwlink/?LinkID=113251).</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>Comment</maml:name>
+        <maml:description>
+          <maml:para>Stores administrator notes.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessEnabled">
+        <maml:name>DAEnable</maml:name>
+        <maml:description>
+          <maml:para>Indicates the rule state for DirectAccess.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessQueryIPSSECEncryption">
+        <maml:name>DAIPsecEncryptionType</maml:name>
+        <maml:description>
+          <maml:para>Specifies the Internet Protocol security (IPsec) encryption setting for DirectAccess. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- None</maml:para>
+          <maml:para>- Low</maml:para>
+          <maml:para>- Medium</maml:para>
+          <maml:para>- High</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessQueryIPsecRequired">
+        <maml:name>DAIPsecRequired</maml:name>
+        <maml:description>
+          <maml:para>Indicates that IPsec is required for DirectAccess.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessDnsServers">
+        <maml:name>DANameServers</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of DNS servers to query when DirectAccess is enabled.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessProxyName">
+        <maml:name>DAProxyServerName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the proxy server to use when connecting to the Internet. This parameter is only applicable if the DAProxyType parameter is set to UseProxyName.</maml:para>
+          <maml:para>Acceptable formats are:</maml:para>
+          <maml:para>- hostname:port</maml:para>
+          <maml:para>- IPv4 address:port</maml:para>
+          <maml:para>- IPv6 address:port</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessProxyType">
+        <maml:name>DAProxyType</maml:name>
+        <maml:description>
+          <maml:para>Specifies the proxy server type to be used when connecting to the Internet. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- NoProxy</maml:para>
+          <maml:para>- UseDefault</maml:para>
+          <maml:para>- UseProxyName</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>DisplayName</maml:name>
+        <maml:description>
+          <maml:para>Specifies an optional friendly name for the NRPT rule.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DnsSecEnabled">
+        <maml:name>DnsSecEnable</maml:name>
+        <maml:description>
+          <maml:para>Enables Domain Name System Security Extensions (DNSSEC) on the rule.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DnsSecQueryIPsecEncryption">
+        <maml:name>DnsSecIPsecEncryptionType</maml:name>
+        <maml:description>
+          <maml:para>Specifies the IPsec tunnel encryption settings.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DnsSecQueryIPsecRequired">
+        <maml:name>DnsSecIPsecRequired</maml:name>
+        <maml:description>
+          <maml:para>Indicates the DNS client must set up an IPsec connection to the DNS server.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>DnsSecValidationRequired</maml:name>
+        <maml:description>
+          <maml:para>Indicates that DNSSEC validation is required.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>GpoName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the Group Policy Object (GPO). </maml:para>
+          <maml:para>- If this parameter and the Server parameter are specified, then the NRPT rule is added in the GPO of domain. The Server parameter specifies the domain controller (DC).  - If neither this parameter nor the Server parameter is specified, then the NRPT rule is added for local client computer.  - If this parameter is specified and the Server parameter is not specified, then the DC of the domain specified by this parameter value is found and NRPT rule is added to the GPO.  - If this parameter is not specified and the Server parameter is specified, then an error is displayed.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="IPsecCARestriction">
+        <maml:name>IPsecTrustAuthority</maml:name>
+        <maml:description>
+          <maml:para>Specifies the certification authority to validate the IPsec channel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>NameEncoding</maml:name>
+        <maml:description>
+          <maml:para>Specifies the encoding format for host names in the DNS query. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Disable</maml:para>
+          <maml:para>- Utf8WithMapping</maml:para>
+          <maml:para>- Utf8WithoutMapping</maml:para>
+          <maml:para>- Punycode</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>NameServers</maml:name>
+        <maml:description>
+          <maml:para>Specifies the DNS servers to which the DNS query is sent when DirectAccess is disabled.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+        <maml:name>Namespace</maml:name>
+        <maml:description>
+          <maml:para>Specifies the DNS namespace.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+          <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>Server</maml:name>
+        <maml:description>
+          <maml:para>Specifies the server hosting the GPO. This parameter is only applicable with the GpoName parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root/Microsoft/Windows/DNS/DnsClientNrptRule</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root/Microsoft/Windows/DNS/DnsClientNrptRule</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+          <maml:para>The DnsClientNrptRule object contains all of the properties of the DNS client NRPT rule.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------- Example 1: Add an NRPT rule to a GPO -------------</maml:title>
+        <dev:code>PS C:\&gt; Add-DnsClientNrptRule -GpoName "TestGPO" -DANameServers "10.0.0.1" -DAIPsecRequired -DAIPsecEncryptionType "High" -DAProxyServerName "DaServer.com:6666" -DnsSecEnable -PassThru -DAProxyType "UseProxyName" -DnsSecValidationRequired -DAEnable -IPsecTrustAuthority "RootCA" -Comment "Sample NRPT Rule" -DisplayName "Sample" -DnsSecIPsecRequired -DnsSecIPsecEncryptionType "Medium" -NameServers "10.0.0.1" -NameEncoding "Punycode" -Namespace "dnsnrpt.com" -Server "host1.com"</dev:code>
+        <dev:remarks>
+          <maml:para>This command adds an NRPT rule in TestGPO on server host1.com for the namespace dnsnrpt.com.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------ Example 2: Add an NRPT rule to configure a server ------</maml:title>
+        <dev:code>PS C:\&gt; Add-DnsClientNrptRule -Namespace "pqr.com" -NameServers "10.0.0.1"</dev:code>
+        <dev:remarks>
+          <maml:para>This command adds an NRPT rule that configures the server named 10.0.0.1 as a DNS server for the namespace pqr.com.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>----- Example 3: Add an NRPT rule to enable DNSSEC queries -----</maml:title>
+        <dev:code>PS C:\&gt; Add-DnsClientNrptRule -Namespace "pqr.com" -DnsSecEnable</dev:code>
+        <dev:remarks>
+          <maml:para>This command adds an NRPT rule that enables DNSSEC queries to be sent for the namespace pqr.com.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 4: Add an NRPT rule to enable DNSSEC queries for a specified namespace</maml:title>
+        <dev:code>PS C:\&gt; Add-DnsClientNrptRule -Namespace "pqr.com" -DnsSecEnable -NameServers "10.0.0.1"</dev:code>
+        <dev:remarks>
+          <maml:para>This command adds an NRPT rule that enables DNSSEC queries to be sent to DNS server named 10.0.0.1 for the namespace pqr.com.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>--- Example 5: Add an NRPT rule to send Punycode DNS queries ---</maml:title>
+        <dev:code>PS C:\&gt; Add-DnsClientNrptRule -Namespace "pqr.com" -NameEncoding "Punycode" -NameServers "10.1.1.1" -PassThru
+
+Name                             : {6a78d8d1-231d-4d1e-bc23-fb593e11a53d} 
+Version                          : 2 
+Namespace                        : {pqr.com} 
+IPsecCARestriction               : 
+DirectAccessDnsServers           : 
+DirectAccessEnabled              : False 
+DirectAccessProxyType            : 
+DirectAccessProxyName            : 
+DirectAccessQueryIPsecEncryption : 
+DirectAccessQueryIPsecRequired   : 
+NameServers                      : 10.1.1.1 
+DnsSecEnabled                    : False 
+DnsSecQueryIPsecEncryption       : 
+DnsSecQueryIPsecRequired         : 
+DnsSecValidationRequired         : 
+NameEncoding                     : Punycode 
+DisplayName                      : 
+Comment                          :</dev:code>
+        <dev:remarks>
+          <maml:para>This command adds an NRPT rule that sends DNS queries encoded in Punycode to DNS server named 10.1.1.1 for the namespace pqr.com.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/dnsclient/add-dnsclientnrptrule?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptGlobal</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptPolicy</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Remove-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-DnsClientNrptGlobal</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-DnsClientNrptRule</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>DnsClientNrptRule</command:noun>
+      <maml:description>
+        <maml:para>Retrieves the DNS client NRPT rules.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-DnsClientNrptRule cmdlet retrieves DNS client Name Resolution Policy Table (NRPT) rules with the following details:
+- DNS client name setting. </maml:para>
+      <maml:para>- DNS client version setting.</maml:para>
+      <maml:para>- DNS client namespace setting.</maml:para>
+      <maml:para>- DNS client IPsec Certification Authority (CA) restriction setting.</maml:para>
+      <maml:para>- Direct Access (DA) DNS servers setting.</maml:para>
+      <maml:para>- DA enabled setting.</maml:para>
+      <maml:para>- DA proxy type setting.</maml:para>
+      <maml:para>- DA proxy name setting.</maml:para>
+      <maml:para>- DA query IPsec encryption setting.</maml:para>
+      <maml:para>- DA query IPsec required setting.</maml:para>
+      <maml:para>- DNS client name servers setting.</maml:para>
+      <maml:para>- DNS security enabled setting.</maml:para>
+      <maml:para>- DNS security query IPsec encryption setting.</maml:para>
+      <maml:para>- DNS security query IPsec required setting.</maml:para>
+      <maml:para>- DNS security validation required setting.</maml:para>
+      <maml:para>- DNS client name encoding setting.</maml:para>
+      <maml:para>- DNS client display name setting.</maml:para>
+      <maml:para>- DNS client comment setting.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-DnsClientNrptRule</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name which uniquely identifies a rule. If this parameter is not specified, then all of the available NRPT rules are retrieved.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete. </maml:para>
+            <maml:para>The cmdlet immediately returns an object that represents the job and then displays the command prompt.  You can continue to work in the session while the job completes.  To manage the job, use the `*-Job` cmdlets.  To get the job results, use the Receive-Job (https://go.microsoft.com/fwlink/?LinkID=113372)cmdlet. </maml:para>
+            <maml:para>For more information about Windows PowerShell background jobs, see about_Jobs (https://go.microsoft.com/fwlink/?LinkID=113251).</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>GpoName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the Group Policy Object (GPO).
+- If this parameter and the Server parameter are specified, then the NRPT rule is added in the GPO of domain. The Server parameter specifies the domain controller (DC).  - If neither this parameter nor the Server parameter is specified, then the NRPT rule is added for local client computer.  - If this parameter is specified and the Server parameter is not specified, then the DC of the domain specified by this parameter value is found and NRPT rule is added to the GPO.  - If this parameter is not specified and the Server parameter is specified, then an error is displayed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>Server</maml:name>
+          <maml:description>
+            <maml:para>Specifies the server hosting the GPO. This parameter is only applicable with the GpoName parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete. </maml:para>
+          <maml:para>The cmdlet immediately returns an object that represents the job and then displays the command prompt.  You can continue to work in the session while the job completes.  To manage the job, use the `*-Job` cmdlets.  To get the job results, use the Receive-Job (https://go.microsoft.com/fwlink/?LinkID=113372)cmdlet. </maml:para>
+          <maml:para>For more information about Windows PowerShell background jobs, see about_Jobs (https://go.microsoft.com/fwlink/?LinkID=113251).</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>GpoName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the Group Policy Object (GPO).
+- If this parameter and the Server parameter are specified, then the NRPT rule is added in the GPO of domain. The Server parameter specifies the domain controller (DC).  - If neither this parameter nor the Server parameter is specified, then the NRPT rule is added for local client computer.  - If this parameter is specified and the Server parameter is not specified, then the DC of the domain specified by this parameter value is found and NRPT rule is added to the GPO.  - If this parameter is not specified and the Server parameter is specified, then an error is displayed.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name which uniquely identifies a rule. If this parameter is not specified, then all of the available NRPT rules are retrieved.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>Server</maml:name>
+        <maml:description>
+          <maml:para>Specifies the server hosting the GPO. This parameter is only applicable with the GpoName parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root/Microsoft/Windows/DNS/DnsClientNrptRule[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root/Microsoft/Windows/DNS/DnsClientNrptRule[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.
+The DnsClientNrptRule object contains all of the properties of the DNS client NRPT rule.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------- Example 1: Get NRPT rules for a specified GPO --------</maml:title>
+        <dev:code>PS C:\&gt; Get-DnsClientNrptRule -GpoName "corp.contoso.com\DirectAccess Client Settings"
+
+Name                             : DA-{FD4B6054-F8C8-4868-94E6-8132AC707DBD} 
+Version                          : 1 
+Namespace                        : {.corp.contoso.com} 
+IPsecCARestriction               : 
+DirectAccessDnsServers           : {2001:db8:1::2, 2001:db8:2::20, 2001:db8:6::6} 
+DirectAccessEnabled              : True 
+DirectAccessProxyType            : NoProxy 
+DirectAccessProxyName            : 
+DirectAccessQueryIPsecEncryption : 
+DirectAccessQueryIPsecRequired   : False 
+NameServers                      : 
+DnsSecEnabled                    : False 
+DnsSecQueryIPsecEncryption       : 
+DnsSecQueryIPsecRequired         : 
+DnsSecValidationRequired         : 
+NameEncoding                     : Disable 
+DisplayName                      : 
+Comment                          : 
+
+Name                             : DA-{274D94E4-E38B-4997-BA9F-84700712C09E} 
+Version                          : 1 
+Namespace                        : {nls.corp.contoso.com} 
+IPsecCARestriction               : 
+DirectAccessDnsServers           : 
+DirectAccessEnabled              : True 
+DirectAccessProxyType            : UseDefault 
+DirectAccessProxyName            : 
+DirectAccessQueryIPsecEncryption : 
+DirectAccessQueryIPsecRequired   : False 
+NameServers                      : 
+DnsSecEnabled                    : False 
+DnsSecQueryIPsecEncryption       : 
+DnsSecQueryIPsecRequired         : 
+DnsSecValidationRequired         : 
+NameEncoding                     : Disable 
+DisplayName                      : 
+Comment                          :</dev:code>
+        <dev:remarks>
+          <maml:para>This example retrieves NRPT rules for the specified GPO.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>----- Example 2: Get the NRPT rules on a specified server -----</maml:title>
+        <dev:code>PS C:\&gt; Get-DnsClientNrptRule -GpoName "corp.contoso.com\DirectAccess Client Settings" -Server "dc1"
+
+Name                             : DA-{FD4B6054-F8C8-4868-94E6-8132AC707DBD} 
+Version                          : 1 
+Namespace                        : {.corp.contoso.com} 
+IPsecCARestriction               : 
+DirectAccessDnsServers           : {2001:db8:1::2, 2001:db8:2::20, 2001:db8:6::6} 
+DirectAccessEnabled              : True 
+DirectAccessProxyType            : NoProxy 
+DirectAccessProxyName            : 
+DirectAccessQueryIPsecEncryption : 
+DirectAccessQueryIPsecRequired   : False 
+NameServers                      : 
+DnsSecEnabled                    : False 
+DnsSecQueryIPsecEncryption       : 
+DnsSecQueryIPsecRequired         : 
+DnsSecValidationRequired         : 
+NameEncoding                     : Disable 
+DisplayName                      : 
+Comment                          : 
+
+Name                             : DA-{274D94E4-E38B-4997-BA9F-84700712C09E} 
+Version                          : 1 
+Namespace                        : {nls.corp.contoso.com} 
+IPsecCARestriction               : 
+DirectAccessDnsServers           : 
+DirectAccessEnabled              : True 
+DirectAccessProxyType            : UseDefault 
+DirectAccessProxyName            : 
+DirectAccessQueryIPsecEncryption : 
+DirectAccessQueryIPsecRequired   : False 
+NameServers                      : 
+DnsSecEnabled                    : False 
+DnsSecQueryIPsecEncryption       : 
+DnsSecQueryIPsecRequired         : 
+DnsSecValidationRequired         : 
+NameEncoding                     : Disable 
+DisplayName                      : 
+Comment                          :</dev:code>
+        <dev:remarks>
+          <maml:para>This example retrieves an NRPT rule for the specified GPO on the specified server.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------ Example 3: Get the NRPT rules on a remote computer ------</maml:title>
+        <dev:code>PS C:\&gt; Get-DnsClientNrptRule -GpoName "corp.contoso.com\DirectAccess Client Settings" -CimSession 2-dc1.corp2.corp.contoso.com</dev:code>
+        <dev:remarks>
+          <maml:para>This example retrieves the NRPT rules on the remote computer named 2-dc1.corp2.corp.contoso.com.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/dnsclient/get-dnsclientnrptrule?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Add-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptGlobal</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptPolicy</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Remove-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-DnsClientNrptGlobal</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Remove-DnsClientNrptRule</command:name>
+      <command:verb>Remove</command:verb>
+      <command:noun>DnsClientNrptRule</command:noun>
+      <maml:description>
+        <maml:para>Removes the specified DNS client NRPT rule.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Remove-DnsClientNrptRule cmdlet removes the specified DNS client Name Resolution Policy Table (NRPT) rule.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-DnsClientNrptRule</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name which uniquely identifies a rule.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete. </maml:para>
+            <maml:para>The cmdlet immediately returns an object that represents the job and then displays the command prompt.  You can continue to work in the session while the job completes.  To manage the job, use the `*-Job` cmdlets.  To get the job results, use the Receive-Job (https://go.microsoft.com/fwlink/?LinkID=113372)cmdlet. </maml:para>
+            <maml:para>For more information about Windows PowerShell background jobs, see about_Jobs (https://go.microsoft.com/fwlink/?LinkID=113251).</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para>Forces the command to run without asking for user confirmation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>GpoName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the Group Policy Object (GPO). </maml:para>
+            <maml:para>- If this parameter and the Server parameter are specified, then the NRPT rule is added in the GPO of domain. The Server parameter specifies the domain controller (DC).  - If neither this parameter nor the Server parameter is specified, then the NRPT rule is added for local client computer.  - If this parameter is specified and the Server parameter is not specified, then the DC of the domain specified by this parameter value is found and NRPT rule is added to the GPO.  - If this parameter is not specified and the Server parameter is specified, then an error is displayed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>Server</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the server containing the GPO. This parameter is only applicable with the GpoName parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete. </maml:para>
+          <maml:para>The cmdlet immediately returns an object that represents the job and then displays the command prompt.  You can continue to work in the session while the job completes.  To manage the job, use the `*-Job` cmdlets.  To get the job results, use the Receive-Job (https://go.microsoft.com/fwlink/?LinkID=113372)cmdlet. </maml:para>
+          <maml:para>For more information about Windows PowerShell background jobs, see about_Jobs (https://go.microsoft.com/fwlink/?LinkID=113251).</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para>Forces the command to run without asking for user confirmation.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>GpoName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the Group Policy Object (GPO). </maml:para>
+          <maml:para>- If this parameter and the Server parameter are specified, then the NRPT rule is added in the GPO of domain. The Server parameter specifies the domain controller (DC).  - If neither this parameter nor the Server parameter is specified, then the NRPT rule is added for local client computer.  - If this parameter is specified and the Server parameter is not specified, then the DC of the domain specified by this parameter value is found and NRPT rule is added to the GPO.  - If this parameter is not specified and the Server parameter is specified, then an error is displayed.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name which uniquely identifies a rule.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+          <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>Server</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the server containing the GPO. This parameter is only applicable with the GpoName parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root/Microsoft/Windows/DNS/DnsClientNrptRule</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root/Microsoft/Windows/DNS/DnsClientNrptRule</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+          <maml:para></maml:para>
+          <maml:para>The DnsClientNrptRule object contains all of the properties of the DNS client NRPT rule.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>---- Example 1: Remove an NRPT rule from a specified server ----</maml:title>
+        <dev:code>PS C:\&gt; Remove-DnsClientNrptRule -GpoName "TestGPO" -Name "{1326d9d0-4fb5-4fed-9f67-f53637b85010}" -PassThru -Server "host1.com" -Force</dev:code>
+        <dev:remarks>
+          <maml:para>This example removes the NRPT rule named {1326d9d0-4fb5-4fed-9f67-f53637b85010} on the server named host1.com.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>---------------- Example 2: Remove an NRPT rule ----------------</maml:title>
+        <dev:code>PS C:\&gt; Remove-DnsClientNrptRule -Name "DA-{274D94E4-E38B-4997-BA9F-84700712C09E}" -PassThru
+
+Confirm 
+Removing NRPT rule for the namespace nls.corp.contoso.com with 
+ DAEnable: Enable, 
+ DnsSecValidationRequired: Disabled, 
+ NameEncoding: Disable 
+ NameServers: No 
+ Do you want to continue? 
+ [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y 
+
+Name                             : DA-{274D94E4-E38B-4997-BA9F-84700712C09E} 
+Version                          : 1 
+Namespace                        : {nls.corp.contoso.com} 
+IPsecCARestriction               : 
+DirectAccessDnsServers           : 
+DirectAccessEnabled              : True 
+DirectAccessProxyType            : UseDefault 
+DirectAccessProxyName            : 
+DirectAccessQueryIPsecEncryption : 
+DirectAccessQueryIPsecRequired   : False 
+NameServers                      : 
+DnsSecEnabled                    : False 
+DnsSecQueryIPsecEncryption       : 
+DnsSecQueryIPsecRequired         : 
+DnsSecValidationRequired         : 
+NameEncoding                     : Disable 
+DisplayName                      : 
+Comment                          : 
+
+This version of the cmdlet performs the task without user confirmation.
+PS C:\&gt; Remove-DnsClientNrptRule -Name "DA-{274D94E4-E38B-4997-BA9F-84700712C09E}" -PassThru -Force
+
+Name                             : DA-{274D94E4-E38B-4997-BA9F-84700712C09E} 
+Version                          : 1 
+Namespace                        : {nls.corp.contoso.com} 
+IPsecCARestriction               : 
+DirectAccessDnsServers           : 
+DirectAccessEnabled              : True 
+DirectAccessProxyType            : UseDefault 
+DirectAccessProxyName            : 
+DirectAccessQueryIPsecEncryption : 
+DirectAccessQueryIPsecRequired   : False 
+NameServers                      : 
+DnsSecEnabled                    : False 
+DnsSecQueryIPsecEncryption       : 
+DnsSecQueryIPsecRequired         : 
+DnsSecValidationRequired         : 
+NameEncoding                     : Disable 
+DisplayName                      : 
+Comment                          :</dev:code>
+        <dev:remarks>
+          <maml:para>This example removes the NRPT rule named {1326d9d0-4fb5-4fed-9f67-f53637b85010}.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/dnsclient/remove-dnsclientnrptrule?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Add-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptGlobal</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptPolicy</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-DnsClientNrptGlobal</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-DnsClientNrptRule</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>DnsClientNrptRule</command:noun>
+      <maml:description>
+        <maml:para>Modifies a DNS client Name Resolution Policy Table (NRPT) rule for the specified namespace.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-DnsClientNrptRule cmdlet modifies the specified DNS client Name Resolution Policy Table (NRPT) rule.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-DnsClientNrptRule</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name which uniquely identifies a rule.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete. </maml:para>
+            <maml:para>The cmdlet immediately returns an object that represents the job and then displays the command prompt.  You can continue to work in the session while the job completes.  To manage the job, use the `*-Job` cmdlets.  To get the job results, use the Receive-Job (https://go.microsoft.com/fwlink/?LinkID=113372)cmdlet. </maml:para>
+            <maml:para>For more information about Windows PowerShell background jobs, see about_Jobs (https://go.microsoft.com/fwlink/?LinkID=113251).</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>Comment</maml:name>
+          <maml:description>
+            <maml:para>Stores administrator comments.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessEnabled">
+          <maml:name>DAEnable</maml:name>
+          <maml:description>
+            <maml:para>Indicates the rule state for DirectAccess (DA).</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessQueryIPSSECEncryption">
+          <maml:name>DAIPsecEncryptionType</maml:name>
+          <maml:description>
+            <maml:para>Specifies the IPsec encryption type for DA. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- None</maml:para>
+            <maml:para>- Low</maml:para>
+            <maml:para>- Medium</maml:para>
+            <maml:para>- High</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false"></command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">None</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Low</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Medium</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">High</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessQueryIPsecRequired">
+          <maml:name>DAIPsecRequired</maml:name>
+          <maml:description>
+            <maml:para>Indicates whether IPsec is required.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessDNSServers">
+          <maml:name>DANameServers</maml:name>
+          <maml:description>
+            <maml:para>Specifies the DNS servers which will be queried when DA is enabled.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessProxyName">
+          <maml:name>DAProxyServerName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the proxy server to be used when connecting to the Internet.</maml:para>
+            <maml:para>This parameter is only applicable when the DAProxyType parameter is set to UseProxyName.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessProxyType">
+          <maml:name>DAProxyType</maml:name>
+          <maml:description>
+            <maml:para>Specifies the proxy server type to be used when connecting to the Internet. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- NoProxy</maml:para>
+            <maml:para>- UseDefault</maml:para>
+            <maml:para>- UseProxyName</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false"></command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NoProxy</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">UseDefault</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">UseProxyName</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DisplayName</maml:name>
+          <maml:description>
+            <maml:para>Specifies an optional friendly name for the NRPT rule.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DnsSecEnabled">
+          <maml:name>DnsSecEnable</maml:name>
+          <maml:description>
+            <maml:para>Indicates whether DNSSEC is enabled on the rule.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DnsSecQueryIPsecEncryption">
+          <maml:name>DnsSecIPsecEncryptionType</maml:name>
+          <maml:description>
+            <maml:para>Specifies the IPsec tunnel encryption settings. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- None</maml:para>
+            <maml:para>- Low</maml:para>
+            <maml:para>- Medium</maml:para>
+            <maml:para>- High</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false"></command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">None</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Low</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Medium</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">High</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DnsSecQueryIPsecRequired">
+          <maml:name>DnsSecIPsecRequired</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the DNS client must set up an IPsec connection to the DNS server.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DnsSecValidationRequired</maml:name>
+          <maml:description>
+            <maml:para>Indicates that DNSSEC validation is required.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>GpoName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the Group Policy Object (GPO). </maml:para>
+            <maml:para>- If this parameter and the Server parameter are specified, then the NRPT rule is added in the GPO of domain. The Server parameter specifies the domain controller (DC).  - If neither this parameter nor the Server parameter is specified, then the NRPT rule is added for local client computer.  - If this parameter is specified and the Server parameter is not specified, then the DC of the domain specified by this parameter value is found and NRPT rule is added to the GPO.  - If this parameter is not specified and the Server parameter is specified, then an error is displayed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="IPsecCARestriction">
+          <maml:name>IPsecTrustAuthority</maml:name>
+          <maml:description>
+            <maml:para>Specifies the Certification Authority (CA) to validate the IPsec channel for DA.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>NameEncoding</maml:name>
+          <maml:description>
+            <maml:para>Specifies the encoding format for host names in the DNS query. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Disable</maml:para>
+            <maml:para>- Utf8WithMapping</maml:para>
+            <maml:para>- Utf8WithoutMapping</maml:para>
+            <maml:para>- Punycode</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disable</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Utf8WithMapping</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Utf8WithoutMapping</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Punycode</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>NameServers</maml:name>
+          <maml:description>
+            <maml:para>Specifies the DNS servers to which the DNS query is sent when DA is disabled.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>Namespace</maml:name>
+          <maml:description>
+            <maml:para>Specifies the DNS namespace. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Suffix</maml:para>
+            <maml:para>- Prefix</maml:para>
+            <maml:para>- FQDN</maml:para>
+            <maml:para>- Subnet</maml:para>
+            <maml:para>- Any</maml:para>
+            <maml:para></maml:para>
+            <maml:para>If this parameter is set to Any, then the parameter value must be specified in dot-notation.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>Server</maml:name>
+          <maml:description>
+            <maml:para>Specifies the server hosting the GPO. This parameter is only applicable with the GpoName parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete. </maml:para>
+          <maml:para>The cmdlet immediately returns an object that represents the job and then displays the command prompt.  You can continue to work in the session while the job completes.  To manage the job, use the `*-Job` cmdlets.  To get the job results, use the Receive-Job (https://go.microsoft.com/fwlink/?LinkID=113372)cmdlet. </maml:para>
+          <maml:para>For more information about Windows PowerShell background jobs, see about_Jobs (https://go.microsoft.com/fwlink/?LinkID=113251).</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>Comment</maml:name>
+        <maml:description>
+          <maml:para>Stores administrator comments.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessEnabled">
+        <maml:name>DAEnable</maml:name>
+        <maml:description>
+          <maml:para>Indicates the rule state for DirectAccess (DA).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessQueryIPSSECEncryption">
+        <maml:name>DAIPsecEncryptionType</maml:name>
+        <maml:description>
+          <maml:para>Specifies the IPsec encryption type for DA. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- None</maml:para>
+          <maml:para>- Low</maml:para>
+          <maml:para>- Medium</maml:para>
+          <maml:para>- High</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessQueryIPsecRequired">
+        <maml:name>DAIPsecRequired</maml:name>
+        <maml:description>
+          <maml:para>Indicates whether IPsec is required.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessDNSServers">
+        <maml:name>DANameServers</maml:name>
+        <maml:description>
+          <maml:para>Specifies the DNS servers which will be queried when DA is enabled.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessProxyName">
+        <maml:name>DAProxyServerName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the proxy server to be used when connecting to the Internet.</maml:para>
+          <maml:para>This parameter is only applicable when the DAProxyType parameter is set to UseProxyName.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DirectAccessProxyType">
+        <maml:name>DAProxyType</maml:name>
+        <maml:description>
+          <maml:para>Specifies the proxy server type to be used when connecting to the Internet. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- NoProxy</maml:para>
+          <maml:para>- UseDefault</maml:para>
+          <maml:para>- UseProxyName</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>DisplayName</maml:name>
+        <maml:description>
+          <maml:para>Specifies an optional friendly name for the NRPT rule.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DnsSecEnabled">
+        <maml:name>DnsSecEnable</maml:name>
+        <maml:description>
+          <maml:para>Indicates whether DNSSEC is enabled on the rule.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DnsSecQueryIPsecEncryption">
+        <maml:name>DnsSecIPsecEncryptionType</maml:name>
+        <maml:description>
+          <maml:para>Specifies the IPsec tunnel encryption settings. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- None</maml:para>
+          <maml:para>- Low</maml:para>
+          <maml:para>- Medium</maml:para>
+          <maml:para>- High</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="DnsSecQueryIPsecRequired">
+        <maml:name>DnsSecIPsecRequired</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the DNS client must set up an IPsec connection to the DNS server.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>DnsSecValidationRequired</maml:name>
+        <maml:description>
+          <maml:para>Indicates that DNSSEC validation is required.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>GpoName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the Group Policy Object (GPO). </maml:para>
+          <maml:para>- If this parameter and the Server parameter are specified, then the NRPT rule is added in the GPO of domain. The Server parameter specifies the domain controller (DC).  - If neither this parameter nor the Server parameter is specified, then the NRPT rule is added for local client computer.  - If this parameter is specified and the Server parameter is not specified, then the DC of the domain specified by this parameter value is found and NRPT rule is added to the GPO.  - If this parameter is not specified and the Server parameter is specified, then an error is displayed.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="IPsecCARestriction">
+        <maml:name>IPsecTrustAuthority</maml:name>
+        <maml:description>
+          <maml:para>Specifies the Certification Authority (CA) to validate the IPsec channel for DA.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name which uniquely identifies a rule.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>NameEncoding</maml:name>
+        <maml:description>
+          <maml:para>Specifies the encoding format for host names in the DNS query. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Disable</maml:para>
+          <maml:para>- Utf8WithMapping</maml:para>
+          <maml:para>- Utf8WithoutMapping</maml:para>
+          <maml:para>- Punycode</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>NameServers</maml:name>
+        <maml:description>
+          <maml:para>Specifies the DNS servers to which the DNS query is sent when DA is disabled.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>Namespace</maml:name>
+        <maml:description>
+          <maml:para>Specifies the DNS namespace. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Suffix</maml:para>
+          <maml:para>- Prefix</maml:para>
+          <maml:para>- FQDN</maml:para>
+          <maml:para>- Subnet</maml:para>
+          <maml:para>- Any</maml:para>
+          <maml:para></maml:para>
+          <maml:para>If this parameter is set to Any, then the parameter value must be specified in dot-notation.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+          <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>Server</maml:name>
+        <maml:description>
+          <maml:para>Specifies the server hosting the GPO. This parameter is only applicable with the GpoName parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root/Microsoft/Windows/DNS/DnsClientNrptRule</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root/Microsoft/Windows/DNS/DnsClientNrptRule</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+          <maml:para>The DnsClientNrptRule object contains all of the properties of the DNS client NRPT rule.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>---------------- Example 1: Modify an NRPT rule ----------------</maml:title>
+        <dev:code>PS C:\&gt; Set-DnsClientNrptRule  -DAEnable $True -DAIPsecEncryptionType "High" -DAIPsecRequired $True -DANameServers "10.0.0.1" -DAProxyServerName "DaServer.com:6666" -DAProxyType "UseProxyName" -DisplayName "Sample" -PassThru -IPsecTrustAuthority "RootCA" -Name "{1326d9d0-4fb5-4fed-9f67-f53637b85010}" -NameEncoding "Punycode" -NameServers "10.0.0.1" -Namespace "dnsnrpt.com" -Server "host1.com" -Comment "Sample NRPT Rule" -DnsSecEnable $True -DnsSecIPsecEncryptionType "Medium" -DnsSecIPsecRequired $True -DnsSecValidationRequired $True -GpoName "TestGPO"</dev:code>
+        <dev:remarks>
+          <maml:para>This example modifies an NRPT rule for a GPO named TestGPO on the server named host1.com for namespace dnsnrpt.com.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/dnsclient/set-dnsclientnrptrule?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Add-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptGlobal</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptPolicy</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Remove-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-DnsClientNrptGlobal</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

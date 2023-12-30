@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-NetTCPConnection</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>NetTCPConnection</command:noun>
+      <maml:description>
+        <maml:para>Gets TCP connections.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-NetTCPConnection cmdlet gets current TCP connections. Use this cmdlet to view TCP connection properties such as local or remote IP address, local or remote port, and connection state.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-NetTCPConnection</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="IPAddress">
+          <maml:name>LocalAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of local IP addresses. The cmdlet gets connections for the addresses that you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>LocalPort</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of local ports. The cmdlet gets connections for the ports that you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AppliedSetting</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of values of applied settings. The cmdlet gets connections that match the settings that you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Internet</maml:para>
+            <maml:para>- Datacenter</maml:para>
+            <maml:para>- Compat</maml:para>
+            <maml:para>- Custom</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Internet</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Datacenter</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Compat</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DatacenterCustom</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">InternetCustom</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AppliedSetting[]</command:parameterValue>
+          <dev:type>
+            <maml:name>AppliedSetting[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CreationTime</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of DateTime objects. To get a DateTime object, use the Get-Date cmdlet.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">DateTime[]</command:parameterValue>
+          <dev:type>
+            <maml:name>DateTime[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>OffloadState</maml:name>
+          <maml:description>
+            <maml:para>Specifies the offload state of a TCP connection.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">InHost</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Offloading</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Offloaded</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Uploading</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">OffloadState[]</command:parameterValue>
+          <dev:type>
+            <maml:name>OffloadState[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>OwningProcess</maml:name>
+          <maml:description>
+            <maml:para>Specifies the PID of the owning process of a TCP connection.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>RemoteAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of remote IP addresses. The cmdlet gets connections for the addresses that you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>RemotePort</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of remote ports. The cmdlet gets connections for the ports that you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>State</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of TCP states. The cmdlet gets connections that match the states that you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Bound</maml:para>
+            <maml:para>- Closed</maml:para>
+            <maml:para>- CloseWait</maml:para>
+            <maml:para>- Closing</maml:para>
+            <maml:para>- DeleteTCB</maml:para>
+            <maml:para>- Established</maml:para>
+            <maml:para>- FinWait1</maml:para>
+            <maml:para>- FinWait2</maml:para>
+            <maml:para>- LastAck</maml:para>
+            <maml:para>- Listen</maml:para>
+            <maml:para>- SynReceived</maml:para>
+            <maml:para>- SynSent</maml:para>
+            <maml:para>- TimeWait</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Closed</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Listen</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SynSent</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SynReceived</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Established</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">FinWait1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">FinWait2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">CloseWait</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Closing</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LastAck</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">TimeWait</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DeleteTCB</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Bound</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">State[]</command:parameterValue>
+          <dev:type>
+            <maml:name>State[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AppliedSetting</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of values of applied settings. The cmdlet gets connections that match the settings that you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Internet</maml:para>
+          <maml:para>- Datacenter</maml:para>
+          <maml:para>- Compat</maml:para>
+          <maml:para>- Custom</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">AppliedSetting[]</command:parameterValue>
+        <dev:type>
+          <maml:name>AppliedSetting[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CreationTime</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of DateTime objects. To get a DateTime object, use the Get-Date cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">DateTime[]</command:parameterValue>
+        <dev:type>
+          <maml:name>DateTime[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="IPAddress">
+        <maml:name>LocalAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of local IP addresses. The cmdlet gets connections for the addresses that you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>LocalPort</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of local ports. The cmdlet gets connections for the ports that you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt16[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>OffloadState</maml:name>
+        <maml:description>
+          <maml:para>Specifies the offload state of a TCP connection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">OffloadState[]</command:parameterValue>
+        <dev:type>
+          <maml:name>OffloadState[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>OwningProcess</maml:name>
+        <maml:description>
+          <maml:para>Specifies the PID of the owning process of a TCP connection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>RemoteAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of remote IP addresses. The cmdlet gets connections for the addresses that you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>RemotePort</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of remote ports. The cmdlet gets connections for the ports that you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt16[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>State</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of TCP states. The cmdlet gets connections that match the states that you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Bound</maml:para>
+          <maml:para>- Closed</maml:para>
+          <maml:para>- CloseWait</maml:para>
+          <maml:para>- Closing</maml:para>
+          <maml:para>- DeleteTCB</maml:para>
+          <maml:para>- Established</maml:para>
+          <maml:para>- FinWait1</maml:para>
+          <maml:para>- FinWait2</maml:para>
+          <maml:para>- LastAck</maml:para>
+          <maml:para>- Listen</maml:para>
+          <maml:para>- SynReceived</maml:para>
+          <maml:para>- SynSent</maml:para>
+          <maml:para>- TimeWait</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">State[]</command:parameterValue>
+        <dev:type>
+          <maml:name>State[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root\StandardCimv2\MSFT_NetTCPConnection</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>---------------- Example 1: Get all connections ----------------</maml:title>
+        <dev:code>PS C:\&gt;Get-NetTCPConnection</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets all current TCP connections.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------ Example 2: Get established connections ------------</maml:title>
+        <dev:code>PS C:\&gt;Get-NetTCPConnection -State Established</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets all TCP connections that have an Established state.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>----------- Example 3: Get Internet TCP connections -----------</maml:title>
+        <dev:code>PS C:\&gt;Get-NetTCPConnection -AppliedSetting Internet</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets all TCP connections that use a TCP applied setting of Internet.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>---------------- Example 4: Get Owning Process ----------------</maml:title>
+        <dev:code>PS C:\&gt;Get-NetTcpConnection -OwningProcess 18948</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets all Owning Process with PID 18948</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/nettcpip/get-nettcpconnection?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

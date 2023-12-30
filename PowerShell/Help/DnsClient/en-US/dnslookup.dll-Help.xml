@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Resolve-DnsName</command:name>
+      <command:verb>Resolve</command:verb>
+      <command:noun>DnsName</command:noun>
+      <maml:description>
+        <maml:para>Performs a DNS name query resolution for the specified name.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Resolve-DnsName cmdlet performs a DNS query for the specified name. This cmdlet is functionally similar to the nslookup tool which allows users to query for names.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Resolve-DnsName</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name to be resolved.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+          <maml:name>Type</maml:name>
+          <maml:description>
+            <maml:para>Specifies the DNS query type that is to be issued. By default the type is A_AAAA, the A and AAAA types will both be queried. The acceptable values for this parameter are:</maml:para>
+            <maml:para> -- UNKNOWN = 0,
+-- A_AAAA = 0, the DNS query type is A_AAAA.
+-- A = 1, the DNS query type is IPv4 server Address.
+-- AAAA = 28, the DNS query type is IPv6 server address.
+-- NS = 2, the DNS query type is name server.
+-- MX = 15, the DNS query type is mail routing information.
+-- MD = 3, the DNS query type is mail destination.
+-- MF = 4, the DNS query type is mail forwarder.
+-- CNAME = 5, the DNS query type is canonical name.
+-- SOA = 6, the DNS query type is start of authority zone.
+-- MB = 7, the DNS query type is mailbox domain name.
+-- MG = 8, the DNS query type is mail group member.
+-- MR = 9, the DNS query type is mail rename name.
+-- NULL = 10, the DNS query type is null resource record.
+-- WKS = 11, the DNS query type is well known service.
+-- PTR = 12, the DNS query type is domain name pointer.
+-- HINFO = 13, the DNS query type is host information.
+-- MINFO = 14, the DNS query type is mailbox information.
+-- TXT = 16, the DNS query type is text strings.
+-- RP = 17, the DNS query type is responsible person.
+-- AFSDB = 18, the DNS query type is AFS database servers.
+-- X25 = 19, the DNS query type is packet switched wide area network.
+-- ISDN = 20, the DNS query type is Integrated Services Digital Network.
+-- RT = 21, the DNS query type is DNS route through.
+-- SRV = 33, the DNS query type is server selection.
+-- DNAME = 39, the DNS query type is domain aliases.
+-- OPT = 41, the DNS query type is DNS option.
+-- DS = 43, the DNS query type is delegation signer.
+-- RRSIG = 46, the DNS query type is DNSSEC signature.
+-- NSEC = 47, the DNS query type is next-secure record.
+-- DNSKEY = 48, the DNS query type is DNS key record.
+-- DHCID = 49, the DNS query type is Dynamic Host Configuration Protocol information.
+-- NSEC3 = 50, the DNS query type is NSEC record version 3.
+-- NSEC3PARAM = 51, the DNS query type is NSEC3 parameters.
+-- ANY = 255, the DNS query type is wildcard match.
+-- ALL = 255, the DNS query type is wildcard match.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">UNKNOWN</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">A_AAAA</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">A</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MD</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MF</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">CNAME</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SOA</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MB</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MG</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MR</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NULL</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">WKS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PTR</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">HINFO</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MINFO</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MX</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">TXT</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RP</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">AFSDB</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">X25</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ISDN</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RT</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">AAAA</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SRV</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DNAME</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OPT</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RRSIG</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NSEC</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DNSKEY</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DHCID</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NSEC3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NSEC3PARAM</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ANY</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ALL</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">WINS</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">RecordType</command:parameterValue>
+          <dev:type>
+            <maml:name>RecordType</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CacheOnly</maml:name>
+          <maml:description>
+            <maml:para>Resolves this query using only the local cache.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DnsOnly</maml:name>
+          <maml:description>
+            <maml:para>Resolves this query using only the DNS protocol.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DnssecCd</maml:name>
+          <maml:description>
+            <maml:para>Sets the DNSSEC checking-disabled bit for this query.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DnssecOk</maml:name>
+          <maml:description>
+            <maml:para>Sets the DNSSEC OK bit for this query.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>LlmnrFallback</maml:name>
+          <maml:description>
+            <maml:para>Allows falling back to the LLMNR protocol when resolving this query with DNS fails.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>LlmnrNetbiosOnly</maml:name>
+          <maml:description>
+            <maml:para>Resolves this query using only the LLMNR or NetBIOS protocols.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>LlmnrOnly</maml:name>
+          <maml:description>
+            <maml:para>Resolves this query using only the LLMNR protocol.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>NetbiosFallback</maml:name>
+          <maml:description>
+            <maml:para>Allows fallback to the NetBIOS protocol when resolving this query with DNS fails.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>NoHostsFile</maml:name>
+          <maml:description>
+            <maml:para>Skips the hosts file when resolving this query.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>NoIdn</maml:name>
+          <maml:description>
+            <maml:para>Specifies not to use IDN encoding logic for the query.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>NoRecursion</maml:name>
+          <maml:description>
+            <maml:para>Instructs the server not to use recursion when resolving this query.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>QuickTimeout</maml:name>
+          <maml:description>
+            <maml:para>Uses shorter timeouts for this query.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Server</maml:name>
+          <maml:description>
+            <maml:para>Specifies the IP addresses or host names of the DNS servers to be queried. By default the interface DNS servers are queried if this parameter is not supplied.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>TcpOnly</maml:name>
+          <maml:description>
+            <maml:para>Uses only TCP for this query.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CacheOnly</maml:name>
+        <maml:description>
+          <maml:para>Resolves this query using only the local cache.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DnsOnly</maml:name>
+        <maml:description>
+          <maml:para>Resolves this query using only the DNS protocol.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DnssecCd</maml:name>
+        <maml:description>
+          <maml:para>Sets the DNSSEC checking-disabled bit for this query.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DnssecOk</maml:name>
+        <maml:description>
+          <maml:para>Sets the DNSSEC OK bit for this query.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>LlmnrFallback</maml:name>
+        <maml:description>
+          <maml:para>Allows falling back to the LLMNR protocol when resolving this query with DNS fails.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>LlmnrNetbiosOnly</maml:name>
+        <maml:description>
+          <maml:para>Resolves this query using only the LLMNR or NetBIOS protocols.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>LlmnrOnly</maml:name>
+        <maml:description>
+          <maml:para>Resolves this query using only the LLMNR protocol.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name to be resolved.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>NetbiosFallback</maml:name>
+        <maml:description>
+          <maml:para>Allows fallback to the NetBIOS protocol when resolving this query with DNS fails.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>NoHostsFile</maml:name>
+        <maml:description>
+          <maml:para>Skips the hosts file when resolving this query.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>NoIdn</maml:name>
+        <maml:description>
+          <maml:para>Specifies not to use IDN encoding logic for the query.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>NoRecursion</maml:name>
+        <maml:description>
+          <maml:para>Instructs the server not to use recursion when resolving this query.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>QuickTimeout</maml:name>
+        <maml:description>
+          <maml:para>Uses shorter timeouts for this query.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Server</maml:name>
+        <maml:description>
+          <maml:para>Specifies the IP addresses or host names of the DNS servers to be queried. By default the interface DNS servers are queried if this parameter is not supplied.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>TcpOnly</maml:name>
+        <maml:description>
+          <maml:para>Uses only TCP for this query.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+        <maml:name>Type</maml:name>
+        <maml:description>
+          <maml:para>Specifies the DNS query type that is to be issued. By default the type is A_AAAA, the A and AAAA types will both be queried. The acceptable values for this parameter are:</maml:para>
+          <maml:para> -- UNKNOWN = 0,
+-- A_AAAA = 0, the DNS query type is A_AAAA.
+-- A = 1, the DNS query type is IPv4 server Address.
+-- AAAA = 28, the DNS query type is IPv6 server address.
+-- NS = 2, the DNS query type is name server.
+-- MX = 15, the DNS query type is mail routing information.
+-- MD = 3, the DNS query type is mail destination.
+-- MF = 4, the DNS query type is mail forwarder.
+-- CNAME = 5, the DNS query type is canonical name.
+-- SOA = 6, the DNS query type is start of authority zone.
+-- MB = 7, the DNS query type is mailbox domain name.
+-- MG = 8, the DNS query type is mail group member.
+-- MR = 9, the DNS query type is mail rename name.
+-- NULL = 10, the DNS query type is null resource record.
+-- WKS = 11, the DNS query type is well known service.
+-- PTR = 12, the DNS query type is domain name pointer.
+-- HINFO = 13, the DNS query type is host information.
+-- MINFO = 14, the DNS query type is mailbox information.
+-- TXT = 16, the DNS query type is text strings.
+-- RP = 17, the DNS query type is responsible person.
+-- AFSDB = 18, the DNS query type is AFS database servers.
+-- X25 = 19, the DNS query type is packet switched wide area network.
+-- ISDN = 20, the DNS query type is Integrated Services Digital Network.
+-- RT = 21, the DNS query type is DNS route through.
+-- SRV = 33, the DNS query type is server selection.
+-- DNAME = 39, the DNS query type is domain aliases.
+-- OPT = 41, the DNS query type is DNS option.
+-- DS = 43, the DNS query type is delegation signer.
+-- RRSIG = 46, the DNS query type is DNSSEC signature.
+-- NSEC = 47, the DNS query type is next-secure record.
+-- DNSKEY = 48, the DNS query type is DNS key record.
+-- DHCID = 49, the DNS query type is Dynamic Host Configuration Protocol information.
+-- NSEC3 = 50, the DNS query type is NSEC record version 3.
+-- NSEC3PARAM = 51, the DNS query type is NSEC3 parameters.
+-- ANY = 255, the DNS query type is wildcard match.
+-- ALL = 255, the DNS query type is wildcard match.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">RecordType</command:parameterValue>
+        <dev:type>
+          <maml:name>RecordType</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.DnsClient.Commands.DnsRecord</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The DnsRecord object contains all of the records returned from the wire for the specified DNS query.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Resolve-DnsName -Name www.bing.com</dev:code>
+        <dev:remarks>
+          <maml:para>This example resolves a name using the default options.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Resolve-DnsName -Name www.bing.com -Server 10.0.0.1</dev:code>
+        <dev:remarks>
+          <maml:para>This example resolves a name against the DNS server at 10.0.0.1.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Resolve-DnsName -Name www.bing.com -Type A</dev:code>
+        <dev:remarks>
+          <maml:para>This example queries for A type records for name www.bing.com.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 4 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Resolve-DnsName -Name www.bing.com -DnsOnly</dev:code>
+        <dev:remarks>
+          <maml:para>This example resolves a name using only DNS. LLMNR and NetBIOS queries are not issued.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/dnsclient/resolve-dnsname?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Nslookup on TechNet</maml:linkText>
+        <maml:uri>https://go.microsoft.com/fwlink/p/?LinkId=84907</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

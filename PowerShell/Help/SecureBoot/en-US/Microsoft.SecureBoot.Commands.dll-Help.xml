@@ -1,0 +1,1215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Confirm-SecureBootUEFI</command:name>
+      <command:verb>Confirm</command:verb>
+      <command:noun>SecureBootUEFI</command:noun>
+      <maml:description>
+        <maml:para>Confirms that Secure Boot is enabled by checking the Secure Boot status on the local computer.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Confirm-SecureBootUEFI cmdlet confirms that Secure Boot is enabled by checking the Secure Boot status on a UEFI computer.</maml:para>
+      <maml:para>If the computer supports Secure Boot and Secure Boot is enabled, this cmdlet returns $True.</maml:para>
+      <maml:para>If the computer supports Secure Boot and Secure Boot is disabled, this cmdlet returns $False.</maml:para>
+      <maml:para>If the computer does not support Secure Boot or is a BIOS (non-UEFI) computer, this cmdlet displays the following: </maml:para>
+      <maml:para>`Cmdlet not supported on this platform.`</maml:para>
+      <maml:para>If Windows PowerShell® is not run in administrator mode, this cmdlet displays the following: </maml:para>
+      <maml:para>`Unable to set proper privileges. Access was denied.`</maml:para>
+      <maml:para>This cmdlet requires that Windows PowerShell be run in administrator mode.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Confirm-SecureBootUEFI</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Boolean</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns a Boolean. If the computer supports Secure Boot and Secure Boot is enabled, this cmdlet returns $True.</maml:para>
+          <maml:para>If the computer supports Secure Boot and Secure Boot is disabled, this cmdlet returns $False.</maml:para>
+          <maml:para>If the computer does not support Secure Boot or is a BIOS (non-UEFI) computer, this cmdlet displays the following: </maml:para>
+          <maml:para>`Cmdlet not supported on this platform`.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>---------------- Example 1: Confirm Secure Boot ----------------</maml:title>
+        <dev:code>PS C:\&gt; Confirm-SecureBootUEFI
+True</dev:code>
+        <dev:remarks>
+          <maml:para>This command checks whether Secure Boot is enabled on the computer.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/secureboot/confirm-securebootuefi?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Format-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-SecureBootPolicy</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Format-SecureBootUEFI</command:name>
+      <command:verb>Format</command:verb>
+      <command:noun>SecureBootUEFI</command:noun>
+      <maml:description>
+        <maml:para>Formats certificates or hashes into a content object that is returned and creates a file that is ready to be signed.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Format-SecureBootUEFI cmdlet receives certificates or hashes as input and formats the input into a content object that is returned. The Set-SecureBootUEFI cmdlet uses this object to update the variable. If you specify a signable file, this cmdlet creates a file that has the specified name that has to be signed.</maml:para>
+      <maml:para>This cmdlet runs on both UEFI and BIOS (non-UEFI) computers.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Format-SecureBootUEFI</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="alg">
+          <maml:name>Algorithm</maml:name>
+          <maml:description>
+            <maml:para>Specifies which algorithm to use if this cmdlet is formatting hashes. The acceptable values for this parameter are: SHA1, SHA256, SHA384, and SHA512.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">sha1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">sha256</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">sha384</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">sha512</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="append">
+          <maml:name>AppendWrite</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the contents of the current variable are appended instead of overwritten.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="f">
+          <maml:name>ContentFilePath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the file that is created and contains the information for the content object that is generated by this cmdlet.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="h">
+          <maml:name>Hash</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of hashes that are used to generate the content.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="n">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the UEFI environment variable. The acceptable values for this parameter are: PK, KEK, DB, and DBX.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">PK</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">KEK</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">db</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">dbx</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="s">
+          <maml:name>SignableFilePath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the file that contains the contents of the data that is ready to be signed.</maml:para>
+            <maml:para>If only the name is specified, the file must be in the current working directory. Otherwise, specify the full path of the file.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="g">
+          <maml:name>SignatureOwner</maml:name>
+          <maml:description>
+            <maml:para>Specifies the GUID of the signature owner.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Guid</command:parameterValue>
+          <dev:type>
+            <maml:name>Guid</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="t">
+          <maml:name>Time</maml:name>
+          <maml:description>
+            <maml:para>Specifies the timestamp that is used in the signature. Format this value as follows so that it is accepted as a DateTime object: </maml:para>
+            <maml:para>`"2011-11-01T13:30:00Z"`</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Format-SecureBootUEFI</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="append">
+          <maml:name>AppendWrite</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the contents of the current variable are appended instead of overwritten.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="c">
+          <maml:name>CertificateFilePath</maml:name>
+          <maml:description>
+            <maml:para>Specifies one or more files that each contain a certificate that is used to generate the content object.</maml:para>
+            <maml:para>If you specify only the name, the file must be in the current working directory. Otherwise, specify the full path of the file.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="f">
+          <maml:name>ContentFilePath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the file that is created and contains the information for the content object that is generated by this cmdlet.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cert">
+          <maml:name>FormatWithCert</maml:name>
+          <maml:description>
+            <maml:para>Indicates whether the certificate will be stored or just the public key. If this parameter is set, the whole certificate is stored in the content object.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="n">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the UEFI environment variable. The acceptable values for this parameter are: PK, KEK, DB, and DBX.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">PK</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">KEK</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">db</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">dbx</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="s">
+          <maml:name>SignableFilePath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the file that contains the contents of the data that is ready to be signed.</maml:para>
+            <maml:para>If only the name is specified, the file must be in the current working directory. Otherwise, specify the full path of the file.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="g">
+          <maml:name>SignatureOwner</maml:name>
+          <maml:description>
+            <maml:para>Specifies the GUID of the signature owner.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Guid</command:parameterValue>
+          <dev:type>
+            <maml:name>Guid</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="t">
+          <maml:name>Time</maml:name>
+          <maml:description>
+            <maml:para>Specifies the timestamp that is used in the signature. Format this value as follows so that it is accepted as a DateTime object: </maml:para>
+            <maml:para>`"2011-11-01T13:30:00Z"`</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Format-SecureBootUEFI</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="del">
+          <maml:name>Delete</maml:name>
+          <maml:description>
+            <maml:para>Indicates that this cmdlet creates a content object and the appropriate sign-able file that deletes the variable.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="n">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the UEFI environment variable. The acceptable values for this parameter are: PK, KEK, DB, and DBX.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">PK</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">KEK</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">db</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">dbx</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="s">
+          <maml:name>SignableFilePath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the file that contains the contents of the data that is ready to be signed.</maml:para>
+            <maml:para>If only the name is specified, the file must be in the current working directory. Otherwise, specify the full path of the file.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="t">
+          <maml:name>Time</maml:name>
+          <maml:description>
+            <maml:para>Specifies the timestamp that is used in the signature. Format this value as follows so that it is accepted as a DateTime object: </maml:para>
+            <maml:para>`"2011-11-01T13:30:00Z"`</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="alg">
+        <maml:name>Algorithm</maml:name>
+        <maml:description>
+          <maml:para>Specifies which algorithm to use if this cmdlet is formatting hashes. The acceptable values for this parameter are: SHA1, SHA256, SHA384, and SHA512.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="append">
+        <maml:name>AppendWrite</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the contents of the current variable are appended instead of overwritten.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="c">
+        <maml:name>CertificateFilePath</maml:name>
+        <maml:description>
+          <maml:para>Specifies one or more files that each contain a certificate that is used to generate the content object.</maml:para>
+          <maml:para>If you specify only the name, the file must be in the current working directory. Otherwise, specify the full path of the file.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="f">
+        <maml:name>ContentFilePath</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the file that is created and contains the information for the content object that is generated by this cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="del">
+        <maml:name>Delete</maml:name>
+        <maml:description>
+          <maml:para>Indicates that this cmdlet creates a content object and the appropriate sign-able file that deletes the variable.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cert">
+        <maml:name>FormatWithCert</maml:name>
+        <maml:description>
+          <maml:para>Indicates whether the certificate will be stored or just the public key. If this parameter is set, the whole certificate is stored in the content object.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="h">
+        <maml:name>Hash</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of hashes that are used to generate the content.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="n">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the UEFI environment variable. The acceptable values for this parameter are: PK, KEK, DB, and DBX.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="s">
+        <maml:name>SignableFilePath</maml:name>
+        <maml:description>
+          <maml:para>Specifies the file that contains the contents of the data that is ready to be signed.</maml:para>
+          <maml:para>If only the name is specified, the file must be in the current working directory. Otherwise, specify the full path of the file.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="g">
+        <maml:name>SignatureOwner</maml:name>
+        <maml:description>
+          <maml:para>Specifies the GUID of the signature owner.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Guid</command:parameterValue>
+        <dev:type>
+          <maml:name>Guid</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="t">
+        <maml:name>Time</maml:name>
+        <maml:description>
+          <maml:para>Specifies the timestamp that is used in the signature. Format this value as follows so that it is accepted as a DateTime object: </maml:para>
+          <maml:para>`"2011-11-01T13:30:00Z"`</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet accepts a string that represents the UEFI variable name that may be output from the Get-SecureBootUEFI cmdlet.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.SecureBoot.Commands.UEFIFormattedVariable</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns a UEFIFormattedVariable object that contains information about the package that is built up to be set. The following members are part of the UEFIFormattedVariable object: </maml:para>
+          <maml:para>- A string named Name. </maml:para>
+          <maml:para>- A string named Time.</maml:para>
+          <maml:para>- A Boolean named AppendWrite.</maml:para>
+          <maml:para>- An array of bytes named Content.</maml:para>
+          <maml:para></maml:para>
+          <maml:para>The UEFIFormattedVariable object can be used to pipe to the Set-SecureBootUEFI cmdlet.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------- Example 1: Format a private key ---------------</maml:title>
+        <dev:code>PS C:\&gt; Format-SecureBootUefi -Name PK -SignatureOwner 12345678-1234-1234-1234-123456789abc -CertificateFilePath PK.cer -SignableFilePath GeneratedFileToSign.bin -Time 2011-11-01T13:30:00Z | Format-List
+Name        : PK 
+Time        : 2011-11-01T13:30:00Z 
+AppendWrite : False 
+Content     : {232, 102, 87, 60...}</dev:code>
+        <dev:remarks>
+          <maml:para>This command formats the private key in PK.cer that is later piped to the Set-SecureBootUEFI cmdlet.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------------- Example 2: Format a hash -------------------</maml:title>
+        <dev:code>PS C:\&gt; Format-SecureBootUEFI -Name DBX -SignatureOwner 12345678-1234-1234-1234-123456789abc -Algorithm SHA256 -Hash 0011223344556677889900112233445566778899001122334455667788990011 -SignableFilePath GeneratedFileToSign.bin -Time 2011-11-01T13:30:00Z -AppendWrite | Format-List
+Name        : dbx 
+Time        : 2011-11-01T13:30:00Z 
+AppendWrite : True 
+Content     : {18, 165, 108, 130...}</dev:code>
+        <dev:remarks>
+          <maml:para>This command formats the hash to beg appended to the DBX UEFI variable when the result is piped to the Set-SecureBootUEFI cmdlet.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------- Example 3: Format for a variable to be deleted --------</maml:title>
+        <dev:code>PS C:\&gt; Format-SecureBootUEFI -Name KEK -Delete -SignableFilePath GeneratedFileToSign.bin -Time 2011-11-01T13:30:00Z | Format-List
+Name        : KEK 
+Time        : 2011-11-01T13:30:00Z 
+AppendWrite : False 
+Content     :</dev:code>
+        <dev:remarks>
+          <maml:para>This command formats the KEK UEFI variable being deleted when the result is piped into the Set-SecureBootUEFI cmdlet.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/secureboot/format-securebootuefi?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Confirm-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-SecureBootPolicy</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-SecureBootPolicy</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>SecureBootPolicy</command:noun>
+      <maml:description>
+        <maml:para>Gets the publisher GUID and the policy version of the Secure Boot configuration policy.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-SecureBootPolicy cmdlet gets the publisher GUID and the policy version of the Secure Boot configuration policy.</maml:para>
+      <maml:para>The cmdlet runs on both UEFI and BIOS (non-UEFI) computers.</maml:para>
+      <maml:para>If the computer does not support Secure Boot or is a non-UEFI computer, this cmdlet displays the following: </maml:para>
+      <maml:para>`Secure Boot policy is not enabled on this machine.`</maml:para>
+      <maml:para>If you do not run Windows PowerShell® in administrator mode, this cmdlet returns an error displaying the following: </maml:para>
+      <maml:para>`Incorrect authentication data.`</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-SecureBootPolicy</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.SecureBoot.Commands.SecureBootPolicy</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns a SecureBootPolicy object that contains the following information about the Secure Boot policy for the computer: </maml:para>
+          <maml:para>- A GUID named Publisher. </maml:para>
+          <maml:para>- An unsigned 32-bit integer named Version.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------- Example 1: Get Secure Boot policy --------------</maml:title>
+        <dev:code>PS C:\&gt; Get-SecureBootPolicy | Format-List
+Publisher: 77fa9abd-0359-4d32-bd60-28f4e78f784b 
+Version  : 1</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets the publisher GUID and the policy version of the Secure Boot configuration policy.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/secureboot/get-securebootpolicy?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Confirm-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Format-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-SecureBootUEFI</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>SecureBootUEFI</command:noun>
+      <maml:description>
+        <maml:para>Gets the UEFI variable values related to Secure Boot.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-SecureBootUEFI cmdlet gets the UEFI variable values related to Secure Boot which are: SetupMode, SecureBoot, KEK, PK, SignatureDatabase (DB), and forbidden SignatureDatabase (DBX).</maml:para>
+      <maml:para>If the computer does not support Secure Boot or is a BIOS (non-UEFI) computer, this cmdlet displays the following: </maml:para>
+      <maml:para>`Cmdlet not supported on this platform.`</maml:para>
+      <maml:para>If the variable does not exist, this cmdlet displays the following: </maml:para>
+      <maml:para>`Variable is currently undefined.`</maml:para>
+      <maml:para>If Windows PowerShell® is not run in administrator mode, this cmdlet displays the following: </maml:para>
+      <maml:para>`Unable to set proper privileges. Access was denied.`</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-SecureBootUEFI</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="n">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the UEFI environment variable.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">PK</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">KEK</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">db</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">dbx</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SetupMode</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SecureBoot</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PKDefault</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">KEKDefault</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">dbDefault</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">dbxDefault</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">dbt</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">dbtDefault</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="f">
+          <maml:name>OutputFilePath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the output file path of the UEFI environment variable.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="n">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the UEFI environment variable.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="f">
+        <maml:name>OutputFilePath</maml:name>
+        <maml:description>
+          <maml:para>Specifies the output file path of the UEFI environment variable.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe a string that represents the UEFI variable name to this cmdlet.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.SecureBoot.Commands.UEFIEnvironmentVariable</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns a UEFIEnvironmentVariable object that contains the following properties: </maml:para>
+          <maml:para>- Name - Bytes - Attributes</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------- Example 1: Get information about PK -------------</maml:title>
+        <dev:code>PS C:\&gt;Get-SecureBootUefi -Name PK | Format-List
+Name       : PK 
+Bytes      : {161, 89, 192, 165...} 
+Attributes : NON VOLATILE 
+             BOOTSERVICE ACCESS 
+             RUNTIME ACCESS 
+             TIME BASED AUTHENTICATED WRITE ACCESS</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets information about PK from the UEFI variable.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/secureboot/get-securebootuefi?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Confirm-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Format-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-SecureBootPolicy</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-SecureBootUEFI</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>SecureBootUEFI</command:noun>
+      <maml:description>
+        <maml:para>Sets the Secure Boot-related UEFI variables.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-SecureBootUEFI cmdlet takes a formatted content object that is created by running the Format-SecureBootUEFI cmdlet and a signed file, combines the two and then attempts to set the package in one of the Secure Boot variables. The supported Secure Boot variables include Platform Key (PK), Key Exchange Key (KEK), Signature Database (DB), and Forbidden Signature Database (DBX).</maml:para>
+      <maml:para>If successful, this cmdlet returns a UEFIEnvironmentVariable object. Otherwise, it displays an error.</maml:para>
+      <maml:para>This cmdlet runs on both UEFI and BIOS (non-UEFI) computers. If the computer does not support Secure Boot or is a non-UEFI computer, this cmdlet displays the following: </maml:para>
+      <maml:para>`Cmdlet not supported on this platform.`</maml:para>
+      <maml:para>If you do not run Windows PowerShell® in administrator mode, this cmdlet displays the following: </maml:para>
+      <maml:para>`Unable to set proper privileges. Access was denied.`</maml:para>
+      <maml:para>If you supply a signed file to this cmdlet that is not valid, this cmdlet displays the following: </maml:para>
+      <maml:para>`Incorrect authentication data.`</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-SecureBootUEFI</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="append">
+          <maml:name>AppendWrite</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the contents of the current variable are appended instead of overwritten.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>Content</maml:name>
+          <maml:description>
+            <maml:para>Specifies the byte contents of the variable that is being set.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Byte[]</command:parameterValue>
+          <dev:type>
+            <maml:name>Byte[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="n">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the UEFI environment variable. The acceptable values for this parameter are: PK, KEK, DB, and DBX.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">PK</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">KEK</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">db</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">dbx</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="of">
+          <maml:name>OutputFilePath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the file created that contains the contents of what is set. If you specify this parameter, instead of setting the variable, the cmdlet stores the contents in this file.</maml:para>
+            <maml:para>The file is created in the specified path location.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="s">
+          <maml:name>SignedFilePath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the signed data that is paired with the contents that are being set to the environment variable.</maml:para>
+            <maml:para>If you specify only the name, the file must be in the current working directory. Otherwise, specify the full path of the file.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="t">
+          <maml:name>Time</maml:name>
+          <maml:description>
+            <maml:para>Specifies the timestamp that is used in the signature. Format this value as follows so that it is accepted as a DateTime object: </maml:para>
+            <maml:para>`"2011-11-01T13:30:00Z"`</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Set-SecureBootUEFI</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="append">
+          <maml:name>AppendWrite</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the contents of the current variable are appended instead of overwritten.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="f">
+          <maml:name>ContentFilePath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the file that contains the contents that is being set to the environment variable.</maml:para>
+            <maml:para>If you specify only the name, the file must be in the current working directory. Otherwise, specify the full path of the file.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="n">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the UEFI environment variable. The acceptable values for this parameter are: PK, KEK, DB, and DBX.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">PK</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">KEK</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">db</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">dbx</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="of">
+          <maml:name>OutputFilePath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the file created that contains the contents of what is set. If you specify this parameter, instead of setting the variable, the cmdlet stores the contents in this file.</maml:para>
+            <maml:para>The file is created in the specified path location.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="s">
+          <maml:name>SignedFilePath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the signed data that is paired with the contents that are being set to the environment variable.</maml:para>
+            <maml:para>If you specify only the name, the file must be in the current working directory. Otherwise, specify the full path of the file.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="t">
+          <maml:name>Time</maml:name>
+          <maml:description>
+            <maml:para>Specifies the timestamp that is used in the signature. Format this value as follows so that it is accepted as a DateTime object: </maml:para>
+            <maml:para>`"2011-11-01T13:30:00Z"`</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="append">
+        <maml:name>AppendWrite</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the contents of the current variable are appended instead of overwritten.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>Content</maml:name>
+        <maml:description>
+          <maml:para>Specifies the byte contents of the variable that is being set.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Byte[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Byte[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="f">
+        <maml:name>ContentFilePath</maml:name>
+        <maml:description>
+          <maml:para>Specifies the file that contains the contents that is being set to the environment variable.</maml:para>
+          <maml:para>If you specify only the name, the file must be in the current working directory. Otherwise, specify the full path of the file.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="n">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the UEFI environment variable. The acceptable values for this parameter are: PK, KEK, DB, and DBX.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="of">
+        <maml:name>OutputFilePath</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the file created that contains the contents of what is set. If you specify this parameter, instead of setting the variable, the cmdlet stores the contents in this file.</maml:para>
+          <maml:para>The file is created in the specified path location.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="s">
+        <maml:name>SignedFilePath</maml:name>
+        <maml:description>
+          <maml:para>Specifies the signed data that is paired with the contents that are being set to the environment variable.</maml:para>
+          <maml:para>If you specify only the name, the file must be in the current working directory. Otherwise, specify the full path of the file.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="t">
+        <maml:name>Time</maml:name>
+        <maml:description>
+          <maml:para>Specifies the timestamp that is used in the signature. Format this value as follows so that it is accepted as a DateTime object: </maml:para>
+          <maml:para>`"2011-11-01T13:30:00Z"`</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.SecureBoot.Commands.UEFIFormattedVariable</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This command accepts a UEFIFormattedVariable object that contains the information for the Name , Time , Content , and AppendWrite parameters.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.SecureBoot.Commands.UEFIEnvironmentVariable</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns a UEFIEnvironmentVariable object that contains the following properties: </maml:para>
+          <maml:para>- Name - Guid - Bytes - Attributes</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------- Example 1: Set the DBX UEFI variable -------------</maml:title>
+        <dev:code>PS C:\&gt; $ObjectFromFormat = ( Format-SecureBootUEFI -Name DBX -SignatureOwner 12345678-1234-1234-1234-123456789abc -Algorithm SHA256 -Hash 0011223344556677889900112233445566778899001122334455667788990011 -SignableFilePath GeneratedFileToSign.bin -Time 2011-11-01T13:30:00Z -AppendWrite ) 
+PS C:\&gt; .\signtool.exe sign /fd sha256 /p7 .\ /p7co 1.2.840.113549.1.7.1 /p7ce DetachedSignedData /a /f PrivateKey.pfx GeneratedFileToSign.bin
+PS C:\&gt; $ObjectFromFormat | Set-SecureBootUEFI -SignedFilePath GeneratedFileToSign.bin.p7
+Name       : dbx 
+Bytes      : {161, 89, 192, 165...} 
+Attributes : NON VOLATILE 
+             BOOTSERVICE ACCESS 
+             RUNTIME ACCESS 
+             TIME BASED AUTHENTICATED WRITE ACCESS</dev:code>
+        <dev:remarks>
+          <maml:para>This example sets the information obtained from the Format-SecureBootUEFI cmdlet to the DBX UEFI variable.</maml:para>
+          <maml:para>The first command supplies a path to the signed package to be authenticated. The file named GeneratedFileToSign.bin is a digest created by the Format-SecureBootUEFI cmdlet that needs to be signed according to the UEFI specification.</maml:para>
+          <maml:para>The second command runs the SignTool.exe tool from the current directory to sign the digest. The SignTool.exe tool can be downloaded from Windows Software Development Kit (SDK) for Windows 8 (https://go.microsoft.com/fwlink/p/?LinkId=236500)on MSDN.</maml:para>
+          <maml:para>The third command sets the information.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 2: Set the DBX UEFI variable by using a signed package</maml:title>
+        <dev:code>PS C:\&gt; Set-SecureBootUEFI -ContentFilePath FormattedVariable.bin -SignedFilePath GeneratedFileToSign.bin.p7
+Name       : dbx 
+Bytes      : {161, 89, 192, 165...} 
+Attributes : NON VOLATILE 
+             BOOTSERVICE ACCESS 
+             RUNTIME ACCESS 
+             TIME BASED AUTHENTICATED WRITE ACCESS</dev:code>
+        <dev:remarks>
+          <maml:para>This command sets the formatted data that was written to file FormattedVariable.bin to the DBX UEFI variable. This cmdlet supplies a path to the signed package to be authenticated.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>- Example 3: Set the DBX UEFI variable by using unsigned data -</maml:title>
+        <dev:code>PS C:\&gt; $objectFromFormat = ( Format-SecureBootUEFI -Name DB -SignatureOwner 12345678-1234-1234-1234-123456789abc -Time 2011-11-01T13:30:00Z -CertificateFilePath db.cer -FormatWithCert )
+PS C:\&gt; $objectFromFormat | Set-SecureBootUEFI
+Name       : db 
+Bytes      : {161, 89, 192, 165...} 
+Attributes : NON VOLATILE 
+             BOOTSERVICE ACCESS 
+             RUNTIME ACCESS 
+             TIME BASED AUTHENTICATED WRITE ACCESS</dev:code>
+        <dev:remarks>
+          <maml:para>This example creates formatted data that is not signed and sets the unsigned data into the UEFI variable named db.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/secureboot/set-securebootuefi?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Confirm-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Format-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-SecureBootPolicy</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-SecureBootUEFI</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

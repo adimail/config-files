@@ -1,0 +1,347 @@
+
+
+ABOUT_LOGGING_NON-WINDOWS
+
+
+Short description
+
+PowerShell logs internal operations from the engine, providers, and
+cmdlets.
+
+
+Long description
+
+PowerShell logs details of PowerShell operations, such as starting and
+stopping the engine and starting and stopping providers. It also logs
+details about PowerShell commands.
+
+The location of PowerShell logs is dependent on the target platform.
+
+-   On Linux, PowerShell logs to the SYSTEMD JOURNAL that can forward to a
+    SYSLOG server. For more information, see the man pages for your Linux
+    distribution.
+-   On macOS, Apple's unified logging system is used. For more information,
+    see Apple's developer documentation on logging.
+
+PowerShell supports configuring two categories of logging:
+
+-   Module logging - Record the pipeline execution events for members of
+    specified modules. Module logging must be enabled for both the session
+    and specific modules. For more information about configuring this
+    logging, see about_PowerShell_Config.
+
+    If module logging is enabled through configuration, you can enable and
+    disable logging for specific modules in a session by setting the value
+    of the LOGPIPELINEEXECUTIONDETAILS property of the module.
+
+    For example, to enable module logging for the PSREADLINE module:
+
+        $psrl = Get-Module PSReadLine
+        $psrl.LogPipelineExecutionDetails = $true
+        Get-Module PSReadline | Select-Object Name, LogPipelineExecutionDetails
+
+        Name       LogPipelineExecutionDetails
+        ----       ---------------------------
+        PSReadLine                        True
+
+-   Script block logging - Record the processing of commands, script
+    blocks, functions, and scripts whether invoked interactively, or
+    through automation.
+
+    When you enable Script Block Logging, PowerShell records the content of
+    all script blocks that it processes. Once enabled, any new PowerShell
+    session logs this information.
+
+      [!NOTE] It's recommended to enable Protected Event Logging, when
+      using Script Block Logging for anything other than diagnostics
+      purposes. For more information, see about_PowerShell_Config.
+
+
+Configuring logging on Linux or macOS
+
+The configuration for logging on Linux and macOS is stored in the
+powershell.config.json file. The powershell.config.json file is a JSON
+formatted file residing in the PowerShell $PSHOME directory. If this
+configuration file doesn't exist, you'll need to create it to change the
+default settings. Each installation of PowerShell uses its own copy of this
+file.
+
+By default, PowerShell enables Informational logging to the Operational
+channel. You can change the configuration if you require additional log
+output, such as verbose or enabling analytic log output.
+
+The following code is an example configuration:
+
+    {
+        "ModuleLogging": {
+            "EnableModuleLogging": false,
+            "ModuleNames": [
+                "PSReadLine",
+                "PowerShellGet"
+            ]
+        },
+        "ScriptBlockLogging": {
+            "EnableScriptBlockInvocationLogging": true,
+            "EnableScriptBlockLogging": true
+        },
+        "LogLevel": "verbose"
+    }
+
+The following is a list of properties for configuring PowerShell logging.
+If the property isn't listed in the configuration, PowerShell uses the
+default value.
+
+-   LOGIDENTITY
+    -   Values: <string name>, powershell
+    -   Description: The name to use when logging. The default identity is
+        powershell. This value can be used to tell the difference between
+        two instances of a PowerShell installation, such as a release and
+        beta version. This value is also used to redirect log output to a
+        separate file.
+-   LOGCHANNELS
+    -   Values: Operational, Analytic
+    -   Description: The channels to enable. Separate the values with a
+        comma when specifying more than one. The default value is
+        Operational.
+-   LOGLEVEL
+    -   Values: Always, Critical, Error, Warning, Informational, Verbose,
+        Debug
+    -   Description: Specify a single value. The values are listed in
+        increasing order of verbosity. The value you choose enables itself
+        and all the values before it. The default value is Informational.
+-   LOGKEYWORDS
+    -   Values: Runspace, Pipeline, Protocol, Transport, Host, Cmdlets,
+        Serializer, Session, ManagedPlugin
+    -   Description: Keywords provide the ability to limit logging to
+        specific components within PowerShell. By default, all keywords are
+        enabled and change this value is only useful for specialized
+        troubleshooting.
+-   POWERSHELLPOLICIES
+    -   Description: The POWERSHELLPOLICIES setting contains the
+        MODULELOGGING, PROTECTEDEVENTLOGGING, and SCRIPTBLOCKLOGGING
+        options. For more information, see Common configuration settings.
+
+
+Viewing PowerShell log data in journald on Linux
+
+PowerShell logs to the SYSTEMD JOURNAL using the JOURNALD daemon on Linux
+distributions such as Ubuntu and Red Hat Enterprise Linux (RHEL).
+
+The JOURNALD daemon stores log messages in a binary format. Use the
+journalctl utility to query the journal log for PowerShell entries.
+
+    journalctl --grep powershell
+
+The JOURNALD daemon can forward log messages to a System Logging Protocol
+(syslog) server. Enable the ForwardToSysLog option in the
+/etc/systemd/journald.conf JOURNALD configuration file if you want to use
+SYSLOG logging on your Linux system. This is the default configuration for
+many Linux distributions.
+
+
+Viewing PowerShell log data in syslog on Linux
+
+Use the package manager for your Linux distribution to install a SYSLOG
+server such as RSYSLOG if you want to use syslog logging on your Linux
+system. Some Linux distributions such as Ubuntu preinstall RSYSLOG.
+
+The syslog protocol stores log messages in a standardized text format. You
+can use any text processing utility to query or view SYSLOG content.
+
+By default, SYSLOG writes log entries to the following location:
+
+-   On Debian-based distributions, including Ubuntu: /var/log/syslog
+-   On RHEL-based distributions: /var/log/messages
+
+The following example uses the cat command to query for PowerShell SYSLOG
+entries on Ubuntu.
+
+    cat /var/log/syslog | grep -i powershell
+
+Syslog message format
+
+Syslog messages have the following format:
+
+    TIMESTAMP MACHINENAME powershell[PID]: (COMMITID:TID:CID)
+      [EVENTID:TASK.OPCODE.LEVEL] MESSAGE
+
+-   TIMESTAMP - A date/time when the log entry was produced.
+-   MACHINENAME - The name of the system where the log was produced.
+-   PID - The process ID of the process that wrote the log entry.
+-   COMMITID - The GIT COMMIT ID or tag used to produce the build.
+-   TID - The thread ID of the thread that wrote the log entry.
+-   CID - The hex channel identifier of the log entry.
+    -   0x10 = Operational
+    -   0x11 = Analytic
+-   EVENTID - The event identifier of the log entry.
+-   TASK - The task identifier for the event entry
+-   OPCODE - The opcode for the event entry
+-   LEVEL - The log level for the event entry
+-   MESSAGE - The message associated with the event entry
+
+EVENTID, TASK, OPCODE, and LEVEL are the same values as used when logging
+to the Windows event log.
+
+Write PowerShell log message to a separate file
+
+It's also possible to redirect the PowerShell log entries to a separate
+file. When the PowerShell log entries are redirected to a separate file,
+they're no longer logged to the default syslog file.
+
+The following steps configure PowerShell log entries on Ubuntu to write to
+a log file named powershell.log.
+
+1.  Create a config (conf) file for the PowerShell log configuration in the
+    /etc/rsyslog.d directory using a text file editor such as nano. Prefix
+    the filename with a number that's less than the default. For example,
+    40-powershell.conf where the default is 50-default.conf.
+
+        sudo nano /etc/rsyslog.d/40-powershell.conf
+
+2.  Add the following information to the 40-powershell.conf file:
+
+        :syslogtag, contains, "powershell[" /var/log/powershell.log
+        & stop
+
+3.  Verify that /etc/rsyslog.conf has an include statement for the new
+    file. It may have a generic statement that includes it, such as:
+
+        $IncludeConfig /etc/rsyslog.d/*.conf
+
+    If it doesn't, you'll need to add an include statement manually.
+
+4.  Verify the attributes and permissions are set appropriately.
+
+        ls -l /etc/rsyslog.d/40-powershell.conf
+
+        -rw-r--r-- 1 root root   67 Nov 28 12:51 40-powershell.conf
+
+    If your 40-powershell.conf file has different ownership or permissions,
+    complete the following steps:
+
+    1.  Set ownership to ROOT.
+
+            sudo chown root:root /etc/rsyslog.d/40-powershell.conf
+
+    2.  Set access permissions: ROOT has read/write, USERS have read.
+
+            sudo chmod 644 /etc/rsyslog.d/40-powershell.conf
+
+5.  Restart the RSYSLOG service.
+
+        sudo systemctl restart rsyslog.service
+
+6.  Run pwsh to generate PowerShell information to log.
+
+        pwsh
+
+      [!NOTE] The /var/log/powershell.log file isn't created until the
+      RSYSLOG service is restarted and PowerShell generates information to
+      log.
+
+7.  Query the powershell.log file to verify PowerShell information is being
+    logged to the new file.
+
+        cat /var/log/powershell.log
+
+
+Viewing PowerShell log data on macOS
+
+PowerShell logs to Apple's unified logging system, a feature of macOS that
+allows for the collection and storage of system and application logs in a
+single centralized location.
+
+Apple's unified logging system stores log messages in binary format. Use
+the Console app or log tool to query the unified logging system for
+PowerShell entries.
+
+Viewing PowerShell log data in the Console application on macOS
+
+The CONSOLE application on macOS is a utility that provides a graphical
+user interface for viewing log data. The CONSOLE application is included
+with macOS by default and can be accessed by opening the UTILITIES folder
+in the APPLICATIONS folder.
+
+Use the following steps to view PowerShell log data in the Console
+application on macOS:
+
+1.  Search for the CONSOLE application and launch it.
+2.  Select the Machine name under DEVICES.
+3.  In the SEARCH field, enter pwsh for the PowerShell main binary and
+    press return.
+4.  Change the search filter from Any to Process.
+5.  Click START.
+6.  Run pwsh to generate PowerShell information to log.
+
+The process ID for a running instance of PowerShell is stored in the $PID
+variable. Use the following steps to filter on a specific process instance
+of PowerShell in the CONSOLE application.
+
+1.  Run an instance of pwsh.
+2.  Run $PID in the instance of PowerShell started in the previous step to
+    determine its process ID.
+3.  Enter the process ID for pwsh in the SEARCH field and press return.
+4.  Change the search filter from Any to PID.
+5.  Click START.
+6.  Generate PowerShell information to log from the instance of PowerShell
+    started in the first step.
+
+For more information, see view log messages in Console on Mac.
+
+Viewing PowerShell log data from the command line on macOS
+
+To view PowerShell log data from a command line on macOS, use the log
+command in the TERMINAL or other shell host application. These commands can
+be run from POWERSHELL, Z SHELL (ZSH), or BASH.
+
+In the following example, the log command is used to show the log data on
+your system as it's occurring in realtime. The PROCESS parameter filters
+the log data for only the pwsh process. If you have more than one instance
+of pwsh running, the PROCESS parameter also accepts a process ID as its
+value. The LEVEL parameter shows messages at the specified level and below.
+
+    log stream --process pwsh --level info
+
+Modes and levels of PowerShell log data on macOS
+
+By default, the PowerShell subsystem logs info level messages to memory
+(mode) and default level messages to disk (persistence) on macOS. This
+behavior can be changed to enable a different mode and level of logging
+using the log config command.
+
+The following example enables info level logging and persistence for the
+PowerShell subsystem:
+
+    sudo log config --subsystem com.microsoft.powershell --mode level:info,persist:info
+
+Use the RESET parameter to revert the log settings to the defaults for the
+PowerShell subsystem:
+
+    sudo log config --subsystem com.microsoft.powershell --reset
+
+The log show command can be used to export log items. The log show command
+provides options for exporting the last N items, items since a given time,
+or items within a given time span.
+
+For example, the following command exports items since
+9am on April 5 of 2022:
+
+    log show --info --start "2022-04-05 09:00:00" --process pwsh
+
+For more information, run log show --help to view the help for the log show
+command.
+
+You may also want to consider saving the logs to a more secure location
+such as Security Information and Event Management (SIEM) aggregator. Using
+Microsoft Defender for Cloud Apps, you can set up SIEM in Azure. For more
+information, see Generic SIEM integration.
+
+
+See also
+
+-   For Linux SYSLOG and RSYSLOG.CONF information, refer to the Linux
+    computer's local man pages
+-   For macOS LOGGING information, see Apple's developer documentation on
+    logging
+-   For Windows, see about_Logging_Windows
+-   Generic SIEM integration

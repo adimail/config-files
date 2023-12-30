@@ -1,0 +1,2667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Add-VpnConnection</command:name>
+      <command:verb>Add</command:verb>
+      <command:noun>VpnConnection</command:noun>
+      <maml:description>
+        <maml:para>Adds a VPN connection to the Connection Manager phone book.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Add-VpnConnection cmdlet adds a VPN connection with the specified parameters to the Connection Manager phone book. If errors occur when you create the VPN profile, the cmdlet returns the error information.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Add-VpnConnection</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="ConnectionName">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of this VPN connection profile.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="10" aliases="none">
+          <maml:name>UseWinlogonCredential</maml:name>
+          <maml:description>
+            <maml:para>Indicates that MSCHAPv2 or EAP MSCHAPv2 is used as the authentication method, and that Windows logon credentials are used automatically when connecting with this VPN connection profile.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="11" aliases="none">
+          <maml:name>EapConfigXmlStream</maml:name>
+          <maml:description>
+            <maml:para>Specifies the contents of the EAP XML configuration file, which includes the EAP method ID.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">XmlDocument</command:parameterValue>
+          <dev:type>
+            <maml:name>XmlDocument</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="ServerName, DefaultServer">
+          <maml:name>ServerAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies the address of the remote VPN server to which the client connects. You can specify the address as a URL, an IPv4 address, or an IPv6 address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="3" aliases="none">
+          <maml:name>TunnelType</maml:name>
+          <maml:description>
+            <maml:para>Specifies the type of tunnel used for the VPN connection.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Pptp</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">L2tp</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Sstp</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Ikev2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Automatic</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="4" aliases="none">
+          <maml:name>EncryptionLevel</maml:name>
+          <maml:description>
+            <maml:para>Specifies the encryption level for the VPN connection.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">NoEncryption</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Optional</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Required</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Maximum</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Custom</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="5" aliases="none">
+          <maml:name>AuthenticationMethod</maml:name>
+          <maml:description>
+            <maml:para>Specifies the authentication method to use for the VPN connection.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Pap</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Chap</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MSChapv2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Eap</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MachineCertificate</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+          <maml:name>SplitTunneling</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet enables split tunneling for this VPN connection profile. When you enable split tunneling, traffic to destinations outside the intranet does not flow through the VPN tunnel. If you do not specify this parameter, split tunneling is disabled.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="7" aliases="none">
+          <maml:name>AllUserConnection</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet adds the VPN connection to the global phone book entries.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="8" aliases="none">
+          <maml:name>L2tpPsk</maml:name>
+          <maml:description>
+            <maml:para>Specifies the value of the PSK to be used for L2TP authentication. If this parameter is not specified, a certificate is used for L2TP.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="9" aliases="none">
+          <maml:name>RememberCredential</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the credentials supplied at the time of first successful connection are stored in the cache.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DnsSuffix</maml:name>
+          <maml:description>
+            <maml:para>Specifies the DNS suffix of the VPN connection.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the pre-shared key (PSK) value is supplied over an insecure channel, if L2TP is used.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>IdleDisconnectSeconds</maml:name>
+          <maml:description>
+            <maml:para>Specifies the time, in seconds, before an idle connection is closed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>MachineCertificateEKUFilter</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of enhanced key usage (EKU) filters for Internet Key Exchange version 2 (IKEv2) machine certificate selection.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>MachineCertificateIssuerFilter</maml:name>
+          <maml:description>
+            <maml:para>Specifies the X509 certificate of the issuer filter for IKEv2 machine certificate selection.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">X509Certificate2</command:parameterValue>
+          <dev:type>
+            <maml:name>X509Certificate2</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ServerList</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of VPN servers. The VPN client can connect to these servers.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Add-VpnConnection</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="ConnectionName">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of this VPN connection profile.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="10" aliases="none">
+          <maml:name>PlugInApplicationID</maml:name>
+          <maml:description>
+            <maml:para>Specifies the identifier for a third party application.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="ServerName, DefaultServer">
+          <maml:name>ServerAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies the address of the remote VPN server to which the client connects. You can specify the address as a URL, an IPv4 address, or an IPv6 address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+          <maml:name>SplitTunneling</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet enables split tunneling for this VPN connection profile. When you enable split tunneling, traffic to destinations outside the intranet does not flow through the VPN tunnel. If you do not specify this parameter, split tunneling is disabled.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="9" aliases="none">
+          <maml:name>RememberCredential</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the credentials supplied at the time of first successful connection are stored in the cache.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>CustomConfiguration</maml:name>
+          <maml:description>
+            <maml:para>Specifies an XML document that allows vendors to specify custom configuration information.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">XmlDocument</command:parameterValue>
+          <dev:type>
+            <maml:name>XmlDocument</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DnsSuffix</maml:name>
+          <maml:description>
+            <maml:para>Specifies the DNS suffix of the VPN connection.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the pre-shared key (PSK) value is supplied over an insecure channel, if L2TP is used.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>IdleDisconnectSeconds</maml:name>
+          <maml:description>
+            <maml:para>Specifies the time, in seconds, before an idle connection is closed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ServerList</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of VPN servers. The VPN client can connect to these servers.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="7" aliases="none">
+        <maml:name>AllUserConnection</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the cmdlet adds the VPN connection to the global phone book entries.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="5" aliases="none">
+        <maml:name>AuthenticationMethod</maml:name>
+        <maml:description>
+          <maml:para>Specifies the authentication method to use for the VPN connection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>CustomConfiguration</maml:name>
+        <maml:description>
+          <maml:para>Specifies an XML document that allows vendors to specify custom configuration information.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">XmlDocument</command:parameterValue>
+        <dev:type>
+          <maml:name>XmlDocument</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>DnsSuffix</maml:name>
+        <maml:description>
+          <maml:para>Specifies the DNS suffix of the VPN connection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="11" aliases="none">
+        <maml:name>EapConfigXmlStream</maml:name>
+        <maml:description>
+          <maml:para>Specifies the contents of the EAP XML configuration file, which includes the EAP method ID.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">XmlDocument</command:parameterValue>
+        <dev:type>
+          <maml:name>XmlDocument</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="4" aliases="none">
+        <maml:name>EncryptionLevel</maml:name>
+        <maml:description>
+          <maml:para>Specifies the encryption level for the VPN connection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the pre-shared key (PSK) value is supplied over an insecure channel, if L2TP is used.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>IdleDisconnectSeconds</maml:name>
+        <maml:description>
+          <maml:para>Specifies the time, in seconds, before an idle connection is closed.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="8" aliases="none">
+        <maml:name>L2tpPsk</maml:name>
+        <maml:description>
+          <maml:para>Specifies the value of the PSK to be used for L2TP authentication. If this parameter is not specified, a certificate is used for L2TP.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>MachineCertificateEKUFilter</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of enhanced key usage (EKU) filters for Internet Key Exchange version 2 (IKEv2) machine certificate selection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>MachineCertificateIssuerFilter</maml:name>
+        <maml:description>
+          <maml:para>Specifies the X509 certificate of the issuer filter for IKEv2 machine certificate selection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">X509Certificate2</command:parameterValue>
+        <dev:type>
+          <maml:name>X509Certificate2</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="ConnectionName">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of this VPN connection profile.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+          <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="10" aliases="none">
+        <maml:name>PlugInApplicationID</maml:name>
+        <maml:description>
+          <maml:para>Specifies the identifier for a third party application.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="9" aliases="none">
+        <maml:name>RememberCredential</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the credentials supplied at the time of first successful connection are stored in the cache.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="ServerName, DefaultServer">
+        <maml:name>ServerAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies the address of the remote VPN server to which the client connects. You can specify the address as a URL, an IPv4 address, or an IPv6 address.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>ServerList</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of VPN servers. The VPN client can connect to these servers.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+        <maml:name>SplitTunneling</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the cmdlet enables split tunneling for this VPN connection profile. When you enable split tunneling, traffic to destinations outside the intranet does not flow through the VPN tunnel. If you do not specify this parameter, split tunneling is disabled.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="3" aliases="none">
+        <maml:name>TunnelType</maml:name>
+        <maml:description>
+          <maml:para>Specifies the type of tunnel used for the VPN connection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="10" aliases="none">
+        <maml:name>UseWinlogonCredential</maml:name>
+        <maml:description>
+          <maml:para>Indicates that MSCHAPv2 or EAP MSCHAPv2 is used as the authentication method, and that Windows logon credentials are used automatically when connecting with this VPN connection profile.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#VpnConnection</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+          <maml:para>This cmdlet returns a VpnConnection object that contains the VPN connection configuration settings.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------- Example 1: Add a VPN connection ---------------</maml:title>
+        <dev:code>PS C:\&gt; Add-VpnConnection -Name "Test1" -ServerAddress "10.1.1.1" -PassThru
+
+Name                  : Test1
+ServerAddress         : 10.1.1.1
+AllUserConnection     : False 
+Guid                  : {4B308E9B-C225-42CB-8158-307193429591}
+TunnelType            : Automatic
+AuthenticationMethod  : {MsChapv2}
+EncryptionLevel       : Required 
+L2tpIPsecAuth         : Certificate
+UseWinlogonCredential : False
+EapConfigXmlStream    : 
+ConnectionStatus      : Disconnected
+NapState              : NotConnected 
+RememberCredential    : False 
+SplitTunneling        : False</dev:code>
+        <dev:remarks>
+          <maml:para>This command adds a VPN connection named Test1 to the server with an IP address 10.1.1.1. By specifying the PassThru parameter, you can see the configuration of the VPN connection object.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 2: Add a VPN connection with an alternate authentication method</maml:title>
+        <dev:code>PS C:\&gt; Add-VpnConnection -Name "Test3" -ServerAddress "10.1.1.1" -TunnelType "Pptp" -EncryptionLevel "Required" -AuthenticationMethod MSChapv2 -UseWinlogonCredential -SplitTunneling -AllUserConnection -RememberCredential -PassThru
+
+Name                  : Test3 
+ServerAddress         : 10.1.1.1 
+AllUserConnection     : True 
+Guid                  : {76746D4E-D72A-467D-A11F-3D4D9075F50D} 
+TunnelType            : Pptp 
+AuthenticationMethod  : {MsChapv2} 
+EncryptionLevel       : Required 
+L2tpIPsecAuth         : 
+UseWinlogonCredential : True 
+EapConfigXmlStream    : 
+ConnectionStatus      : Disconnected 
+NapState              : NotConnected 
+RememberCredential    : True 
+SplitTunneling        : True</dev:code>
+        <dev:remarks>
+          <maml:para>This command adds a VPN connection named Test3 to the server with an IP address 10.1.1.1. This connection uses the MSCHAPv2 authentication method, as specified by the AuthenticationMethod parameter. Additional parameters specify that the connection: </maml:para>
+          <maml:para>- Uses the Windows logon credentials (the UseWinlogonCredential parameter)  - Uses split tunneling (the SplitTunneling parameter)  - Is stored in the global phone book (the AllUserConnection parameter)  - Caches the credentials used for the first successful connection (the RememberCredential parameter)</maml:para>
+          <maml:para>By specifying the PassThru parameter, you can see the configuration of the VPN connection object.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>- Example 3: Add a VPN connection that uses EAP authentication -</maml:title>
+        <dev:code>PS C:\&gt; Add-VpnConnection -Name "Test4" -ServerAddress "10.1.1.1" -TunnelType "L2tp" -EncryptionLevel "Required" -AuthenticationMethod Eap -SplitTunneling -AllUserConnection -L2tpPsk "password" -Force -RememberCredential -PassThru
+
+Name                  : Test4 
+ServerAddress         : 10.1.1.1 
+AllUserConnection     : True 
+Guid                  : {1D423FF3-E3D4-404A-B052-DB9130656D29} 
+TunnelType            : L2tp 
+AuthenticationMethod  : {Eap} 
+EncryptionLevel       : Required 
+L2tpIPsecAuth         : Psk 
+UseWinlogonCredential : False 
+EapConfigXmlStream    : #document 
+ConnectionStatus      : Disconnected 
+NapState              : NotConnected 
+RememberCredential    : True 
+SplitTunneling        : True</dev:code>
+        <dev:remarks>
+          <maml:para>This command adds a VPN connection named Test4 to the server with an IP address of 10.1.1.1. This connection uses the default EAP authentication method, as specified by the AuthenticationMethod parameter. The pre-shared key for the connection is specified by the L2tpPsk parameter. Additional parameters specify that the connection: </maml:para>
+          <maml:para>- Uses split tunneling (the SplitTunneling parameter)  - Is stored in the global phone book (the AllUserConnection parameter)  - Caches the credentials used for the first successful connection (the RememberCredential parameter)</maml:para>
+          <maml:para>By specifying the PassThru parameter, you can see the configuration of the VPN connection object.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 4: Add a VPN connection that uses a custom EAP authentication method</maml:title>
+        <dev:code>PS C:\&gt; $A = New-EapConfiguration
+PS C:\&gt; Add-VpnConnection -Name "Test5" -ServerAddress "10.1.1.1" -TunnelType "L2tp" -EncryptionLevel "Required" -AuthenticationMethod Eap -SplitTunneling -AllUserConnection -RememberCredential -EapConfigXmlStream $A.EapConfigXmlStream -PassThru
+
+Name                  : Test5 
+ServerAddress         : 10.1.1.1 
+AllUserConnection     : True 
+Guid                  : {CF9F624F-D7DF-48BA-BD4B-D4E34AE05148} 
+TunnelType            : L2tp 
+AuthenticationMethod  : {Eap} 
+EncryptionLevel       : Required 
+L2tpIPsecAuth         : Certificate 
+UseWinlogonCredential : False 
+EapConfigXmlStream    : #document 
+ConnectionStatus      : Disconnected 
+NapState              : NotConnected 
+RememberCredential    : True 
+SplitTunneling        : True</dev:code>
+        <dev:remarks>
+          <maml:para>This set of commands adds a VPN connection using a custom EAP authentication method. For more information about custom EAP authentication methods, see the New-EapConfiguration cmdlet.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 5: Add a VPN connection that uses already generated EAP XML configuration</maml:title>
+        <dev:code>PS C:\&gt; $EAPXml = Get-Content -Path C:\eap-config.xml
+PS C:\&gt; Add-VpnConnection -Name "Test6" -ServerAddress "10.1.1.1" -TunnelType "L2tp" -EncryptionLevel "Required" -AuthenticationMethod Eap -SplitTunneling -AllUserConnection -RememberCredential -EapConfigXmlStream $EAPXml</dev:code>
+        <dev:remarks>
+          <maml:para>This set of commands adds a VPN connection using an already generated EAP XML configuration. For more information about how to generate EAP XML configuration, see EAP Configuration (/windows/client-management/mdm/eap-configuration).</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/vpnclient/add-vpnconnection?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-VpnConnection</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-VpnConnection</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Remove-VpnConnection</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>New-EapConfiguration</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-VpnConnection</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>VpnConnection</command:noun>
+      <maml:description>
+        <maml:para>Retrieves the specified VPN connection profile information.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-VpnConnection cmdlet retrieves the specified VPN connection profile and its properties. If you do not specify a profile name, the cmdlet returns a list of all VPN connections in the phone book.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-VpnConnection</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="ConnectionName">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of names of VPN connection profiles.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>AllUserConnection</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the VPN connection is retrieved from the global phone book.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>AllUserConnection</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the VPN connection is retrieved from the global phone book.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="ConnectionName">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of names of VPN connection profiles.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#VpnConnection[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+          <maml:para>This cmdlet returns a VpnConnection object that contains the VPN connection configuration settings.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------- Example 1: Get all available VPN connections ---------</maml:title>
+        <dev:code>PS C:\&gt; Get-VpnConnection
+Name                  : Test1
+ServerAddress         : 10.1.1.2
+AllUserConnection     : False
+Guid                  : {65EA2A6D-60A5-49DA-AEDF-5542171D3794}
+TunnelType            : Automatic
+AuthenticationMethod  : {MsChapv2}
+EncryptionLevel       : Required
+L2tpIPsecAuth         : Certificate
+UseWinlogonCredential : False
+EapConfigXmlStream    : 
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : False
+SplitTunneling        : False
+DnsSuffix             : 
+IdleDisconnectSeconds : 0
+
+Name                  : Test6
+ServerAddress         : 10.1.1.1
+AllUserConnection     : False
+Guid                  : {03D226D4-3EBF-4B67-9618-4E310AD3FE87}
+TunnelType            : Ikev2
+AuthenticationMethod  : {MachineCertificate}
+EncryptionLevel       : Required
+L2tpIPsecAuth         : 
+UseWinlogonCredential : False
+EapConfigXmlStream    : 
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : False
+SplitTunneling        : False
+DnsSuffix             : 
+IdleDisconnectSeconds : 0
+
+Name                  : Test7
+ServerAddress         : Washington
+AllUserConnection     : False
+Guid                  : {671F26F9-7C5C-44B2-8271-BD2005FCE702}
+TunnelType            : Automatic
+AuthenticationMethod  : {MsChapv2}
+EncryptionLevel       : Required
+L2tpIPsecAuth         : Certificate
+UseWinlogonCredential : False
+EapConfigXmlStream    : 
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : False
+SplitTunneling        : False
+DnsSuffix             : 
+IdleDisconnectSeconds : 0</dev:code>
+        <dev:remarks>
+          <maml:para>This command returns a list of all available VPN connections in the user's local phone book.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 2: Get all available VPN connections from the global phonebook</maml:title>
+        <dev:code>PS C:\&gt;Get-VpnConnection -AllUserConnection
+Name                  : Test5
+ServerAddress         : 10.1.1.1
+AllUserConnection     : True
+Guid                  : {CF59A4C3-57DB-41FA-9793-D0C785756ABD}
+TunnelType            : L2tp
+AuthenticationMethod  : {Eap}
+EncryptionLevel       : Required
+L2tpIPsecAuth         : Certificate
+UseWinlogonCredential : False
+EapConfigXmlStream    : #document
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : True
+SplitTunneling        : True
+DnsSuffix             : 
+IdleDisconnectSeconds : 0
+
+Name                  : Test3
+ServerAddress         : 10.1.1.1
+AllUserConnection     : True
+Guid                  : {E37453AF-EE0B-4DD8-9AC0-30B262B0CA74}
+TunnelType            : L2tp
+AuthenticationMethod  : {Pap}
+EncryptionLevel       : Optional
+L2tpIPsecAuth         : Certificate
+UseWinlogonCredential : False
+EapConfigXmlStream    : 
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : False
+SplitTunneling        : False
+DnsSuffix             : washington.contoso.com
+IdleDisconnectSeconds : 600
+
+Name                  : Test4
+ServerAddress         : 10.1.1.1
+AllUserConnection     : True
+Guid                  : {C5D5579E-FF9D-4F31-ABE1-B26AB38107CD}
+TunnelType            : L2tp
+AuthenticationMethod  : {Eap}
+EncryptionLevel       : Required
+L2tpIPsecAuth         : Psk
+UseWinlogonCredential : False
+EapConfigXmlStream    : #document
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : True
+SplitTunneling        : True
+DnsSuffix             : 
+IdleDisconnectSeconds : 0</dev:code>
+        <dev:remarks>
+          <maml:para>This command retrieves all the available VPN connections from the global phone book.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 3: Get a specific VPN connection from the global phone book</maml:title>
+        <dev:code>PS C:\&gt;Get-VpnConnection -Name "Test3" -AllUserConnection
+Name                  : Test3
+ServerAddress         : 10.1.1.1
+AllUserConnection     : True
+Guid                  : {E37453AF-EE0B-4DD8-9AC0-30B262B0CA74}
+TunnelType            : L2tp
+AuthenticationMethod  : {Pap}
+EncryptionLevel       : Optional
+L2tpIPsecAuth         : Certificate
+UseWinlogonCredential : False
+EapConfigXmlStream    : 
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : False
+SplitTunneling        : False
+DnsSuffix             : washington.contoso.com
+IdleDisconnectSeconds : 600</dev:code>
+        <dev:remarks>
+          <maml:para>This command retrieves the VPN connection named Test3 from the global phone book.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>----------- Example 4: Get multiple VPN connections -----------</maml:title>
+        <dev:code>PS C:\&gt;Get-VpnConnection -Name "Test3", "Test4", "test5" -AllUserConnection
+Name                  : Test3
+ServerAddress         : 10.1.1.1
+AllUserConnection     : True
+Guid                  : {E37453AF-EE0B-4DD8-9AC0-30B262B0CA74}
+TunnelType            : L2tp
+AuthenticationMethod  : {Pap}
+EncryptionLevel       : Optional
+L2tpIPsecAuth         : Certificate
+UseWinlogonCredential : False
+EapConfigXmlStream    : 
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : False
+SplitTunneling        : False
+DnsSuffix             : washington.contoso.com
+IdleDisconnectSeconds : 600
+
+Name                  : Test4
+ServerAddress         : 10.1.1.1
+AllUserConnection     : True
+Guid                  : {C5D5579E-FF9D-4F31-ABE1-B26AB38107CD}
+TunnelType            : L2tp
+AuthenticationMethod  : {Eap}
+EncryptionLevel       : Required
+L2tpIPsecAuth         : Psk
+UseWinlogonCredential : False
+EapConfigXmlStream    : #document
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : True
+SplitTunneling        : True
+DnsSuffix             : 
+IdleDisconnectSeconds : 0
+
+Name                  : test5
+ServerAddress         : 10.1.1.1
+AllUserConnection     : True
+Guid                  : {CF59A4C3-57DB-41FA-9793-D0C785756ABD}
+TunnelType            : L2tp
+AuthenticationMethod  : {Eap}
+EncryptionLevel       : Required
+L2tpIPsecAuth         : Certificate
+UseWinlogonCredential : False
+EapConfigXmlStream    : #document
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : True
+SplitTunneling        : True
+DnsSuffix             : 
+IdleDisconnectSeconds : 0</dev:code>
+        <dev:remarks>
+          <maml:para>This command retrieves multiple specified VPN connections from the global phone book.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/vpnclient/get-vpnconnection?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Add-VpnConnection</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-VpnConnection</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Remove-VpnConnection</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>New-EapConfiguration</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Remove-VpnConnection</command:name>
+      <command:verb>Remove</command:verb>
+      <command:noun>VpnConnection</command:noun>
+      <maml:description>
+        <maml:para>Removes specified VPN connection profiles.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Remove-VpnConnection cmdlet removes one or more specified VPN connection profiles. If errors occur when you remove the VPN profile, or if the specified VPN profile does not exist, the error information is returned.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-VpnConnection</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="1" aliases="ConnectionName">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the VPN connection profile.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>AllUserConnection</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the VPN connection is removed from the global phone book.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para>Forces the removal of the VPN profile from the phone book.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>AllUserConnection</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the VPN connection is removed from the global phone book.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para>Forces the removal of the VPN profile from the phone book.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="1" aliases="ConnectionName">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the VPN connection profile.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+          <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#VpnConnection[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+          <maml:para>This cmdlet returns a VpnConnection object that contains the VPN Connection configuration settings.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>---------- Example 1: Remove a single VPN connection ----------</maml:title>
+        <dev:code>PS C:\&gt; Remove-VpnConnection -Name "Test1" -Force -PassThru
+Name                  : Test1
+ServerAddress         : 10.1.1.2
+AllUserConnection     : False
+Guid                  : {65EA2A6D-60A5-49DA-AEDF-5542171D3794}
+TunnelType            : Automatic
+AuthenticationMethod  : {MsChapv2}
+EncryptionLevel       : Required
+L2tpIPsecAuth         : Certificate
+UseWinlogonCredential : False
+EapConfigXmlStream    : 
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : False
+SplitTunneling        : False
+DnsSuffix             : 
+IdleDisconnectSeconds : 0</dev:code>
+        <dev:remarks>
+          <maml:para>This command removes the VPN connection named Test1. The Force parameter suppresses warnings and non-terminating errors.</maml:para>
+          <maml:para>By specifying the PassThru parameter, you can see the configuration of the VPN connection object.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>---------- Example 2: Remove multiple VPN connections ----------</maml:title>
+        <dev:code>PS C:\&gt;Remove-VpnConnection -Name "Test3",  "Test4",  "Test5" -AllUserConnection -Force -PassThru
+Name                  : Test3
+ServerAddress         : 10.1.1.1
+AllUserConnection     : True
+Guid                  : {E37453AF-EE0B-4DD8-9AC0-30B262B0CA74}
+TunnelType            : L2tp
+AuthenticationMethod  : {Pap}
+EncryptionLevel       : Optional
+L2tpIPsecAuth         : Certificate
+UseWinlogonCredential : False
+EapConfigXmlStream    : 
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : False
+SplitTunneling        : False
+DnsSuffix             : washington.contoso.com
+IdleDisconnectSeconds : 600
+
+Name                  : Test4
+ServerAddress         : 10.1.1.1
+AllUserConnection     : True
+Guid                  : {C5D5579E-FF9D-4F31-ABE1-B26AB38107CD}
+TunnelType            : L2tp
+AuthenticationMethod  : {Eap}
+EncryptionLevel       : Required
+L2tpIPsecAuth         : Psk
+UseWinlogonCredential : False
+EapConfigXmlStream    : #document
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : True
+SplitTunneling        : True
+DnsSuffix             : 
+IdleDisconnectSeconds : 0
+
+Name                  : Test5
+ServerAddress         : 10.1.1.1
+AllUserConnection     : True
+Guid                  : {CF59A4C3-57DB-41FA-9793-D0C785756ABD}
+TunnelType            : L2tp
+AuthenticationMethod  : {Eap}
+EncryptionLevel       : Required
+L2tpIPsecAuth         : Certificate
+
+UseWinlogonCredential : False
+EapConfigXmlStream    : #document
+ConnectionStatus      : Disconnected
+NapState              : NotConnected
+RememberCredential    : True
+SplitTunneling        : True
+DnsSuffix             : 
+IdleDisconnectSeconds : 0</dev:code>
+        <dev:remarks>
+          <maml:para>This command removes the VPN connections named Test3, Test4 and Test5. By specifying the AllUserConnection parameter, the connections are removed from the global phone book. The Force parameter suppresses warnings and non-terminating errors.</maml:para>
+          <maml:para>By specifying the PassThru parameter, you can see the configuration of all of the VPN connection objects.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/vpnclient/remove-vpnconnection?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Add-VpnConnection</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-VpnConnection</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-VpnConnection</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>New-EapConfiguration</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-VpnConnection</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>VpnConnection</command:noun>
+      <maml:description>
+        <maml:para>Changes the configuration settings of an existing VPN connection profile.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-VpnConnection cmdlet changes the configuration settings of an existing VPN connection profile. If the VPN profile specified does not exist, you see an error. If errors occur when you modify the VPN profile, the cmdlet returns the error information.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-VpnConnection</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="ConnectionName">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the VPN connection profile.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="10" aliases="none">
+          <maml:name>UseWinlogonCredential</maml:name>
+          <maml:description>
+            <maml:para>Indicates whether to use Windows logon credentials. Specify a value of $True to use MSCHAPv2 or EAP-MSCHAPv2 as the authentication method and use Windows logon credentials automatically when connecting with the VPN connection profile.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="11" aliases="none">
+          <maml:name>EapConfigXmlStream</maml:name>
+          <maml:description>
+            <maml:para>Specifies the contents of the EAP XML configuration file, which includes the EAP method ID.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">XmlDocument</command:parameterValue>
+          <dev:type>
+            <maml:name>XmlDocument</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="ServerName, DefaultServer">
+          <maml:name>ServerAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies the address of the remote VPN server to which the client connects. You can specify the address as a fully qualified domain name (FQDN), an IPv4 address, or an IPv6 address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="3" aliases="none">
+          <maml:name>TunnelType</maml:name>
+          <maml:description>
+            <maml:para>Specifies the type of tunnel used for the VPN connection. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- PPTP </maml:para>
+            <maml:para>- L2TP</maml:para>
+            <maml:para>- SSTP</maml:para>
+            <maml:para>- IKEv2</maml:para>
+            <maml:para>- Automatic</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Pptp</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">L2tp</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Sstp</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Ikev2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Automatic</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="4" aliases="none">
+          <maml:name>EncryptionLevel</maml:name>
+          <maml:description>
+            <maml:para>Specifies the encryption level for the VPN connection. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- NoEncryption </maml:para>
+            <maml:para>- Optional</maml:para>
+            <maml:para>- Required</maml:para>
+            <maml:para>- Maximum</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">NoEncryption</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Optional</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Required</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Maximum</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Custom</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="5" aliases="none">
+          <maml:name>AuthenticationMethod</maml:name>
+          <maml:description>
+            <maml:para>Specifies the authentication method to use for the VPN connection. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- PAP </maml:para>
+            <maml:para>- CHAP</maml:para>
+            <maml:para>- MSCHAPv2</maml:para>
+            <maml:para>- EAP</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Pap</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Chap</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MSChapv2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Eap</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MachineCertificate</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+          <maml:name>SplitTunneling</maml:name>
+          <maml:description>
+            <maml:para>Indicates whether the cmdlet enables split tunneling for the VPN connection profile. When you enable split tunneling, traffic to destinations outside the intranet does not flow through the VPN tunnel. Specify a value of $True to enable split tunneling.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="7" aliases="none">
+          <maml:name>AllUserConnection</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the VPN connection specified is in the global phone book.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="8" aliases="none">
+          <maml:name>L2tpPsk</maml:name>
+          <maml:description>
+            <maml:para>Specifies the value of the PSK to be used for L2TP authentication. If this parameter is not specified, a certificate is used for L2TP.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="9" aliases="none">
+          <maml:name>RememberCredential</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the credentials supplied at the time of first successful connection is stored in the cache, if set to $True.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DnsSuffix</maml:name>
+          <maml:description>
+            <maml:para>Specifies the DNS suffix of the VPN connection.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the pre-shared key (PSK) value is supplied over an insecure channel, if L2TP is used.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>IdleDisconnectSeconds</maml:name>
+          <maml:description>
+            <maml:para>Specifies the time, in seconds, before closing an idle connection.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>MachineCertificateEKUFilter</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of enhanced key usage (EKU) filters for Internet Key Exchange version 2 (IKEv2) machine certificate selection.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>MachineCertificateIssuerFilter</maml:name>
+          <maml:description>
+            <maml:para>Specifies the X509 certificate of the issuer filter for IKEv2 machine certificate selection.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">X509Certificate2</command:parameterValue>
+          <dev:type>
+            <maml:name>X509Certificate2</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ServerList</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of VPN servers. The VPN client can connect to these servers.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Set-VpnConnection</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="ConnectionName">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the VPN connection profile.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="10" aliases="none">
+          <maml:name>PlugInApplicationID</maml:name>
+          <maml:description>
+            <maml:para>Specifies the identifier for a third party application.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="ServerName, DefaultServer">
+          <maml:name>ServerAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies the address of the remote VPN server to which the client connects. You can specify the address as a fully qualified domain name (FQDN), an IPv4 address, or an IPv6 address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+          <maml:name>ThirdPartyVpn</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet runs for a third party profile.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+          <maml:name>SplitTunneling</maml:name>
+          <maml:description>
+            <maml:para>Indicates whether the cmdlet enables split tunneling for the VPN connection profile. When you enable split tunneling, traffic to destinations outside the intranet does not flow through the VPN tunnel. Specify a value of $True to enable split tunneling.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="9" aliases="none">
+          <maml:name>RememberCredential</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the credentials supplied at the time of first successful connection is stored in the cache, if set to $True.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>CustomConfiguration</maml:name>
+          <maml:description>
+            <maml:para>Specifies an XML document that allows vendors to specify custom configuration information.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">XmlDocument</command:parameterValue>
+          <dev:type>
+            <maml:name>XmlDocument</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DnsSuffix</maml:name>
+          <maml:description>
+            <maml:para>Specifies the DNS suffix of the VPN connection.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the pre-shared key (PSK) value is supplied over an insecure channel, if L2TP is used.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>IdleDisconnectSeconds</maml:name>
+          <maml:description>
+            <maml:para>Specifies the time, in seconds, before closing an idle connection.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ServerList</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of VPN servers. The VPN client can connect to these servers.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="7" aliases="none">
+        <maml:name>AllUserConnection</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the VPN connection specified is in the global phone book.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="5" aliases="none">
+        <maml:name>AuthenticationMethod</maml:name>
+        <maml:description>
+          <maml:para>Specifies the authentication method to use for the VPN connection. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- PAP </maml:para>
+          <maml:para>- CHAP</maml:para>
+          <maml:para>- MSCHAPv2</maml:para>
+          <maml:para>- EAP</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>CustomConfiguration</maml:name>
+        <maml:description>
+          <maml:para>Specifies an XML document that allows vendors to specify custom configuration information.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">XmlDocument</command:parameterValue>
+        <dev:type>
+          <maml:name>XmlDocument</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>DnsSuffix</maml:name>
+        <maml:description>
+          <maml:para>Specifies the DNS suffix of the VPN connection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="11" aliases="none">
+        <maml:name>EapConfigXmlStream</maml:name>
+        <maml:description>
+          <maml:para>Specifies the contents of the EAP XML configuration file, which includes the EAP method ID.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">XmlDocument</command:parameterValue>
+        <dev:type>
+          <maml:name>XmlDocument</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="4" aliases="none">
+        <maml:name>EncryptionLevel</maml:name>
+        <maml:description>
+          <maml:para>Specifies the encryption level for the VPN connection. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- NoEncryption </maml:para>
+          <maml:para>- Optional</maml:para>
+          <maml:para>- Required</maml:para>
+          <maml:para>- Maximum</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the pre-shared key (PSK) value is supplied over an insecure channel, if L2TP is used.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>IdleDisconnectSeconds</maml:name>
+        <maml:description>
+          <maml:para>Specifies the time, in seconds, before closing an idle connection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="8" aliases="none">
+        <maml:name>L2tpPsk</maml:name>
+        <maml:description>
+          <maml:para>Specifies the value of the PSK to be used for L2TP authentication. If this parameter is not specified, a certificate is used for L2TP.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>MachineCertificateEKUFilter</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of enhanced key usage (EKU) filters for Internet Key Exchange version 2 (IKEv2) machine certificate selection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>MachineCertificateIssuerFilter</maml:name>
+        <maml:description>
+          <maml:para>Specifies the X509 certificate of the issuer filter for IKEv2 machine certificate selection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">X509Certificate2</command:parameterValue>
+        <dev:type>
+          <maml:name>X509Certificate2</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="ConnectionName">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the VPN connection profile.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+          <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="10" aliases="none">
+        <maml:name>PlugInApplicationID</maml:name>
+        <maml:description>
+          <maml:para>Specifies the identifier for a third party application.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="9" aliases="none">
+        <maml:name>RememberCredential</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the credentials supplied at the time of first successful connection is stored in the cache, if set to $True.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="ServerName, DefaultServer">
+        <maml:name>ServerAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies the address of the remote VPN server to which the client connects. You can specify the address as a fully qualified domain name (FQDN), an IPv4 address, or an IPv6 address.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>ServerList</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of VPN servers. The VPN client can connect to these servers.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+        <maml:name>SplitTunneling</maml:name>
+        <maml:description>
+          <maml:para>Indicates whether the cmdlet enables split tunneling for the VPN connection profile. When you enable split tunneling, traffic to destinations outside the intranet does not flow through the VPN tunnel. Specify a value of $True to enable split tunneling.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+        <maml:name>ThirdPartyVpn</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the cmdlet runs for a third party profile.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="3" aliases="none">
+        <maml:name>TunnelType</maml:name>
+        <maml:description>
+          <maml:para>Specifies the type of tunnel used for the VPN connection. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- PPTP </maml:para>
+          <maml:para>- L2TP</maml:para>
+          <maml:para>- SSTP</maml:para>
+          <maml:para>- IKEv2</maml:para>
+          <maml:para>- Automatic</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="10" aliases="none">
+        <maml:name>UseWinlogonCredential</maml:name>
+        <maml:description>
+          <maml:para>Indicates whether to use Windows logon credentials. Specify a value of $True to use MSCHAPv2 or EAP-MSCHAPv2 as the authentication method and use Windows logon credentials automatically when connecting with the VPN connection profile.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#VpnConnection</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+          <maml:para>This cmdlet returns a VpnConnection object that contains the VPN connection configuration settings.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------- Example 1: Configure a single VPN connection ---------</maml:title>
+        <dev:code>PS C:\&gt; Set-VpnConnection -Name "Test1" -ServerAddress "10.1.1.2" -PassThru
+Name                  : Test1
+
+ServerAddress         : 10.1.1.2
+
+AllUserConnection     : False
+
+Guid                  : {4B308E9B-C225-42CB-8158-307193429591}
+
+TunnelType            : Automatic
+
+AuthenticationMethod  : {MsChapv2}
+
+EncryptionLevel       : Required
+
+L2tpIPsecAuth         : Certificate
+
+UseWinlogonCredential : False
+
+EapConfigXmlStream    :   
+ConnectionStatus      : Disconnected
+
+NapState              : NotConnected
+
+RememberCredential    : False
+
+SplitTunneling        : False</dev:code>
+        <dev:remarks>
+          <maml:para>This command configures the VPN connection named Test1 to connect to the server with an IP address of 10.1.1.2. By specifying the PassThru parameter, you can see the configuration of the VPN connection object.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>- Example 2: Configure a VPN connection with several settings -</maml:title>
+        <dev:code>PS C:\&gt;Set-VpnConnection -Name "Test3" -AllUserConnection -TunnelType "L2tp" -EncryptionLevel "Optional" -AuthenticationMethod Pap -SplitTunneling $False -RememberCredential $False -PassThru
+WARNING: The currently selected encryption level requires EAP or MS-CHAPv2 logon security methods. Data encryption will not occur for Pap or Chap.
+Name                  : Test3
+
+ServerAddress         : 10.1.1.1
+
+AllUserConnection     : True
+
+Guid                  : {76746D4E-D72A-467D-A11F-3D4D9075F50D}
+
+TunnelType            : L2tp
+
+AuthenticationMethod  : {Pap}
+
+EncryptionLevel       : Optional
+
+L2tpIPsecAuth         : Certificate
+
+UseWinlogonCredential : False
+
+EapConfigXmlStream    :
+
+ConnectionStatus      : Disconnected
+
+NapState              : NotConnected
+
+RememberCredential    : False
+
+SplitTunneling        : False</dev:code>
+        <dev:remarks>
+          <maml:para>This command configures the VPN connection named Test3 and located in the global phone book as follows: </maml:para>
+          <maml:para>- The connection is configured to use L2tp as the tunnel type, as specified by the TunnelType parameter  - The tunnel is using optional encryption, as specified by the EncryptionLevel parameter  - The authentication method used by the connection is PAP, as specified by the AuthenticationMethod parameter  - Split tunneling is turned off, as specified by the SplitTunneling parameter, and the value of $False - Credential caching is turned off, as specified by the RememberCredential parameter and the value of $False</maml:para>
+          <maml:para>By specifying the PassThru parameter, you can see the configuration of the VPN connection object.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 3: Configure a VPN connection to use a custom EAP configuration</maml:title>
+        <dev:code>This command stores the result of **New-EapConfiguration** into the variable named $A.
+PS C:\&gt;$A = New-EapConfiguration -Tls
+
+This command configures the VPN connection named Test4 in the global phone book to use the custom EAP configuration by: 
+
+-- Specifying the *AuthenticationMethod* parameter with the value EAP
+-- Specifying the *EapConfigXmlStream* parameter with the value of the *EapConfigXmlStream* method of the previously created variable.By specifying the *PassThru* parameter, you can see the configuration of the VPN connection object.
+PS C:\&gt;Set-VpnConnection -Name "Test4" -AllUserConnection -AuthenticationMethod Eap -EapConfigXmlStream $A.EapConfigXmlStream -PassThru
+Name                  : Test4
+
+ServerAddress         : 10.1.1.1
+
+AllUserConnection     : True
+
+Guid                  : {1D423FF3-E3D4-404A-B052-DB9130656D29}
+
+TunnelType            : L2tp
+
+AuthenticationMethod  : {Eap}
+
+EncryptionLevel       : Required
+
+L2tpIPsecAuth         : Psk
+
+UseWinlogonCredential : False
+
+EapConfigXmlStream    : #document
+
+ConnectionStatus      : Disconnected
+
+NapState              : NotConnected
+
+RememberCredential    : True
+
+SplitTunneling        : True</dev:code>
+        <dev:remarks>
+          <maml:para>This set of commands first creates a custom EAP configuration, and then configures a VPN connection from the global phone book to use the new custom EAP configuration.</maml:para>
+          <maml:para>For more information about custom EAP creation, see the New-EapConfiguration cmdlet.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/vpnclient/set-vpnconnection?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Add-VpnConnection</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-VpnConnection</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Remove-VpnConnection</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

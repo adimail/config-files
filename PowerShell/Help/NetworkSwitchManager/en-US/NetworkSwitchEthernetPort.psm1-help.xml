@@ -1,0 +1,1986 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Disable-NetworkSwitchEthernetPort</command:name>
+      <command:verb>Disable</command:verb>
+      <command:noun>NetworkSwitchEthernetPort</command:noun>
+      <maml:description>
+        <maml:para>Disables an Ethernet port on a network switch.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Disable-NetworkSwitchEthernetPort cmdlet disables an Ethernet port on a network switch.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Disable-NetworkSwitchEthernetPort</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DeviceID</maml:name>
+          <maml:description>
+            <maml:para>Specifies a device ID. This cmdlet disables a port on a device that this parameter specifies.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Disable-NetworkSwitchEthernetPort</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Disable-NetworkSwitchEthernetPort</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PortNumber</maml:name>
+          <maml:description>
+            <maml:para>Specifies a port to disable.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DeviceID</maml:name>
+        <maml:description>
+          <maml:para>Specifies a device ID. This cmdlet disables a port on a device that this parameter specifies.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PortNumber</maml:name>
+        <maml:description>
+          <maml:para>Specifies a port to disable.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe an array of CimInstance objects that correspond to an Ethernet port to this cmdlet.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------------ Example 1: Disable a port ------------------</maml:title>
+        <dev:code>PS C:\&gt;$Session = New-CimSession -ComputerName "NetworkSwitch08"
+PS C:\&gt; Disable-NetworkSwitchEthernetPort -CimSession $Session -PortNumber 21</dev:code>
+        <dev:remarks>
+          <maml:para>The first command creates a CimSession for a network switch, and then stores it in the $Session variable. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          <maml:para>This command disables port 21 for NetworkSwitch08 by using the $Session object.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------- Example 2: Disable a port by using a device ID --------</maml:title>
+        <dev:code>PS C:\&gt;Disable-NetworkSwitchEthernetPort -CimSession $Session -DeviceId "Ethernet17"</dev:code>
+        <dev:remarks>
+          <maml:para>This command disables an Ethernet port with device ID Ethernet17 on a network switch. The command uses a CimSession , similar to the first example.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/networkswitchmanager/disable-networkswitchethernetport?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Enable-NetworkSwitchEthernetPort</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetworkSwitchEthernetPort</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Enable-NetworkSwitchEthernetPort</command:name>
+      <command:verb>Enable</command:verb>
+      <command:noun>NetworkSwitchEthernetPort</command:noun>
+      <maml:description>
+        <maml:para>Enables an Ethernet port on a network switch.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Enable-NetworkSwitchEthernetPort cmdlet enables an Ethernet port on a network switch.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Enable-NetworkSwitchEthernetPort</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DeviceID</maml:name>
+          <maml:description>
+            <maml:para>Specifies a device ID. This cmdlet enables a port on a device that this parameter specifies.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Enable-NetworkSwitchEthernetPort</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Enable-NetworkSwitchEthernetPort</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PortNumber</maml:name>
+          <maml:description>
+            <maml:para>Specifies a port to enable.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DeviceID</maml:name>
+        <maml:description>
+          <maml:para>Specifies a device ID. This cmdlet enables a port on a device that this parameter specifies.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PortNumber</maml:name>
+        <maml:description>
+          <maml:para>Specifies a port to enable.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe an array of CimInstance objects that correspond to Ethernet ports to this cmdlet.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------- Example 1: Enable a port by using a device ID --------</maml:title>
+        <dev:code>PS C:\&gt;$Session = New-CimSession -ComputerName "NetworkSwitch08"
+PS C:\&gt; Enable-NetworkSwitchEthernetPort -DeviceID "Ethernet17" -CimSession $Session</dev:code>
+        <dev:remarks>
+          <maml:para>The first command creates a CimSession for a network switch, and then stores it in the $Session variable. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          <maml:para>The second command enables ports for the device that has the ID Ethernet17 by using the $Session object.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------- Example 2: Enable a port by using a port number -------</maml:title>
+        <dev:code>PS C:\&gt;Enable-NetworkSwitchEthernetPort -Port 21 -CimSession $Session</dev:code>
+        <dev:remarks>
+          <maml:para>This command enables port 21. The command includes a CimSession , similar to the first example.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/networkswitchmanager/enable-networkswitchethernetport?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Disable-NetworkSwitchEthernetPort</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetworkSwitchEthernetPort</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-NetworkSwitchEthernetPort</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>NetworkSwitchEthernetPort</command:noun>
+      <maml:description>
+        <maml:para>Gets port information for a network switch.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-NetworkSwitchEthernetPort cmdlet gets port information for a network switch.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-NetworkSwitchEthernetPort</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DeviceId</maml:name>
+          <maml:description>
+            <maml:para>Specifies a device ID. This cmdlet gets information for the port that this parameter specifies.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-NetworkSwitchEthernetPort</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>FullDuplexDisabled</maml:name>
+          <maml:description>
+            <maml:para>Indicates that this cmdlet returns only ports that have FullDuplex disabled.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-NetworkSwitchEthernetPort</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>FullDuplexEnabled</maml:name>
+          <maml:description>
+            <maml:para>Indicates that this cmdlet returns only ports that have FullDuplex enabled.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-NetworkSwitchEthernetPort</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PortNumber</maml:name>
+          <maml:description>
+            <maml:para>Specifies a port number. This cmdlet gets the port that the parameter specifies.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DeviceId</maml:name>
+        <maml:description>
+          <maml:para>Specifies a device ID. This cmdlet gets information for the port that this parameter specifies.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>FullDuplexDisabled</maml:name>
+        <maml:description>
+          <maml:para>Indicates that this cmdlet returns only ports that have FullDuplex disabled.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>FullDuplexEnabled</maml:name>
+        <maml:description>
+          <maml:para>Indicates that this cmdlet returns only ports that have FullDuplex enabled.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PortNumber</maml:name>
+        <maml:description>
+          <maml:para>Specifies a port number. This cmdlet gets the port that the parameter specifies.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#CIM_EthernetPort</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>---------- Example 1: Get all the ports for a device ----------</maml:title>
+        <dev:code>PS C:\&gt;$Session = New-CimSession -ComputerName "NetworkSwitch08"
+PS C:\&gt; Get-NetworkSwitchEthernetPort -CimSession $Session</dev:code>
+        <dev:remarks>
+          <maml:para>The first command creates a CimSession for a network switch, and then stores it in the $Session variable. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          <maml:para>The second command gets the ports for NetworkSwitch08 by using the $Session object.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>---------------- Example 2: Get a specific port ----------------</maml:title>
+        <dev:code>PS C:\&gt;Get-NetworkSwitchEthernetPort -PortNumber 21 -CimSession $Session
+Name            PortNumber DeviceID       FullDuplex    AutoSense     PortType  MaxDataSize
+----            ---------- --------       ----------    ---------     --------  -----------
+Ethernet17              21 Ethernet17           True        False            0         9214</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets port 21. The example shows the console output for the command. The command includes a CimSession , similar to the first example.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>---------- Example 3: Get a port with a specified ID ----------</maml:title>
+        <dev:code>PS C:\&gt;Get-NetworkSwitchEthernetPort -DeviceID "Ethernet17" -CimSession $Session</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets the port for the device that has the ID Ethernet17. The command includes a CimSession , similar to the first example.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/networkswitchmanager/get-networkswitchethernetport?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Disable-NetworkSwitchEthernetPort</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Enable-NetworkSwitchEthernetPort</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Remove-NetworkSwitchEthernetPortIPAddress</command:name>
+      <command:verb>Remove</command:verb>
+      <command:noun>NetworkSwitchEthernetPortIPAddress</command:noun>
+      <maml:description>
+        <maml:para>Removes an IP address from a port of a network switch.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Remove-NetworkSwitchEthernetPortIPAddress cmdlet removes an assigned IP address from a port of a network switch.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-NetworkSwitchEthernetPortIPAddress</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Remove-NetworkSwitchEthernetPortIPAddress</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PortNumber</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of a port. This cmdlet removes the IP address from the port that this parameter specifies.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Specifies the CimSession to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PortNumber</maml:name>
+        <maml:description>
+          <maml:para>Specifies the number of a port. This cmdlet removes the IP address from the port that this parameter specifies.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>Example 1: Remove an IP address from a port by using the pipeline</maml:title>
+        <dev:code>PS C:\&gt;$Session = New-CimSession -ComputerName "NetworkSwitch08"
+PS C:\&gt; Remove-NetworkSwitchEthernetPortIPAddress -CimSession $Session -PortNumber 21</dev:code>
+        <dev:remarks>
+          <maml:para>The first command creates a CimSession for a network switch, and then stores it in the $Session variable. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          <maml:para>The second command removes the IP address of port 21 by using the $Session object.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/networkswitchmanager/remove-networkswitchethernetportipaddress?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-NetworkSwitchEthernetPortIPAddress</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetworkSwitchEthernetPort</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-NetworkSwitchEthernetPortIPAddress</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>NetworkSwitchEthernetPortIPAddress</command:noun>
+      <maml:description>
+        <maml:para>Sets the IP address on a port on a network switch.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-NetworkSwitchEthernetPortIPAddress cmdlet sets the IP address of an Ethernet port on a network switch.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-NetworkSwitchEthernetPortIPAddress</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>IpAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies an IP address for the Ethernet port.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SubnetAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies a subnet mask for the IP address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Set-NetworkSwitchEthernetPortIPAddress</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>IpAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies an IP address for the Ethernet port.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PortNumber</maml:name>
+          <maml:description>
+            <maml:para>Specifies a port number. This cmdlet sets the IP address on the port that this parameter specifies.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SubnetAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies a subnet mask for the IP address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>IpAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies an IP address for the Ethernet port.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PortNumber</maml:name>
+        <maml:description>
+          <maml:para>Specifies a port number. This cmdlet sets the IP address on the port that this parameter specifies.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>SubnetAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies a subnet mask for the IP address.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe an array of CimInstance objects that refer to an EthernetPort object.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>---------- Example 1: Assign an IP address to a port ----------</maml:title>
+        <dev:code>PS C:\&gt;$Session = New-CimSession -ComputerName "NetworkSwitch08"
+PS C:\&gt; Set-NetworkSwitchEthernetPortIPAddress -IpAddress "10.4.10.12" -PortNumber 21 -SubnetAddress "255.255.255.248" -CimSession $Session</dev:code>
+        <dev:remarks>
+          <maml:para>The first command creates a CimSession for a network switch, and then stores it in the $Session variable. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          <maml:para>The second command assigns an IP address and subnet address to the specified port by using the $Session object.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/networkswitchmanager/set-networkswitchethernetportipaddress?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Remove-NetworkSwitchEthernetPortIPAddress</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetworkSwitchEthernetPort</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-NetworkSwitchPortMode</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>NetworkSwitchPortMode</command:noun>
+      <maml:description>
+        <maml:para>Sets the port mode on a network switch.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-NetworkSwitchPortMode cmdlet sets the port mode to access, trunk or route on a network switch.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-NetworkSwitchPortMode</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AccessMode</maml:name>
+          <maml:description>
+            <maml:para>Indicates that this cmdlet sets the port to access mode.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>VlanID</maml:name>
+          <maml:description>
+            <maml:para>Specifies the virtual local area network (VLAN) ID of the VLAN to set for the port in access mode.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Set-NetworkSwitchPortMode</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>IpAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies an IP address to set for the port in route mode.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>RouteMode</maml:name>
+          <maml:description>
+            <maml:para>Indicates that this cmdlet sets the port to route mode.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SubnetAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies the subnet mask to set for the port in route mode.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Set-NetworkSwitchPortMode</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>TrunkMode</maml:name>
+          <maml:description>
+            <maml:para>Indicates that this cmdlet sets the port to trunk mode.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>VlanIDs</maml:name>
+          <maml:description>
+            <maml:para>Specifies the VLAN IDs of the VLANs to set for the port in trunk mode.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AccessMode</maml:name>
+        <maml:description>
+          <maml:para>Indicates that this cmdlet sets the port to access mode.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>IpAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies an IP address to set for the port in route mode.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>RouteMode</maml:name>
+        <maml:description>
+          <maml:para>Indicates that this cmdlet sets the port to route mode.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>SubnetAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies the subnet mask to set for the port in route mode.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>TrunkMode</maml:name>
+        <maml:description>
+          <maml:para>Indicates that this cmdlet sets the port to trunk mode.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>VlanID</maml:name>
+        <maml:description>
+          <maml:para>Specifies the virtual local area network (VLAN) ID of the VLAN to set for the port in access mode.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>VlanIDs</maml:name>
+        <maml:description>
+          <maml:para>Specifies the VLAN IDs of the VLANs to set for the port in trunk mode.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt16[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe an array of CimInstance objects that correspond to a network switch port to this cmdlet.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------- Example 1: Set a port to trunk mode -------------</maml:title>
+        <dev:code>PS C:\&gt;$Session = New-CimSession -ComputerName "NetworkSwitch08"
+PS C:\&gt; Set-NetworkSwitchPortMode -CimSession $Session -TrunkMode -VlanIDs 2,17,22</dev:code>
+        <dev:remarks>
+          <maml:para>The first command creates a CimSession for a network switch, and then stores it in the $Session variable. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          <maml:para>The second command sets NetworkSwitch08 to use trunk mode by using the $Session object. The command specifies IDs for three VLANs.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------- Example 2: Set a port to route mode -------------</maml:title>
+        <dev:code>PS C:\&gt;Set-NetworkSwitchPortMode -CimSession $Session -IpAddress "10.14.1.1" -RouteMode -SubnetAddress "255.255.0.0"</dev:code>
+        <dev:remarks>
+          <maml:para>This command sets the port to route mode. The command specifies its IP address and the subnet mask. The command includes a CimSession , similar to the first example.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/networkswitchmanager/set-networkswitchportmode?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetworkSwitchEthernetPort</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-NetworkSwitchPortProperty</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>NetworkSwitchPortProperty</command:noun>
+      <maml:description>
+        <maml:para>Sets the port properties for a network switch.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-NetworkSwitchPortProperty cmdlet sets the port properties for a network switch. This cmdlet can modify any property. If you run this cmdlet, you must specify at least one property to change. Otherwise, the command returns an error.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-NetworkSwitchPortProperty</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Property</maml:name>
+          <maml:description>
+            <maml:para>Specifies a hash table of name/value pairs. The cmdlet sets the properties that this parameter specifies.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
+          <dev:type>
+            <maml:name>Hashtable</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Specifies the CimSession that this cmdlet uses to connect to the network switch. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Property</maml:name>
+        <maml:description>
+          <maml:para>Specifies a hash table of name/value pairs. The cmdlet sets the properties that this parameter specifies.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
+        <dev:type>
+          <maml:name>Hashtable</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe an array of CimInstance objects to this cmdlet.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------- Example 1: Set properties for a port -------------</maml:title>
+        <dev:code>PS C:\&gt;$Session = New-CimSession -ComputerName "NetworkSwitch08"
+PS C:\&gt; $PortSpeed = 1
+PS C:\&gt; $Description = "Port on management device 02."
+PS C:\&gt; Set-NetworkSwitchPortProperty -CimSession $Session -Property @{Speed = $portSpeed; Description = $Description }</dev:code>
+        <dev:remarks>
+          <maml:para>The first command creates a CimSession for a network switch, and then stores it in the $Session variable. For more information about CimSession objects, type `Get-Help New-CimSession`.</maml:para>
+          <maml:para>The second and third commands assign values to the $PortSpeed variable and the $Description variable. These are the values of the key/value pairs.</maml:para>
+          <maml:para>The final command sets a properties by using the $Session object. The command uses standard syntax to create a hash table that contains the key/value pairs as the value of the Property parameter.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/networkswitchmanager/set-networkswitchportproperty?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-NetworkSwitchVlanProperty</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

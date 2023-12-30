@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-DnsClientNrptPolicy</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>DnsClientNrptPolicy</command:noun>
+      <maml:description>
+        <maml:para>Gets the NRPT configured on a computer.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-DnsClientNrptPolicy cmdlet gets the following Name Resolution Policy Table (NRPT) details for each namespace. </maml:para>
+      <maml:para>- DNS client name resolution fallback policy. </maml:para>
+      <maml:para>- DNS client secure name query fallback setting.</maml:para>
+      <maml:para>- Direct Access (DA) IPsec Certification Authority (CA) restriction setting.</maml:para>
+      <maml:para>- DA proxy name setting.</maml:para>
+      <maml:para>- DA DNS servers setting.</maml:para>
+      <maml:para>- DA enabled setting.</maml:para>
+      <maml:para>- DA proxy type setting.</maml:para>
+      <maml:para>- DA Query IPsec encryption setting.</maml:para>
+      <maml:para>- DA Query IPsec required setting.</maml:para>
+      <maml:para>- DNS client name servers setting.</maml:para>
+      <maml:para>- DNS security IPsec CA restriction setting.</maml:para>
+      <maml:para>- DNS security query IPsec encryption setting.</maml:para>
+      <maml:para>- DNS security query IPsec required setting.</maml:para>
+      <maml:para>- DNS security validation required setting.</maml:para>
+      <maml:para>- DNS client name encoding setting.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-DnsClientNrptPolicy</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+          <maml:name>Namespace</maml:name>
+          <maml:description>
+            <maml:para>Specifies the DNS namespace for which the policy is retrieved.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete. </maml:para>
+            <maml:para>The cmdlet immediately returns an object that represents the job and then displays the command prompt.  You can continue to work in the session while the job completes.  To manage the job, use the `*-Job` cmdlets.  To get the job results, use the Receive-Job (https://go.microsoft.com/fwlink/?LinkID=113372)cmdlet. </maml:para>
+            <maml:para>For more information about Windows PowerShell background jobs, see about_Jobs (https://go.microsoft.com/fwlink/?LinkID=113251).</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Effective</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the effective NRPT policy is returned.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete. </maml:para>
+          <maml:para>The cmdlet immediately returns an object that represents the job and then displays the command prompt.  You can continue to work in the session while the job completes.  To manage the job, use the `*-Job` cmdlets.  To get the job results, use the Receive-Job (https://go.microsoft.com/fwlink/?LinkID=113372)cmdlet. </maml:para>
+          <maml:para>For more information about Windows PowerShell background jobs, see about_Jobs (https://go.microsoft.com/fwlink/?LinkID=113251).</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Effective</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the effective NRPT policy is returned.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+        <maml:name>Namespace</maml:name>
+        <maml:description>
+          <maml:para>Specifies the DNS namespace for which the policy is retrieved.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root/Microsoft/Windows/DNS/DnsClientPolicyConfiguration[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+          <maml:para>The DnsClientPolicyConfiguration object contains all of the properties of the DNS client NRPT policy. If the Effective parameter is specified, then only the contents of effective policy are retrieved.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>---------------- Example 1: Get the NRPT policy ----------------</maml:title>
+        <dev:code>PS C:\&gt; Get-DnsClientNrptPolicy
+
+Namespace                        : nls.corp.contoso.com 
+QueryPolicy                      : 
+SecureNameQueryFallback          : 
+DirectAccessIPsecCARestriction   : 
+DirectAccessProxyName            : 
+DirectAccessDnsServers           : 
+DirectAccessEnabled              : 
+DirectAccessProxyType            : UseDefault 
+DirectAccessQueryIPsecEncryption : 
+DirectAccessQueryIPsecRequired   : False 
+NameServers                      : 
+DnsSecIPsecCARestriction         : 
+DnsSecQueryIPsecEncryption       : 
+DnsSecQueryIPsecRequired         : False 
+DnsSecValidationRequired         : False 
+NameEncoding                     : Utf8WithoutMapping 
+
+Namespace                        : .corp.contoso.com 
+QueryPolicy                      : 
+SecureNameQueryFallback          : 
+DirectAccessIPsecCARestriction   : 
+DirectAccessProxyName            : 
+DirectAccessDnsServers           : {2001:db8:1::2, 2001:db8:2::20, 
+                                   2001:db8:6::6} 
+DirectAccessEnabled              : 
+DirectAccessProxyType            : NoProxy 
+DirectAccessQueryIPsecEncryption : 
+DirectAccessQueryIPsecRequired   : False 
+NameServers                      : 
+DnsSecIPsecCARestriction         : 
+DnsSecQueryIPsecEncryption       : 
+DnsSecQueryIPsecRequired         : False 
+DnsSecValidationRequired         : False 
+NameEncoding                     : Utf8WithoutMapping</dev:code>
+        <dev:remarks>
+          <maml:para>This example gets the NRPT policy on a computer.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>----------- Example 2: Get the effective NRPT policy -----------</maml:title>
+        <dev:code>PS C:\&gt; Get-DnsClientNrptPolicy -Effective
+
+Namespace                        : nls.corp.contoso.com 
+QueryPolicy                      : QueryIPv6Only 
+SecureNameQueryFallback          : FallbackPrivate 
+DirectAccessIPsecCARestriction   : 
+DirectAccessProxyName            : 
+DirectAccessDnsServers           : 
+DirectAccessEnabled              : True 
+DirectAccessProxyType            : UseDefault 
+DirectAccessQueryIPsecEncryption : 
+DirectAccessQueryIPsecRequired   : False 
+NameServers                      : 
+DnsSecIPsecCARestriction         : 
+DnsSecQueryIPsecEncryption       : 
+DnsSecQueryIPsecRequired         : 
+DnsSecValidationRequired         : 
+NameEncoding                     : 
+
+Namespace                        : .corp.contoso.com 
+QueryPolicy                      : QueryIPv6Only 
+SecureNameQueryFallback          : FallbackPrivate 
+DirectAccessIPsecCARestriction   : 
+DirectAccessProxyName            : 
+DirectAccessDnsServers           : {2001:db8:1::2, 2001:db8:2::20, 
+                                   2001:db8:6::6} 
+DirectAccessEnabled              : True 
+DirectAccessProxyType            : NoProxy 
+DirectAccessQueryIPsecEncryption : 
+DirectAccessQueryIPsecRequired   : False 
+NameServers                      : 
+DnsSecIPsecCARestriction         : 
+DnsSecQueryIPsecEncryption       : 
+DnsSecQueryIPsecRequired         : 
+DnsSecValidationRequired         : 
+NameEncoding                     :</dev:code>
+        <dev:remarks>
+          <maml:para>This example gets the effective NRPT policy on a computer.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 3: Get the effective NRPT policy for a specified namespace</maml:title>
+        <dev:code>PS C:\&gt; Get-DnsClientNrptPolicy -Effective -Namespace "nls.corp.contoso.com"
+
+Namespace                        : nls.corp.contoso.com 
+QueryPolicy                      : QueryIPv6Only 
+SecureNameQueryFallback          : FallbackPrivate 
+DirectAccessIPsecCARestriction   : 
+DirectAccessProxyName            : 
+DirectAccessDnsServers           : 
+DirectAccessEnabled              : True 
+DirectAccessProxyType            : UseDefault 
+DirectAccessQueryIPsecEncryption : 
+DirectAccessQueryIPsecRequired   : False 
+NameServers                      : 
+DnsSecIPsecCARestriction         : 
+DnsSecQueryIPsecEncryption       : 
+DnsSecQueryIPsecRequired         : 
+DnsSecValidationRequired         : 
+NameEncoding                     :</dev:code>
+        <dev:remarks>
+          <maml:para>This example gets an effective NRPT policy for the namespace nls.corp.contoso.com.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/dnsclient/get-dnsclientnrptpolicy?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Add-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptGlobal</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptPolicy</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Remove-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-DnsClientNrptGlobal</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-DnsClientNrptRule</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

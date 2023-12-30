@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-NetIPConfiguration</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>NetIPConfiguration</command:noun>
+      <maml:description>
+        <maml:para>Gets IP network configuration.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-NetIPConfiguration cmdlet gets network configuration, including usable interfaces, IP addresses, and DNS servers.</maml:para>
+      <maml:para>If you do not specify any parameters, this cmdlet gets IP configuration properties for all non-virtual connected interfaces on a computer.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-NetIPConfiguration</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="true" pipelineInput="True (ByPropertyName)" position="1" aliases="ifAlias">
+          <maml:name>InterfaceAlias</maml:name>
+          <maml:description>
+            <maml:para>Specifies an alias of a network interface. The cmdlet gets an IP configuration that matches the alias.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="IncludeAllCompartments">
+          <maml:name>AllCompartments</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet gets the IP configuration properties for all of the compartments on a computer.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>CompartmentId</maml:name>
+          <maml:description>
+            <maml:para>Specifies an identifier for network compartment in the protocol stack. By default, the cmdlet gets Net IP configuration in the default compartment. If you specify a value for this parameter, the cmdlet gets any matching Net IP configuration in the compartment specified in this field.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Detailed</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet retrieves additional interface and computer configuration information, including the computer name, link layer address, network profile, MTU length, and DHCP status.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSComputerName, ComputerName">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-NetIPConfiguration</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifIndex">
+          <maml:name>InterfaceIndex</maml:name>
+          <maml:description>
+            <maml:para>Specifies an index of a network interface. The cmdlet gets an IP configuration that matches the index.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="IncludeAllCompartments">
+          <maml:name>AllCompartments</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet gets the IP configuration properties for all of the compartments on a computer.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>CompartmentId</maml:name>
+          <maml:description>
+            <maml:para>Specifies an identifier for network compartment in the protocol stack. By default, the cmdlet gets Net IP configuration in the default compartment. If you specify a value for this parameter, the cmdlet gets any matching Net IP configuration in the compartment specified in this field.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Detailed</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet retrieves additional interface and computer configuration information, including the computer name, link layer address, network profile, MTU length, and DHCP status.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSComputerName, ComputerName">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-NetIPConfiguration</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="IncludeAllInterfaces">
+          <maml:name>All</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet retrieves the IP configuration properties for all of the interfaces on a computer, including virtual interfaces, loopback interfaces, and disconnected interfaces.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="IncludeAllCompartments">
+          <maml:name>AllCompartments</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet gets the IP configuration properties for all of the compartments on a computer.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>CompartmentId</maml:name>
+          <maml:description>
+            <maml:para>Specifies an identifier for network compartment in the protocol stack. By default, the cmdlet gets Net IP configuration in the default compartment. If you specify a value for this parameter, the cmdlet gets any matching Net IP configuration in the compartment specified in this field.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Detailed</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet retrieves additional interface and computer configuration information, including the computer name, link layer address, network profile, MTU length, and DHCP status.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSComputerName, ComputerName">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="true" pipelineInput="True (ByPropertyName)" position="1" aliases="ifAlias">
+        <maml:name>InterfaceAlias</maml:name>
+        <maml:description>
+          <maml:para>Specifies an alias of a network interface. The cmdlet gets an IP configuration that matches the alias.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifIndex">
+        <maml:name>InterfaceIndex</maml:name>
+        <maml:description>
+          <maml:para>Specifies an index of a network interface. The cmdlet gets an IP configuration that matches the index.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="IncludeAllInterfaces">
+        <maml:name>All</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the cmdlet retrieves the IP configuration properties for all of the interfaces on a computer, including virtual interfaces, loopback interfaces, and disconnected interfaces.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="IncludeAllCompartments">
+        <maml:name>AllCompartments</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the cmdlet gets the IP configuration properties for all of the compartments on a computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>CompartmentId</maml:name>
+        <maml:description>
+          <maml:para>Specifies an identifier for network compartment in the protocol stack. By default, the cmdlet gets Net IP configuration in the default compartment. If you specify a value for this parameter, the cmdlet gets any matching Net IP configuration in the compartment specified in this field.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Detailed</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the cmdlet retrieves additional interface and computer configuration information, including the computer name, link layer address, network profile, MTU length, and DHCP status.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSComputerName, ComputerName">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------- Example 1: Get the IP configuration -------------</maml:title>
+        <dev:code>PS C:\&gt;Get-NetIPConfiguration</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets IP configuration information. When this cmdlet is run without parameters, it gets the IP configuration information for all of the non-virtual connected interfaces on the computer.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>--------- Example 2: Get all IP configuration details ---------</maml:title>
+        <dev:code>PS C:\&gt;Get-NetIPConfiguration -All</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets the IP configuration information for all of the interfaces on the computer, including virtual interfaces, loopback interfaces, and disconnected interfaces.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 3: Get the IP configuration information with a common parameter</maml:title>
+        <dev:code>PS C:\&gt;Get-NetIPConfiguration -Verbose</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets IP configuration information. By using the Verbose parameter, the networking cmdlets are shown to gather and format the information displayed in this cmdlet.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>---- Example 4: Get the IP configuration by interface index ----</maml:title>
+        <dev:code>PS C:\&gt;Get-NetIPConfiguration -InterfaceIndex 12</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets the IP configuration information for the interface at the index 12.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>--- Example 5: Get the IP configuration from pipeline input ---</maml:title>
+        <dev:code>PS C:\&gt;Get-NetIPConfiguration | Get-NetIPAddress</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets the IP address information, including the prefix length.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/nettcpip/get-netipconfiguration?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-DNSClientServerAddress</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetAdapter</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetIPAddress</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetIPInterface</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetRoute</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>
