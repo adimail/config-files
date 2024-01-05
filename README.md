@@ -31,27 +31,13 @@ My personal Windows-friendly dotfiles. Supports automatic installation of depend
 
 ## ✅ Pre-requisites
 
-### General Tools
-
-- [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#install-powershell-using-winget-recommended)
-- [Git](https://winget.run/pkg/Git/Git)
-
-### Fonts
-
-- [Nerd Fonts](https://www.nerdfonts.com/)
-
-### Text Editor
-
-- [Neovim](https://neovim.io/)
-
-### PowerShell Enhancements
-
-- [PsReadline](https://github.com/PowerShell/PsReadline)
+  - [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#install-powershell-using-winget-recommended)
+  - [Git](https://winget.run/pkg/Git/Git)
+  - [Nerd Fonts](https://www.nerdfonts.com/)
+  - [Neovim](https://neovim.io/)
+  - [PsReadline](https://github.com/PowerShell/PsReadline)
   - Install using PowerShell: `Install-Module -Name PSReadline -Force -SkipPublisherCheck`
-
-### Terminal Theming
-
-- [Oh-My-Posh](https://ohmyposh.dev/)
+  - [Oh-My-Posh](https://ohmyposh.dev/)
   - Install using PowerShell: `Install-Module oh-my-posh -Scope CurrentUser`
 
 ## 🚀 Installation
@@ -61,7 +47,6 @@ My personal Windows-friendly dotfiles. Supports automatic installation of depend
 
 ## 📸 Screenshots
 
-![image](assets/ss1.png)
 ![image](assets/ss2.png)
 ![image](assets/ss3.png)
 ![image](assets/ss4.png)
