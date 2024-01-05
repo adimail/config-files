@@ -4,15 +4,17 @@ return {
     opts = function()
         local dashboard = require("alpha.themes.dashboard")
         local logo = [[
-           ▄ ▄
-       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄
-       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █
-    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █
-  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄
-▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █
-█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █
-    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█
+      ____   ___  _   _  ____ _   _    _    _____ _
+     / ___| / _ \| \ | |/ ___| | | |  / \  |  ___/ \
+     \___ \| | | |  \| | |   | |_| | / _ \ | |_ / _ \
+      ___) | |_| | |\  | |___|  _  |/ ___ \|  _/ ___ \
+     |____/ \___/|_| \_|\____|_| |_/_/   \_\_|/_/   \_\
+
+  _____ _______  _______   _____ ____ ___ _____ ___  ____
+ |_   _| ____\ \/ /_   _| | ____|  _ \_ _|_   _/ _ \|  _ \
+   | | |  _|  \  /  | |   |  _| | | | | |  | || | | | |_) |
+   | | | |___ /  \  | |   | |___| |_| | |  | || |_| |  _ <
+   |_| |_____/_/\_\ |_|   |_____|____/___| |_| \___/|_| \_\
 ]]
 
         dashboard.section.header.val = vim.split(logo, "\n")
@@ -65,18 +67,8 @@ return {
         vim.api.nvim_create_autocmd("User", {
             pattern = "LazyVimStarted",
             callback = function()
-                local stats = require("lazy").stats()
-                local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-                local version = "  󰥱 v"
-                    .. vim.version().major
-                    .. "."
-                    .. vim.version().minor
-                    .. "."
-                    .. vim.version().patch
-                local plugins = "⚡ loaded " .. stats.count .. " plugins in " .. ms .. "ms"
-                local datetime = os.date("        %a, %d %b          %H:%M")
-                local footer = version .. "\t" .. plugins .. "\n \n" .. datetime .. "\n"
-                dashboard.section.footer.val = footer
+                local cwd = "  " .. vim.fn.getcwd()
+                dashboard.section.footer.val = cwd
                 pcall(vim.cmd.AlphaRedraw)
             end,
         })

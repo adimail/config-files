@@ -1,8 +1,30 @@
+<#
+                      7#G~
+                    7BB7J#P~
+                 .?BG!   .?#G!
+                :B@J       .?BB7
+             ::  :Y#P~        7BB?.
+           ^Y#?    :J#G~        !GB?.
+          !&@!       .?#G!        J@B:
+       ~^  ^Y#5^       .7BB7    .PB?.  ~^
+    .!GB7    :Y#5^        !GB7.  ^.    Y#5^
+    7&&~       !@@G~       .P@#J.       J@B^
+     :J#G~   ~P#J^?#G!   .?#G~~P#Y:  .7BB7
+       .?BG7P#J.   .7BB7J#P~    ^5#Y?BG!
+         .?BJ.        7#G~        ^5B!
+
+    Author: Aditya Godse (https://adimail.github.io)
+    Description: PowersShell Profile containing aliases and functions to be loaded when a new PowerShell session is started.
+#>
+
+
+Clear-Host
+
 # Variables
-$enableLog = $false
 $nvimconfigdir = 'C:\Users\pradi\AppData\Local\nvim'
 $classroom = 'C:\Users\pradi\Documents\classroom' 
 
+. C:\Users\pradi\OneDrive\Documents\PowerShell\Scripts\adimail.ps1
 
 # --------------------------------------------------------------------------------------------------------
 # Aliases
@@ -10,8 +32,11 @@ Set-Alias tt tree
 Set-Alias ll ls
 Set-Alias g git
 Set-Alias vv nvim
-Set-Alias dropmyneedle Activate-My-Powershell 
 Set-Alias gd gotodesktop
+Set-Alias getwifiinmyrange readwifinearme
+Set-Alias viewdb view-main-database
+Set-Alias addtask insert-task
+Set-Alias mac remove-task
 
 # Prompt
 oh-my-posh init pwsh --config 'C:\Users\pradi\Documents\devprofile\adimail.omp.json' | Invoke-Expression
@@ -19,7 +44,7 @@ oh-my-posh init pwsh --config 'C:\Users\pradi\Documents\devprofile\adimail.omp.j
 # Functions
 Function whereis ($command) {
     Get-Command -Name $command -ErrorAction SilentlyContinue |
-        Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
+    Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 }
 
 function writenote ($command) {
@@ -28,7 +53,7 @@ function writenote ($command) {
     if ($command) {
         $targetPath = Join-Path $notesPath "self\$command"
         if (Test-Path $targetPath -PathType Container) {
-            cd $targetPath
+            Set-Location $targetPath
             ls
         }
         else {
@@ -51,7 +76,7 @@ function nvimconfig {
 
 #Opens a folder in my directory for practice coding
 Function classroom {
-    code C:\Users\pradi\Documents\classroom
+    code $classroom
 }
 
 function portfolio ($command) {
@@ -62,40 +87,40 @@ function portfolio ($command) {
         code C:\Users\pradi\Documents\adimail.github.io
     }
     else {
-        echo "Invalid command: comands avaliable=>  "view" && "code""
+        Write-Host "Invalid command: comands avaliable=>  "view" && "code""
     }
 }
 
 function keybr {
-    start https://www.keybr.com/
+    Start-Process https://www.keybr.com/
 }
 
 function llm ($command) {
     if ($command -eq "gpt") {
-        start https://chat.openai.com
+        Start-Process https://chat.openai.com
     }
     elseif ($command -eq "bard") {
-        start https://bard.google.com/chat
+        Start-Process https://bard.google.com/chat
     }
     else {
-        echo "Invalid command: comands avaliable=>  gpt && bard"
+        Write-Host "Invalid command: comands avaliable=>  gpt && bard"
     }
 }
 
 function gotodesktop {
-    cls
+    Clear-Host
     cd C:\Users\pradi\Desktop
 }
 
 function yt ($command) {
     if ($command -eq "hist") {
-        start https://www.youtube.com/feed/history
+        Start-Process https://www.youtube.com/feed/history
     }
     elseif (-not $command) {
-        start https://www.youtube.com
+        Start-Process https://www.youtube.com
     }
     else {
-        echo "Invalid command: commands available=> hist"
+        Write-Host "Invalid command: commands available=> hist"
     }
 }
 
@@ -111,7 +136,6 @@ Function Get-InternetStatus {
     }
 }
 
-# Display information when a new terminal session is started
 Function Show-StartupInfo {
     $currentPath = Get-Location
     $internetStatus = Get-InternetStatus
@@ -146,13 +170,20 @@ function readwifinearme {
     $wifiNetworks | Select-String "SSID", "Signal", "Channel", "Authentication", "Encryption"
 }
 
-
-
-function Activate-My-Powershell {
-    figlet Welcome ADI
-    Show-StartupInfo
+# Function to clear environment variables when exiting
+function Clear-EnvironmentVariables {
+    $env:DB_USERNAME = $null
+    $env:DB_PASSWORD = $null
+    Write-Host "Environment variables cleared."
 }
 
-cls
+# Register the function to run when PowerShell exits
+$profileDir = Split-Path $PROFILE
+$profileExitScript = Join-Path $profileDir "ProfileExit.ps1"
+"`n`n Clear-EnvironmentVariables" | Out-File -Append -FilePath $profileExitScript
+
+Clear-Host
 Set-PSReadLineOption -PredictionViewStyle ListView
-Activate-My-Powershell
+figlet Welcome ADI
+Show-StartupInfo
+

@@ -1,0 +1,766 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Save-EtwTraceSession</command:name>
+      <command:verb>Save</command:verb>
+      <command:noun>EtwTraceSession</command:noun>
+      <maml:description>
+        <maml:para>Saves the events collected by the ETW session to an .etl file.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Save-EtwTraceSession cmdlet saves the events collected by the ETW session to an .etl file.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Save-EtwTraceSession</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the ETW session.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>OutputFile</maml:name>
+          <maml:description>
+            <maml:para>Specifies the file to save the .etl file to for the ETW session.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">FileInfo</command:parameterValue>
+          <dev:type>
+            <maml:name>FileInfo</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>OutputFolder</maml:name>
+          <maml:description>
+            <maml:para>Specifies the folder to save the .etl file to for the ETW session.</maml:para>
+            <maml:para>When this parameter is set, the file name of the .etl will be selected automatically based on the session properties.</maml:para>
+            <maml:para>If the session is a buffering mode session, the file name will be the name of the session.</maml:para>
+            <maml:para>If the session is a file mode session, the file name will be the file name of the currently being written to.</maml:para>
+            <maml:para>To control the file name as well as the output folder, use the OutputFile parameter instead.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">DirectoryInfo</command:parameterValue>
+          <dev:type>
+            <maml:name>DirectoryInfo</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Overwrite</maml:name>
+          <maml:description>
+            <maml:para>Controls whether an existing file should be overwritten by saving this session.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Stop</maml:name>
+          <maml:description>
+            <maml:para>Controls whether the session should be stopped after the save is complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the ETW session.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>OutputFile</maml:name>
+        <maml:description>
+          <maml:para>Specifies the file to save the .etl file to for the ETW session.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">FileInfo</command:parameterValue>
+        <dev:type>
+          <maml:name>FileInfo</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>OutputFolder</maml:name>
+        <maml:description>
+          <maml:para>Specifies the folder to save the .etl file to for the ETW session.</maml:para>
+          <maml:para>When this parameter is set, the file name of the .etl will be selected automatically based on the session properties.</maml:para>
+          <maml:para>If the session is a buffering mode session, the file name will be the name of the session.</maml:para>
+          <maml:para>If the session is a file mode session, the file name will be the file name of the currently being written to.</maml:para>
+          <maml:para>To control the file name as well as the output folder, use the OutputFile parameter instead.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">DirectoryInfo</command:parameterValue>
+        <dev:type>
+          <maml:name>DirectoryInfo</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Overwrite</maml:name>
+        <maml:description>
+          <maml:para>Controls whether an existing file should be overwritten by saving this session.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Stop</maml:name>
+        <maml:description>
+          <maml:para>Controls whether the session should be stopped after the save is complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.IO.FileInfo, System.IO.DirectoryInfo</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.IO.FileInfo, CIM_DataFile</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns a System.IO.FileInfo object that represents a file on the local computer. The object is returned when the current session is saved successfully to a file on the local machine.</maml:para>
+          <maml:para>This cmdlet returns a CIM_DataFile object when the current session is saved successfully to a file over a CIM session.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/eventtracingmanagement/save-etwtracesession?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-EtwTraceSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>New-EtwTraceSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Send-EtwTraceSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Start-EtwTraceSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Stop-EtwTraceSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Update-EtwTraceSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Start-EtwTraceSession</command:name>
+      <command:verb>Start</command:verb>
+      <command:noun>EtwTraceSession</command:noun>
+      <maml:description>
+        <maml:para>Starts an ETW session with the specified name and settings.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Start-EtwTraceSession cmdlet starts an ETW session with the specified name and settings.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Start-EtwTraceSession</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the ETW trace session.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>BufferSize</maml:name>
+          <maml:description>
+            <maml:para>Specifies the Event Tracing for Windows (ETW) session buffer size, in kilobytes.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ClockType</maml:name>
+          <maml:description>
+            <maml:para>Specifies the type of timestamp that will be used for each event logged to this ETW session.</maml:para>
+            <maml:para>This is an advanced session configuration option, and it is not recommended that this parameter be set.</maml:para>
+            <maml:para>For more information, see the description of the ClientContext field in the topic WNODE_HEADER structure (https://msdn.microsoft.com/en-us/library/windows/desktop/aa364160.aspx)for a description of the different clock types available.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Performance</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">System</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Cycle</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Compress</maml:name>
+          <maml:description>
+            <maml:para>Controls whether ETW should compress the saved buffers as they are filled. Enabling this parameter sets the EVENT_TRACE_COMPRESSED_MODE bit in the LogFileMode parameter.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>FileMode</maml:name>
+          <maml:description>
+            <maml:para>Specifies how events received by the session should be saved. FileMode provides named values for common logging mode constants, and setting it will affect the value of LogFileMode that is passed to ETW when the session is created.</maml:para>
+            <maml:para>If you specify this parameter do not specify any file or buffering mode bits in the LogFileMode parameter.</maml:para>
+            <maml:para>For more information about available modes, see Logging Mode Constants (https://msdn.microsoft.com/en-us/library/windows/desktop/aa364080.aspx)in MSDN.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">File</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Buffering</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Sequential</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Circular</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>FlushTimer</maml:name>
+          <maml:description>
+            <maml:para>When set, all active buffers in the session will be flushed at this interval, in seconds.</maml:para>
+            <maml:para>This is an advanced session configuration option, and it is not recommended that this parameter be set.</maml:para>
+            <maml:para>If it is not set, the ETW will select an appropriate default based on the LogFileMode .</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>LocalFilePath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the full path to the file the ETW session should write to. For non-buffering mode sessions only.</maml:para>
+            <maml:para>When creating a new-file file mode session, the file path must contain a %d in the file name.</maml:para>
+            <maml:para>Do not use this parameter if the session is configured as a buffering mode session. Use Save-EtwTraceSession to save a buffering mode session to disk instead.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>LogFileMode</maml:name>
+          <maml:description>
+            <maml:para>Specifies the ETW session logging mode. The value is a bitmask of the ETW logging mode constants.</maml:para>
+            <maml:para>For more information, see Logging Mode Constants (https://msdn.microsoft.com/en-us/library/windows/desktop/aa364080.aspx)in MSDN.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MaximumBuffers</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of buffers the ETW session should use.</maml:para>
+            <maml:para>The ETW session will use a maximum of ( BufferSize  MaximumBuffers*) kilobytes of memory. Depending on the specified LogFileMode , this may be pageable or non-paged memory.</maml:para>
+            <maml:para>If the session is losing events because the buffers cannot be flushed quick enough to keep up with the incoming event rate, try increasing this value.</maml:para>
+            <maml:para>Configuring a session to use too many buffers may affect system performance.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MaximumFileSize</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum file size for the output .etl file to grow to, in megabytes.</maml:para>
+            <maml:para>The parameter must be set for a circular, new-file, or sequential file mode ETW session.</maml:para>
+            <maml:para>For circular sessions, once the file reaches this size the oldest buffers will be overwritten by the new buffers.</maml:para>
+            <maml:para>For new-file sessions, once the file reaches this size a new file will be created and all new events will be written to that file.</maml:para>
+            <maml:para>For sequential file sessions, once the file reaches this size the session will stop.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MinimumBuffers</maml:name>
+          <maml:description>
+            <maml:para>Specifies the minimum number of buffers the ETW session should use.</maml:para>
+            <maml:para>The ETW session will use a minimum of ( BufferSize  MinimumBuffers*) kilobytes of memory. Depending on the specified LogFileMode , this may be pageable or non-paged memory.</maml:para>
+            <maml:para>If the session is losing events because the buffers cannot be flushed quick enough to keep up with the incoming event rate, try increasing this value.</maml:para>
+            <maml:para>Configuring a session to use too many buffers may affect system performance.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>NonPaged</maml:name>
+          <maml:description>
+            <maml:para>Controls whether ETW should use memory from the non-paged pool for the session buffers. Enabling this parameter clears the EVENT_TRACE_USE_PAGED_MEMORY bit in the LogFileMode parameter.</maml:para>
+            <maml:para>Using memory from the non-paged pool for the session buffers is only required if any of the events that will be sent to the session are logged from the kernel or a driver at high a dispatch level. This parameter should not be set otherwise.</maml:para>
+            <maml:para>Allocating too much memory from the non-paged pool can seriously degrade system performance.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>RealTime</maml:name>
+          <maml:description>
+            <maml:para>Controls whether ETW should allow real-time consumers to connect to the session. Enabling this parameter sets the EVENT_TRACE_REAL_TIME_MODE bit in the LogFileMode parameter.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>BufferSize</maml:name>
+        <maml:description>
+          <maml:para>Specifies the Event Tracing for Windows (ETW) session buffer size, in kilobytes.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ClockType</maml:name>
+        <maml:description>
+          <maml:para>Specifies the type of timestamp that will be used for each event logged to this ETW session.</maml:para>
+          <maml:para>This is an advanced session configuration option, and it is not recommended that this parameter be set.</maml:para>
+          <maml:para>For more information, see the description of the ClientContext field in the topic WNODE_HEADER structure (https://msdn.microsoft.com/en-us/library/windows/desktop/aa364160.aspx)for a description of the different clock types available.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Compress</maml:name>
+        <maml:description>
+          <maml:para>Controls whether ETW should compress the saved buffers as they are filled. Enabling this parameter sets the EVENT_TRACE_COMPRESSED_MODE bit in the LogFileMode parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>FileMode</maml:name>
+        <maml:description>
+          <maml:para>Specifies how events received by the session should be saved. FileMode provides named values for common logging mode constants, and setting it will affect the value of LogFileMode that is passed to ETW when the session is created.</maml:para>
+          <maml:para>If you specify this parameter do not specify any file or buffering mode bits in the LogFileMode parameter.</maml:para>
+          <maml:para>For more information about available modes, see Logging Mode Constants (https://msdn.microsoft.com/en-us/library/windows/desktop/aa364080.aspx)in MSDN.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>FlushTimer</maml:name>
+        <maml:description>
+          <maml:para>When set, all active buffers in the session will be flushed at this interval, in seconds.</maml:para>
+          <maml:para>This is an advanced session configuration option, and it is not recommended that this parameter be set.</maml:para>
+          <maml:para>If it is not set, the ETW will select an appropriate default based on the LogFileMode .</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>LocalFilePath</maml:name>
+        <maml:description>
+          <maml:para>Specifies the full path to the file the ETW session should write to. For non-buffering mode sessions only.</maml:para>
+          <maml:para>When creating a new-file file mode session, the file path must contain a %d in the file name.</maml:para>
+          <maml:para>Do not use this parameter if the session is configured as a buffering mode session. Use Save-EtwTraceSession to save a buffering mode session to disk instead.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>LogFileMode</maml:name>
+        <maml:description>
+          <maml:para>Specifies the ETW session logging mode. The value is a bitmask of the ETW logging mode constants.</maml:para>
+          <maml:para>For more information, see Logging Mode Constants (https://msdn.microsoft.com/en-us/library/windows/desktop/aa364080.aspx)in MSDN.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>MaximumBuffers</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of buffers the ETW session should use.</maml:para>
+          <maml:para>The ETW session will use a maximum of ( BufferSize  MaximumBuffers*) kilobytes of memory. Depending on the specified LogFileMode , this may be pageable or non-paged memory.</maml:para>
+          <maml:para>If the session is losing events because the buffers cannot be flushed quick enough to keep up with the incoming event rate, try increasing this value.</maml:para>
+          <maml:para>Configuring a session to use too many buffers may affect system performance.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>MaximumFileSize</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum file size for the output .etl file to grow to, in megabytes.</maml:para>
+          <maml:para>The parameter must be set for a circular, new-file, or sequential file mode ETW session.</maml:para>
+          <maml:para>For circular sessions, once the file reaches this size the oldest buffers will be overwritten by the new buffers.</maml:para>
+          <maml:para>For new-file sessions, once the file reaches this size a new file will be created and all new events will be written to that file.</maml:para>
+          <maml:para>For sequential file sessions, once the file reaches this size the session will stop.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>MinimumBuffers</maml:name>
+        <maml:description>
+          <maml:para>Specifies the minimum number of buffers the ETW session should use.</maml:para>
+          <maml:para>The ETW session will use a minimum of ( BufferSize  MinimumBuffers*) kilobytes of memory. Depending on the specified LogFileMode , this may be pageable or non-paged memory.</maml:para>
+          <maml:para>If the session is losing events because the buffers cannot be flushed quick enough to keep up with the incoming event rate, try increasing this value.</maml:para>
+          <maml:para>Configuring a session to use too many buffers may affect system performance.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the ETW trace session.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>NonPaged</maml:name>
+        <maml:description>
+          <maml:para>Controls whether ETW should use memory from the non-paged pool for the session buffers. Enabling this parameter clears the EVENT_TRACE_USE_PAGED_MEMORY bit in the LogFileMode parameter.</maml:para>
+          <maml:para>Using memory from the non-paged pool for the session buffers is only required if any of the events that will be sent to the session are logged from the kernel or a driver at high a dispatch level. This parameter should not be set otherwise.</maml:para>
+          <maml:para>Allocating too much memory from the non-paged pool can seriously degrade system performance.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>RealTime</maml:name>
+        <maml:description>
+          <maml:para>Controls whether ETW should allow real-time consumers to connect to the session. Enabling this parameter sets the EVENT_TRACE_REAL_TIME_MODE bit in the LogFileMode parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/eventtracingmanagement/start-etwtracesession?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-EtwTraceSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>New-EtwTraceSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Save-EtwTraceSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Send-EtwTraceSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Stop-EtwTraceSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Update-EtwTraceSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

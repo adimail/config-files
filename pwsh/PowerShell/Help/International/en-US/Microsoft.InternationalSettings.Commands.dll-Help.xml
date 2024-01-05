@@ -1,0 +1,1524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Copy-UserInternationalSettingsToSystem</command:name>
+      <command:verb>Copy</command:verb>
+      <command:noun>UserInternationalSettingsToSystem</command:noun>
+      <maml:description>
+        <maml:para>Copies the current user's international settings (Windows Display language, Input language, Regional Format/locale, and Location/GeoID) to one or both of the following: * Welcome screen and system accounts</maml:para>
+        <maml:para>* New user accounts Important: Note that this PowerShell cmdlet is only available for Windows 11 and later.</maml:para>
+        <maml:para>This is a system setting. It can only be changed by a user who has Administrator permissions. Changes take effect after the computer is restarted.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Copy-UserInternationalSettingsToSystem cmdlet gets the international settings from the current user. You can decide whether to copy these settings into the Welcome screen and system accounts , the New user accounts , or both.</maml:para>
+      <maml:para>This cmdlet takes two parameters: -WelcomeScreen and -NewUser .</maml:para>
+      <maml:para>When any of the parameters is set to $True, this cmdlet gets the current values from the current user and copies them to the system settings for the selected options based on the parameters that were set to $True.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Copy-UserInternationalSettingsToSystem</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>WelcomeScreen</maml:name>
+          <maml:description>
+            <maml:para>Copies the settings into the Welcome screen and system accounts.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>NewUser</maml:name>
+          <maml:description>
+            <maml:para>Copies the settings into the new user accounts.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>WelcomeScreen</maml:name>
+        <maml:description>
+          <maml:para>Copies the settings into the Welcome screen and system accounts.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>NewUser</maml:name>
+        <maml:description>
+          <maml:para>Copies the settings into the new user accounts.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>Example 1: Copy settings into both the Welcome screen and system accounts, and new user accounts</maml:title>
+        <dev:code>PS C:\&gt; Copy-UserInternationalSettingsToSystem -WelcomeScreen $True -NewUser $True</dev:code>
+        <dev:remarks>
+          <maml:para>This example copies the Windows Display language, Input language, Regional Format/locale, and Location/GeoID into both the Welcome screen and system accounts, and new user accounts.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 2: Copy the settings into only the Welcome screen and system accounts</maml:title>
+        <dev:code>PS C:\&gt; Copy-UserInternationalSettingsToSystem -WelcomeScreen $True -NewUser $False</dev:code>
+        <dev:remarks>
+          <maml:para>This example copies the Windows Display language, Input language, Format/locale, and Regional Location/GeoID to the Welcome screen and system accounts only.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-WinAcceptLanguageFromLanguageListOptOut</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>WinAcceptLanguageFromLanguageListOptOut</command:noun>
+      <maml:description>
+        <maml:para>Gets the HTTP Accept Language from the Language List opt-out setting for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-WinAcceptLanguageFromLanguageListOptOut cmdlet gets the HTTP Accept Language from Language List opt-out setting for the current user account. By default, the HTTP Accept Language List is automatically generated from the language list of the current user account.</maml:para>
+      <maml:para>When set to $True, this setting deletes the current content of the HTTP Accept Language registry key and prevents changes to the language list from reestablishing the key. When set to $False, this setting reestablishes the HTTP Accept Language List that is based on the language list for the current user account.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-WinAcceptLanguageFromLanguageListOptOut</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns a Boolean value that reports the status of the HTTP Accept Language from Language List opt-out setting for the current user account.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>----------- Example 1: Get the status of the setting -----------</maml:title>
+        <dev:code>PS C:\&gt; Get-WinAcceptLanguageFromLanguageListOptOut
+TRUE</dev:code>
+        <dev:remarks>
+          <maml:para>This command returns the status of the HTTP Accept Language from Language List opt-out setting for the current user account.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/get-winacceptlanguagefromlanguagelistoptout?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-WinAcceptLanguageFromLanguageListOptOut</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WinUserLanguageList</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-WinCultureFromLanguageListOptOut</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>WinCultureFromLanguageListOptOut</command:noun>
+      <maml:description>
+        <maml:para>Gets the Culture from the language list opt-out setting for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-WinCultureFromLanguageListOptOut cmdlet gets the Culture, or User Locale, override setting for the current user account. When set to $True, the Culture setting is not updated by changes to the Windows display language. When set to $False, the Culture setting can be reassigned to match the display language changes any time that the display language changes. The default setting is $False.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-WinCultureFromLanguageListOptOut</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns a Boolean value that reports the status of this setting.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------- Example 1: Get the Culture override setting ---------</maml:title>
+        <dev:code>PS C:\&gt; Get-WinCultureFromLanguageListOptOut</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets the Culture override setting for the current user account.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/get-winculturefromlanguagelistoptout?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-WinCultureFromLanguageListOptOut</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-WinDefaultInputMethodOverride</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>WinDefaultInputMethodOverride</command:noun>
+      <maml:description>
+        <maml:para>Gets the default input method override setting for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-WinDefaultInputMethodOverride cmdlet retrieves the default input method override setting, which specifies a default input method for the current user account. If no override setting is used, the input method is dynamically determined from the language list of the current user account. For more information, see the Get-WinUserLanguageList and Set-WinUserLanguageList cmdlets.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-WinDefaultInputMethodOverride</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>WinKeyboardObject</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns the Tablet Input Panel (TIP) string for the default input method override setting.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>----------- Example 1: Display default input method -----------</maml:title>
+        <dev:code>PS C:\&gt; Get-WinDefaultInputMethodOverride
+InputMethodTip      Keyboard name
+---------------     -------------
+0409:00000409       English (United States) - US</dev:code>
+        <dev:remarks>
+          <maml:para>This command returns and displays the default input method for the current user account.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/get-windefaultinputmethodoverride?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-WinDefaultInputMethodOverride</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-WinHomeLocation</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>WinHomeLocation</command:noun>
+      <maml:description>
+        <maml:para>Gets the Windows GeoID home location setting for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-WinHomeLocation cmdlet gets the value of the user GeoID setting and returns a .NET GeoID object. The Windows GeoID setting is a user setting that describes the home location of the current user account. A home location is the country or region. Applications that require the home location of the current user account, such as a driver for a television tuner application, can use this setting.</maml:para>
+      <maml:para>For a table of GeoIDs, see Table of Geographical Locations (https://go.microsoft.com/fwlink/?LinkID=242308).</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-WinHomeLocation</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>GeoID</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns a 32-bit signed number that uniquely identifies a geographical location.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>----- Example 1: Display the GeoID for the current account -----</maml:title>
+        <dev:code>PS C:\&gt; Get-WinHomeLocation
+HomeLocation     Description
+----             -----------
+244              United States</dev:code>
+        <dev:remarks>
+          <maml:para>This command returns the GeoID setting and its display name for the current user account.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/get-winhomelocation?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>RegionInfo.GeoId Property</maml:linkText>
+        <maml:uri>https://go.microsoft.com/fwlink/?LinkID=242310</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-WinHomeLocation</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-WinLanguageBarOption</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>WinLanguageBarOption</command:noun>
+      <maml:description>
+        <maml:para>Gets the language bar mode and language bar type for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-WinLanguageBarOption cmdlet gets the language bar type and mode by using a LanguageBar object. The values for the type and mode settings can be either true or false. The default value for each setting is false.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-WinLanguageBarOption</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>LanguageBar</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns an object that contains the following settings. </maml:para>
+          <maml:para>- IsLegacyLanguageBar . When this setting is set to true, the desktop language bar is used, where available. When this setting is set to false, the modem input switcher is used. This is recommended.  - IsLegacySwitchingMode . When this setting is set to true, the current input method, which includes keyboard layout or input method editor (IME), is selected for the current application only. When new applications start, the default input method is selected. For more information, see the Get-WinDefaultInputMethodOverride cmdlet. When this setting is set to false, the input method is selected for all applications and changes only when the user actively switches input methods (recommended).</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------- Example 1: Get the settings for the language bar -------</maml:title>
+        <dev:code>PS C:\&gt; Get-WinLanguageBarOption
+IsLegacyLanguageBar    IsLegacySwitchingMode
+-------------------    ---------------------
+False                  False</dev:code>
+        <dev:remarks>
+          <maml:para>This command returns the current settings for the language bar options for the current user account.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/get-winlanguagebaroption?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WinDefaultInputMethodOverride</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-WinLanguageBarOption</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-WinSystemLocale</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>WinSystemLocale</command:noun>
+      <maml:description>
+        <maml:para>Gets the System-locale setting for the current computer.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-WinSystemLocale cmdlet returns the current value of the System-locale setting. The System-locale setting determines which code pages, which include ANSI, DOS, and Macintosh, the computer uses by default.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-WinSystemLocale</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>CultureInfo</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns the system locale of the current computer. For more information about the CultureInfo object, see CultureInfo Class (https://go.microsoft.com/fwlink/?LinkID=242306).</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------- Example 1: Get the system locale ---------------</maml:title>
+        <dev:code>PS C:\&gt; GET-WinSystemLocale
+LCID             Name             DisplayName
+----             ----             -----------
+1033             en-US            English (United States)</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets and displays the System-locale setting for the current computer.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/get-winsystemlocale?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Manage the input and display language settings in Windows 10</maml:linkText>
+        <maml:uri>https://support.microsoft.com/help/4496404/windows-10-manage-the-input-and-display-language#input_language</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-WinSystemLocale</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-WinUILanguageOverride</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>WinUILanguageOverride</command:noun>
+      <maml:description>
+        <maml:para>Gets the Windows UI language override setting for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-WinUILanguageOverride cmdlet displays the user-preferred language override that will be used for the Windows user interface (UI) after a reboot or log off. If the override setting is not used, Get-WinUILanguageOverride does not return a value. If a change is pending, the Get-WinUILanguageOverride returns the pending value.</maml:para>
+      <maml:para>For more information, see the Get-WinUserLanguageList and Set-WinUserLanguageList cmdlets.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-WinUILanguageOverride</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>CultureInfo</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns the Windows UI language override for the current user account. For more information about the CultureInfo object, see CultureInfo Class (https://go.microsoft.com/fwlink/?LinkID=242306).</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------- Example 1: Display the language override setting -------</maml:title>
+        <dev:code>PS C:\&gt; Get-WinUILanguageOverride
+LCID             Name             DisplayName                                                                        
+----             ----             -----------                                                                        
+1033             en-US            English (United States)</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets and displays the UI language override setting for the current user account. If the Windows UI language override is not set for the current user account, this command returns a null value.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/get-winuilanguageoverride?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WinUserLanguageList</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-WinUILanguageOverride</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-WinUserLanguageList</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-WinUserLanguageList</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>WinUserLanguageList</command:noun>
+      <maml:description>
+        <maml:para>Gets the language list for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-WinUserLanguageList cmdlet returns the current user language settings. These settings include input method, spelling setting, text prediction setting, and handwriting input mode. For more information, see CultureInfo Class (https://go.microsoft.com/fwlink/?LinkID=242306) and [Manage the input and display language settings in Windows 10](https://support.microsoft.com/help/4496404/windows-10-manage-the-input-and-display-language#input_language).</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-WinUserLanguageList</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Collections.Generic.List&lt;Microsoft.InternationalSettings.Commands.WinUserLanguage&gt;</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns a list of WinUserLanguage objects that contain one or more languages and associated properties from the current user account's language list. For information about the Generic.List object, see List(Of T) Class (https://go.microsoft.com/fwlink/?LinkID=243342).</maml:para>
+          <maml:para>The generic list object supports the following methods: </maml:para>
+          <maml:para>- Add("`LanguageTag`")</maml:para>
+          <maml:para>- Insert(index, "`LanguageTag`")</maml:para>
+          <maml:para>- Remove(Index)</maml:para>
+          <maml:para></maml:para>
+          <maml:para>The output language object contains the following properties: </maml:para>
+          <maml:para>- LanguageTag (READ). A standard BCP-47 language tag that is used to identify languages. For more information, see the Internet Engineering Task Force (IETF) BCP 47 RFC (https://go.microsoft.com/fwlink/?LinkID=242207).  - Autonym (LP database) (READ). The name of the language in the language itself.  - EnglishName (LP database) (READ). The name of the language in English.  - LocalizedName (LP database) (READ). The name of the language in the current Windows display language.  - ScriptName (LP database) (READ). The writing system of the language.  - InputMethodTips (READ/WRITE). A list of input method Tablet Input Panel (TIP) strings that are enabled for this language. The enabled Input methods are listed in the format `Language ID: Keyboard layout ID`.  - Handwriting (READ/WRITE). This value is either 0 (freehand) or 1 (write each character separately).</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>----- Example 1: Get language list for the current account -----</maml:title>
+        <dev:code>PS C:\&gt; Get-WinUserLanguageList
+LanguageTag     : en-US
+Autonym         : English (United States) 
+EnglishName     : English (United States) 
+LocalizedName   : English (United States) 
+ScriptName      : Latin
+InputMethodTips : {0409:00000409}
+Handwriting     : False 
+LanguageTag     : fr-FR
+Autonym         : français (France) 
+EnglishName     : French (France) 
+LocalizedName   : French (France) 
+ScriptName      : Latin
+InputMethodTips : {040c:0000040c}
+Handwriting     : False</dev:code>
+        <dev:remarks>
+          <maml:para>This command returns the language list for the current user account, BCP-47 tags, and the corresponding display name.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>--------------- Example 2: Display input methods ---------------</maml:title>
+        <dev:code>PS C:\&gt; (Get-WinUserLanguageList)[0].InputMethodTips
+0409:00000409
+0409:00010409</dev:code>
+        <dev:remarks>
+          <maml:para>This command returns the list of currently enabled input methods as a TIP string.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------ Example 3: Display an autonym property ------------</maml:title>
+        <dev:code>PS C:\&gt; (Get-WinUserLanguageList)[0].autonym
+English (United States)</dev:code>
+        <dev:remarks>
+          <maml:para>This command returns the autonym property of the first item in the user language list.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/get-winuserlanguagelist?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>New-WinUserLanguageList</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-WinUserLanguageList</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>New-WinUserLanguageList</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>WinUserLanguageList</command:noun>
+      <maml:description>
+        <maml:para>Instantiates a new language list object.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The New-WinUserLanguageList cmdlet creates a user language list object. The object settings include input method, spelling setting, text prediction setting, and handwriting input mode. For more information, see CultureInfo Class (https://go.microsoft.com/fwlink/?LinkID=242306) and [Configurable Language and Cultural Settings](https://go.microsoft.com/fwlink/?LinkID=242307).</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-WinUserLanguageList</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Language</maml:name>
+          <maml:description>
+            <maml:para>Specifies a language.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Language</maml:name>
+        <maml:description>
+          <maml:para>Specifies a language.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Collections.Generic.List&lt;Microsoft.InternationalSettings.Commands.WinUserLanguage&gt;</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>A list of WinUserLanguage objects that contain one or more languages and associated properties from the current user account's language list. For more information about the Generic.List object, see System.Collections.Generic.List(Of T) (https://go.microsoft.com/fwlink/?LinkID=243342).</maml:para>
+          <maml:para>The generic list object supports the following methods: </maml:para>
+          <maml:para>- Add("BCP-47")</maml:para>
+          <maml:para>- Insert(index, "BCP-47")</maml:para>
+          <maml:para>- Remove(Index)</maml:para>
+          <maml:para></maml:para>
+          <maml:para>The LanguageList is a list of language objects in the current user account's list. The language list object contains the following methods: </maml:para>
+          <maml:para>- Add ("BCP-47") - Insert (BCP-47, index)  - Remove (BCP-47)  - Remove (Index)</maml:para>
+          <maml:para>The language list object contains the following properties: </maml:para>
+          <maml:para>- BCP-47 (READ). A standard language tag that is used to identify languages. For more information, see the Internet Engineering Task Force (IETF) BCP 47 RFC (https://go.microsoft.com/fwlink/?LinkID=242207).  - Autonym (LP database) (READ). The name of the language in the language itself.  - English name (LP database) (READ). The name of the language in English.  - Localized name (LP database) (READ). The name of the language in the current Windows display language.  - Script (LP database) (READ). The writing system of the language.  - Input methods (READ/WRITE). A list of input method Tablet Input Panel (TIP) strings that are enabled for this language. The enabled input methods are listed in the format `Language ID: Keyboard layout ID`.  - Handwriting recognition input mode (READ/WRITE). This value is either 0 (freehand) or 1 (write each character separately).</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>---------- Example 1: Create and set a language list ----------</maml:title>
+        <dev:code>PS C:\&gt; $UserLanguageList = New-WinUserLanguageList -Language "en-US"
+PS C:\&gt; $UserLanguageList.Add("fr-FR")
+PS C:\&gt; Set-WinUserLanguageList -LanguageList $UserLanguageList</dev:code>
+        <dev:remarks>
+          <maml:para>The first command creates a language list that contains US English. The command stores that object in the $UserLanguageList variable.</maml:para>
+          <maml:para>The second command adds France French to the object in $UserLanguageList.</maml:para>
+          <maml:para>The final command assigns the list in $UserLanguageList to the current user account by using the Set-WinUserLanguageList cmdlet.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/new-winuserlanguagelist?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WinUserLanguageList</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-WinUserLanguageList</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-Culture</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>Culture</command:noun>
+      <maml:description>
+        <maml:para>Sets the user culture for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-Culture cmdlet sets a specific culture for the current user account. A culture is known as a locale for unmanaged code development. The information includes the names for the culture, the writing system, the calendar, and formatting for dates and sort strings. For more information, see CultureInfo Class (https://go.microsoft.com/fwlink/?LinkID=242306) and [Configurable Language and Cultural Settings](https://go.microsoft.com/fwlink/?LinkID=242307).</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-Culture</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+          <maml:name>CultureInfo</maml:name>
+          <maml:description>
+            <maml:para>Specifies a culture.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CultureInfo</command:parameterValue>
+          <dev:type>
+            <maml:name>CultureInfo</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+        <maml:name>CultureInfo</maml:name>
+        <maml:description>
+          <maml:para>Specifies a culture.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CultureInfo</command:parameterValue>
+        <dev:type>
+          <maml:name>CultureInfo</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>Changes made by the use of this cmdlet will take effect on subsequent PowerShell sessions.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------------ Example 1: Set the culture ------------------</maml:title>
+        <dev:code>PS C:\&gt; Set-Culture -CultureInfo de-DE</dev:code>
+        <dev:remarks>
+          <maml:para>This command sets the culture for the current user account to German (Germany).</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/set-culture?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>GetCulture Class</maml:linkText>
+        <maml:uri>https://go.microsoft.com/fwlink/?LinkID=243343</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-WinAcceptLanguageFromLanguageListOptOut</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>WinAcceptLanguageFromLanguageListOptOut</command:noun>
+      <maml:description>
+        <maml:para>Sets the HTTP Accept Language from the Language List opt-out setting for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-WinAcceptLanguageFromLanguageListOptOut cmdlet sets the HTTP Accept Language from the Language List opt-out setting for the current user account. By default, the HTTP Accept Language List is automatically generated from language list of the current user account. You can use this cmdlet to set the HTTP Accept Language from Language List opt-out value. When set to $True, this setting deletes the current content of the HTTP Accept Language registry key and prevents changes to the language list from reestablishing the key. When set to $False, this setting reestablishes the HTTP Accept Language List based on the language list for the current user account.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-WinAcceptLanguageFromLanguageListOptOut</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>OptOut</maml:name>
+          <maml:description>
+            <maml:para>Specifies the opt-out value.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>OptOut</maml:name>
+        <maml:description>
+          <maml:para>Specifies the opt-out value.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------- Example 1: Update the registry key --------------</maml:title>
+        <dev:code>PS C:\&gt; Set-WinAcceptLanguageFromLanguageListOptOut -OptOut $True</dev:code>
+        <dev:remarks>
+          <maml:para>This cmdlet deletes the current content of the HTTP Accept Language registry key and blocks updates to the key based on changes to the language list of the user.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/set-winacceptlanguagefromlanguagelistoptout?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WinAcceptLanguageFromLanguageListOptOut</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-WinCultureFromLanguageListOptOut</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>WinCultureFromLanguageListOptOut</command:noun>
+      <maml:description>
+        <maml:para>Sets the Culture from language list opt out setting for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-WinCultureFromLanguageListOptOut cmdlet sets the Culture, or User Locale, opt-out setting for the current user account. Setting this option to $True disables the action of dynamically setting the Culture for the current user based on changes to the Windows display language. Setting this option to $False activates the dynamic setting behavior. The default setting is $False.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-WinCultureFromLanguageListOptOut</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>OptOut</maml:name>
+          <maml:description>
+            <maml:para>Specifies the opt-out value.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>OptOut</maml:name>
+        <maml:description>
+          <maml:para>Specifies the opt-out value.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------- Example 1: Block dynamic setting ---------------</maml:title>
+        <dev:code>PS C:\&gt; Set-WinCultureFromLanguageListOptOut -OptOut $True</dev:code>
+        <dev:remarks>
+          <maml:para>This command blocks the dynamic setting behavior.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/set-winculturefromlanguagelistoptout?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WinCultureFromLanguageListOptOut</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-WinDefaultInputMethodOverride</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>WinDefaultInputMethodOverride</command:noun>
+      <maml:description>
+        <maml:para>Sets the default input method override for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-WinDefaultInputMethodOverride cmdlet sets the default input method override setting, which specifies a default input method for the current user account. If no override setting is used, the input method is dynamically determined from the language list of the current user account. For more information, see the Get-WinUserLanguageList and Set-WinUserLanguageList cmdlets.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-WinDefaultInputMethodOverride</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+          <maml:name>InputTip</maml:name>
+          <maml:description>
+            <maml:para>Specifies an input tip.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+        <maml:name>InputTip</maml:name>
+        <maml:description>
+          <maml:para>Specifies an input tip.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>InputTIP</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe a locale ID and a keyboard language ID (KLID). See Default Input Profiles (Input Locales) in Windows (/windows-hardware/manufacture/desktop/default-input-locales-for-windows-language-packs)</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------- Example 1: Set the default input method override -------</maml:title>
+        <dev:code>PS C:\&gt; Set-WinDefaultInputMethodOverride -InputTip "0409:00000409"</dev:code>
+        <dev:remarks>
+          <maml:para>This command sets the default input method override to English (United States) - US.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/set-windefaultinputmethodoverride?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WinDefaultInputMethodOverride</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-WinHomeLocation</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>WinHomeLocation</command:noun>
+      <maml:description>
+        <maml:para>Sets the home location setting for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-WinHomeLocation cmdlet sets the value of the user GeoID object. The Windows GeoID setting is a user setting that describes the home location of the current user account. A home location is the country or region. Applications that require the home location of the current user account, such as a driver for a television tuner application, can use this setting.</maml:para>
+      <maml:para>For a table of GeoIDs, see Table of Geographical Locations (https://go.microsoft.com/fwlink/?LinkID=242308).</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-WinHomeLocation</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+          <maml:name>GeoId</maml:name>
+          <maml:description>
+            <maml:para>Specifies a GeoID setting.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+        <maml:name>GeoId</maml:name>
+        <maml:description>
+          <maml:para>Specifies a GeoID setting.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------- Example 1: Set the home location ---------------</maml:title>
+        <dev:code>PS C:\&gt; Set-WinHomeLocation -GeoId 0xF4</dev:code>
+        <dev:remarks>
+          <maml:para>This command sets the home location for the current user account to 0xF4 (hex) (United States).</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/set-winhomelocation?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>RegionInfo.GeoId Property</maml:linkText>
+        <maml:uri>https://go.microsoft.com/fwlink/?LinkID=242310</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WinHomeLocation</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-WinLanguageBarOption</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>WinLanguageBarOption</command:noun>
+      <maml:description>
+        <maml:para>Sets the language bar type and mode for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-WinLanguageBarOption cmdlet sets the language bar type and mode by using a LanguageBar object. The values for the type and mode settings can be either true or false. The default value for each setting is false.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-WinLanguageBarOption</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>UseLegacyLanguageBar</maml:name>
+          <maml:description>
+            <maml:para>Indicates that this cmdlet sets the language bar mode to the legacy setting. If you do not specify this parameter, the cmdlet sets the language bar mode to the default setting.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>UseLegacySwitchMode</maml:name>
+          <maml:description>
+            <maml:para>Indicates that this cmdlet sets the language bar switch mode to the legacy or per-thread setting. If you do not specify this parameter, the cmdlet sets the language bar switch mode to the default or per-user setting.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>UseLegacyLanguageBar</maml:name>
+        <maml:description>
+          <maml:para>Indicates that this cmdlet sets the language bar mode to the legacy setting. If you do not specify this parameter, the cmdlet sets the language bar mode to the default setting.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>UseLegacySwitchMode</maml:name>
+        <maml:description>
+          <maml:para>Indicates that this cmdlet sets the language bar switch mode to the legacy or per-thread setting. If you do not specify this parameter, the cmdlet sets the language bar switch mode to the default or per-user setting.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------- Example 1: Set language bar options -------------</maml:title>
+        <dev:code>PS C:\&gt; Set-WinLanguageBarOption -UseLegacySwitchMode -UseLegacyLanguageBar</dev:code>
+        <dev:remarks>
+          <maml:para>This command sets the language bar mode to the legacy setting and the language bar type to the per-thread setting.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>---- Example 2: Set language bar options to default values ----</maml:title>
+        <dev:code>PS C:\&gt; Set-WinLanguageBarOption</dev:code>
+        <dev:remarks>
+          <maml:para>This command sets the language bar mode and the language bar type to the default setting.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/set-winlanguagebaroption?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WinLanguageBarOption</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-WinSystemLocale</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>WinSystemLocale</command:noun>
+      <maml:description>
+        <maml:para>Sets the system locale for the current computer.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-WinSystemLocale cmdlet sets the system locale for the current computer. The System-locale setting determines which code pages, which include ANSI, DOS, and Macintosh, the computer uses by default. If you change the System-locale setting, the necessary bitmap font files are installed to support legacy applications in the selected language.</maml:para>
+      <maml:para>This is a system setting. It can only be changed by a user who has Administrator permissions. Changes take effect after the computer is restarted.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-WinSystemLocale</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+          <maml:name>SystemLocale</maml:name>
+          <maml:description>
+            <maml:para>Specifies a system locale.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CultureInfo</command:parameterValue>
+          <dev:type>
+            <maml:name>CultureInfo</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+        <maml:name>SystemLocale</maml:name>
+        <maml:description>
+          <maml:para>Specifies a system locale.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CultureInfo</command:parameterValue>
+        <dev:type>
+          <maml:name>CultureInfo</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>CultureInfo</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>An object that contains a BCP-47 tag to specify the system locale for the current computer. For more information about the CultureInfo object, see CultureInfo Class (https://go.microsoft.com/fwlink/?LinkID=242306).</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>Please note that the System Locale setting on the computer is primarily used for legacy code page selection and font fallback. This setting is primarily used by applications that do not support Unicode. It should not be viewed from the sense of a traditional locale or culture info, and should not be confused with the user locale (Regional Format) setting.</maml:para>
+        <maml:para>When changing the System Locale setting it is highly recommended to also change the Windows Display Language or UI language setting for the computer so that it matches the System Locale. In some cases, the UI language may depend on the code page and/or the font to render properly. Failure to do so can result in configurations where non-Unicode applications don't work as intended.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------- Example 1: Set the system locale ---------------</maml:title>
+        <dev:code>PS C:\&gt; Set-WinSystemLocale -SystemLocale ja-JP</dev:code>
+        <dev:remarks>
+          <maml:para>This command sets the system locale to Japanese (Japan).</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/set-winsystemlocale?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Configurable Language and Cultural Settings</maml:linkText>
+        <maml:uri>https://go.microsoft.com/fwlink/?LinkID=242307</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WinSystemLocale</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-WinUILanguageOverride</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>WinUILanguageOverride</command:noun>
+      <maml:description>
+        <maml:para>Sets the Windows UI language override setting for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-WinUILanguageOverride cmdlet sets a user-preferred display language to be used for the Windows user interface (UI). If no override setting is used, the display language is dynamically determined from the language list of the user. Log off and loging back on is required for changes to take place.</maml:para>
+      <maml:para>For more information, see the Get-WinUserLanguageList and Set-WinUserLanguageList cmdlets.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-WinUILanguageOverride</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+          <maml:name>Language</maml:name>
+          <maml:description>
+            <maml:para>Specifies a language.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CultureInfo</command:parameterValue>
+          <dev:type>
+            <maml:name>CultureInfo</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+        <maml:name>Language</maml:name>
+        <maml:description>
+          <maml:para>Specifies a language.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CultureInfo</command:parameterValue>
+        <dev:type>
+          <maml:name>CultureInfo</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>CultureInfo</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe an object that contains the Windows UI language override for the current user account. For more information about the CultureInfo object, see CultureInfo Class (https://go.microsoft.com/fwlink/?LinkID=242306).</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------- Example 1: Set a language override --------------</maml:title>
+        <dev:code>PS C:\&gt; Set-WinUILanguageOverride -Language de-DE</dev:code>
+        <dev:remarks>
+          <maml:para>This command sets the Windows UI language override to German (Germany) for the current user account.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>---------- Example 2: Set a language override to null ----------</maml:title>
+        <dev:code>PS C:\&gt; Set-WinUILanguageOverride</dev:code>
+        <dev:remarks>
+          <maml:para>This command sets the Windows UI language override to null for the current user account.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/set-winuilanguageoverride?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WinUILanguageOverride</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WinUserLanguageList</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-WinUserLanguageList</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-WinUserLanguageList</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>WinUserLanguageList</command:noun>
+      <maml:description>
+        <maml:para>Sets the language list and associated properties for the current user account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-WinUserLanguageList cmdlet sets the current user language settings. These settings include input method, spelling setting, text prediction setting, and handwriting input mode. For more information, see CultureInfo Class (https://go.microsoft.com/fwlink/?LinkID=242306) and [Configurable Language and Cultural Settings](https://go.microsoft.com/fwlink/?LinkID=242307).</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-WinUserLanguageList</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+          <maml:name>LanguageList</maml:name>
+          <maml:description>
+            <maml:para>Specifies a language list.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Collections.Generic.List`1[Microsoft.InternationalSettings.Commands.WinUserLanguage]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Collections.Generic.List`1[Microsoft.InternationalSettings.Commands.WinUserLanguage]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+        <maml:name>LanguageList</maml:name>
+        <maml:description>
+          <maml:para>Specifies a language list.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Collections.Generic.List`1[Microsoft.InternationalSettings.Commands.WinUserLanguage]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Collections.Generic.List`1[Microsoft.InternationalSettings.Commands.WinUserLanguage]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Collections.Generic.List&lt;Microsoft.InternationalSettings.Commands.WinUserLanguage&gt;</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe a list of WinUserLanguage objects that contain one or more languages and associated properties from the current user account's language list. The language object contains the following properties: </maml:para>
+          <maml:para>- BCP-47 (READ). A standard language tag that is used to identify languages. For more information, see the Internet Engineering Task Force (IETF) BCP 47 RFC (https://go.microsoft.com/fwlink/?LinkID=242207).  - Autonym (LP database) (READ). The name of the language in the language itself.  - English name (LP database) (READ). The name of the language in English.  - Localized name (LP database) (READ). The name of the language in the current Windows display language.  - Script (LP database) (READ). The writing system of the language.  - Input methods (READ/WRITE). A list of input method Tablet Input Panel (TIP) strings that are enabled for this language. The enabled input methods are listed in the format `Language ID:Keyboard layout ID`. See Default input profiles (input locales) in Windows (/windows-hardware/manufacture/desktop/default-input-locales-for-windows-language-packs). - Handwriting recognition input mode (READ/WRITE). This value is either 0 (freehand) or 1 (write each character separately).</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>---- Example 1: Add a language to an existing language list ----</maml:title>
+        <dev:code>PS C:\&gt; $OldList = Get-WinUserLanguageList
+PS C:\&gt; $OldList.Add("fr-FR")
+PS C:\&gt; Set-WinUserLanguageList -LanguageList $OldList</dev:code>
+        <dev:remarks>
+          <maml:para>This example adds the language French (France) to the language list of the user.</maml:para>
+          <maml:para>The first command gets the user language list by using the Get-WinUserLanguageList cmdlet. The command stores the result in the $OldList variable.</maml:para>
+          <maml:para>The second command adds a language to the object in $OldList.</maml:para>
+          <maml:para>The final command sets the language list of the current user to the revised value of $OldList.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>----------- Example 2: Change a value in a language -----------</maml:title>
+        <dev:code>PS C:\&gt; $UserLanguageList = New-WinUserLanguageList -Language en-US
+PS C:\&gt; $UserLanguageList[0].Handwriting = $True
+PS C:\&gt; Set-WinUserLanguageList -LanguageList $UserLanguageList</dev:code>
+        <dev:remarks>
+          <maml:para>This example changes the handwriting setting for a language in the user language list.</maml:para>
+          <maml:para>The first command creates a language list for US English that has default values, and then stores it in the $UserLanguageList variable.</maml:para>
+          <maml:para>The second command modifies the Handwriting property of the first member of the language list in $UserLanguageList.</maml:para>
+          <maml:para>The final command sets the language list of the current user to the revised value of $UserLanguageList.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/international/set-winuserlanguagelist?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WinUserLanguageList</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>New-WinUserLanguageList</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

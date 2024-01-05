@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Enable-SmbDelegation</command:name>
+      <command:verb>Enable</command:verb>
+      <command:noun>SmbDelegation</command:noun>
+      <maml:description>
+        <maml:para>Enables a constrained delegation authorization for an SMB client and server.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Enable-SmbDelegation cmdlet enables a constrained delegation authorization for a Server Message Block (SMB) client and server. Delegation allows a user who remotes into an SMB client to perform operations on a remote SMB server.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Enable-SmbDelegation</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>SmbClient</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the SMB client. The cmdlet enables constrained delegation authorizations for the SMB client that you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>SmbServer</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the SMB server. The cmdlet enables constrained delegation authorizations for the SMB server that you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>SmbClient</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the SMB client. The cmdlet enables constrained delegation authorizations for the SMB client that you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>SmbServer</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the SMB server. The cmdlet enables constrained delegation authorizations for the SMB server that you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>* This cmdlet relies on Active Directory Windows PowerShell cmdlets to perform its actions. Before you use this cmdlet, you must install the Active Directory cmdlets. To install the Active Directory cmdlets, run the following command:  `Install-WindowsFeature RSAT-AD-PowerShell` For more information, type `Get-Help Install-WindowsFeature`.</maml:para>
+        <maml:para>  This cmdlet works only with resource-based delegation, and the Active Directory forest must be at the Windows Server 2012 functional level. To check the functional level of the Active Directory forest, use the Get-ADForest cmdlet.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>Example 1: Enable a constrained delegation authorization for SMB clients and servers</maml:title>
+        <dev:code>PS C:\&gt; Enable-SmbDelegation -SmbServer "FileServer01" -SmbClient "HVSVR01"</dev:code>
+        <dev:remarks>
+          <maml:para>This command adds a new constrained delegation authorization so that a user remotely connected to the SMB client named HVSVR01 can configure resources on the SMB server named FileServer01.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/smbshare/enable-smbdelegation?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>SmbShare</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-SmbDelegation</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>SmbDelegation</command:noun>
+      <maml:description>
+        <maml:para>Gets the constrained delegation authorizations for an SMB client.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-SmbDelegation cmdlet gets the constrained delegation authorizations that are currently defined for a server message block (SMB) client that you specify. Delegation allows a user who remotes into an SMB client to perform operations on a remote SMB server.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-SmbDelegation</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>SmbServer</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of an SMB server. The cmdlet gets the constrained delegation authorizations for the SMB server you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>SmbServer</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of an SMB server. The cmdlet gets the constrained delegation authorizations for the SMB server you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>* This cmdlet relies on Active Directory  Windows PowerShell cmdlets to perform its actions. Before you use this cmdlet, you must install the Active Directory cmdlets. To install the Active Directory cmdlets, run the following command:  `Install-WindowsFeature RSAT-AD-PowerShell` For more information, type `Get-Help Install-WindowsFeature`.</maml:para>
+        <maml:para>  This cmdlet works only with resource-based delegation, and the Active Directory forest must be at the Windows Server 2012 functional level. To check the functional level of the Active Directory forest, use the Get-ADForest cmdlet.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>Example 1: Get the constrained delegation authorizations for an SMB client</maml:title>
+        <dev:code>PS C:\&gt; Get-SmbDelegation -SmbServer "HVSVR01"</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets the currently defined constrained delegation authorizations for the HVSRV01 server.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/smbshare/get-smbdelegation?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>SmbShare</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-SmbPathAcl</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>SmbPathAcl</command:noun>
+      <maml:description>
+        <maml:para>Sets the ACL for the file system folder to match the ACL used by an SMB share.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-SmbPathAcl cmdlet sets the access control list (ACL) for the file system folder to match the ACL for the server message block (SMB) share. The cmdlet sets the ACL to match the SMB share itself. This action simplifies the configuration of NTFS or ReFS file system permissions by copying the SMB share permissions.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-SmbPathAcl</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>ShareName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the SMB share. The cmdlet sets the ACL on the file system folder to the ACL used by the SMB share that you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>ScopeName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the scope name of the SMB share. The cmdlet sets the ACL for the scope that you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>ScopeName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the scope name of the SMB share. The cmdlet sets the ACL for the scope that you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>ShareName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the SMB share. The cmdlet sets the ACL on the file system folder to the ACL used by the SMB share that you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>* The previous syntax for the same task, `((Get-SmbShare -Name &lt;ShareName&gt; ).PresetPathACL | Set-Acl)`, continues to work with newer versions of the Windows Server operating system, but the new syntax is much simpler and therefore recommended.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------- Example 1: Set the SMB path ACL by share name --------</maml:title>
+        <dev:code>PS C:\&gt; Set-SmbPathAcl -ShareName "Share01"</dev:code>
+        <dev:remarks>
+          <maml:para>This command sets the ACL on the file system folder used by the Share01 share to match the ACL of the share.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>- Example 2: Set the SMB path ACL by share name and scope name -</maml:title>
+        <dev:code>PS C:\&gt; Set-SmbPathAcl -ShareName "Share01" -ScopeName "SOFS01"</dev:code>
+        <dev:remarks>
+          <maml:para>This command sets the ACL on the file system folder used by the Share01 share on the SOFS01 scope to match the ACL of the share.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/smbshare/set-smbpathacl?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>SMB Share Cmdlets in Windows PowerShell</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

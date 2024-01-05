@@ -1,0 +1,2054 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-NetTCPSetting</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>NetTCPSetting</command:noun>
+      <maml:description>
+        <maml:para>Gets information about TCP settings and configuration.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-NetTCPSetting cmdlet gets TCP settings. TCP settings are optimized for different network conditions including latency and congestion. To apply a TCP setting to a port number or destination IP address range, create a transport filter by using the New-NetTransportFilter cmdlet.</maml:para>
+      <maml:para>Specify a setting to get by using the SettingName parameter, or by specifying a transport filter that is associated with a setting. Specify parameter values to determine which settings to get, or do not include any parameters to get all TCP settings.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-NetTCPSetting</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>SettingName</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of setting names. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Internet. Optimized for networks with higher latency and lower throughput. - Datacenter. Optimized for networks with lower latency and higher throughput. - Compat. Optimized for compatibility with legacy network equipment. - Custom. Custom settings. - Automatic. The computer uses latency to select either Internet or Datacenter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>AssociatedTransportFilter</maml:name>
+          <maml:description>
+            <maml:para>Specifies CIM object for a transport filter associated with a setting. The cmdlet gets the setting for this transport filter. To obtain a transport filter, use the Get-NetTransportFilter cmdlet.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutoReusePortRangeNumberOfPorts</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of ports for the auto-reuse port range, which is a port range used for local ephemeral port selection by outbound TCP connections for which either SO_REUSE_UNICASTPORT has been set on the socket, or for which connect() has been called without calling bind() on the socket.</maml:para>
+            <maml:para>If you specify 0, the auto-reuse feature is disabled and ephemeral ports are drawn instead from the dynamic port range as specified by DynamicPortRangeStartPort and DynamicPortRangeNumberOfPorts , even if SO_REUSE_UNICASTPORT is set on a socket.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutoReusePortRangeStartPort</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of ports for the auto-reuse port range, which is a port range used for local ephemeral port selection by outbound TCP connections for which either SO_REUSE_UNICASTPORT has been set on the socket, or for which connect() has been called without calling bind() on the socket.</maml:para>
+            <maml:para>If you specify 0, the auto-reuse feature is disabled and ephemeral ports are drawn instead from the dynamic port range as specified by DynamicPortRangeStartPort and DynamicPortRangeNumberOfPorts , even if SO_REUSE_UNICASTPORT is set on a socket.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutoTuningLevelEffective</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of values of the TCP auto-tuning level effective property. The cmdlet gets settings that the values that you specify. This property can improve throughput for high thoughput, high latency networks. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Local </maml:para>
+            <maml:para>- GroupPolicy</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Local</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">GroupPolicy</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AutoTuningLevelEffective[]</command:parameterValue>
+          <dev:type>
+            <maml:name>AutoTuningLevelEffective[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutoTuningLevelGroupPolicy</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of values for the group policy for the auto-tuning level. The cmdlet gets settings that have the values that you specify. This property determines the setting of the TCP auto-tuning level that group policy configures. A group policy applies uniformly across all NetTcpSetting objects. The auto-tuning level can improve throughput for high thoughput, high latency networks. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Disabled</maml:para>
+            <maml:para>- HighlyRestricted</maml:para>
+            <maml:para>- Restricted</maml:para>
+            <maml:para>- Normal</maml:para>
+            <maml:para>- Experimental</maml:para>
+            <maml:para>- NotConfigured</maml:para>
+            <maml:para>- NotChanged</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">HighlyRestricted</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Restricted</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Normal</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Experimental</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NotConfigured</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NotChanged</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AutoTuningLevelGroupPolicy[]</command:parameterValue>
+          <dev:type>
+            <maml:name>AutoTuningLevelGroupPolicy[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutoTuningLevelLocal</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of TCP auto-tuning levels for the host computer. The cmdlet gets settings that have the values that you specify. TCP auto-tuning can improve throughput on high throughput, high latency networks. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Disabled. Sets the TCP receive window to the default value.  - HighlyRestricted. Sets the TCP receive window to grow beyond the default value, but very conservatively.  - Restricted. Sets the TCP receive window to grow beyond the default value, but less conservatively than HighlyRestricted.  - Normal. Sets the TCP receive window to grow to accommodate almost all scenarios.  - Experimental. Sets the TCP receive window to grow to accommodate extreme scenarios.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">HighlyRestricted</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Restricted</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Normal</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Experimental</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AutoTuningLevelLocal[]</command:parameterValue>
+          <dev:type>
+            <maml:name>AutoTuningLevelLocal[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutomaticUseCustom</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of values for whether the automatic profile assigns a custom template, either Datacenter Custom or Internet Custom, to a connection. The cmdlet gets settings that have the values you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- True</maml:para>
+            <maml:para>- False</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AutomaticUseCustom[]</command:parameterValue>
+          <dev:type>
+            <maml:name>AutomaticUseCustom[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CongestionProvider</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of congestion provider properties that TCP uses. The cmdlet gets settings that have the congestion provider values that you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- CTCP. Compound TCP increases the receive window and amount of data sent. This value can improve throughput on higher latency connections.  - DCTCP. Data Center TCP adjusts the TCP window based on network congestion feedback based on Explicit Congestion Notification (ECN) signaling. This value can improve throughput on low latency links.  - Default. Servers use Data Center TCP by default. Clients use CUBIC (https://techcommunity.microsoft.com/t5/Networking-Blog/Top-10-Networking-Features-in-Windows-Server-2019-8-A-Faster/ba-p/339749).</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Default</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">CTCP</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DCTCP</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">CongestionProvider[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CongestionProvider[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CwndRestart</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of values that determine whether to enable congestion window restart. The cmdlet gets settings that have the congestion window restart values that you specify. Congestion window restart can avoid slow start to optimize throughput on low latency networks. For more information about congestion window restart, see RFC 2581 (http://www.ietf.org/rfc/rfc2581.txt). The acceptable values for this parameter are:</maml:para>
+            <maml:para>- True. TCP uses congestion window restart.  - False. TCP uses the default setting of the connection.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">False</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">True</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">CwndRestart[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CwndRestart[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DelayedAckFrequency</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of numbers of acknowledgments (ACKs) received before the computer sends a response. The cmdlet gets settings that have the delayed ACK frequency values that you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Byte[]</command:parameterValue>
+          <dev:type>
+            <maml:name>Byte[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="DelayedAckTimeout">
+          <maml:name>DelayedAckTimeoutMs</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of the time to wait, in milliseconds, before the computer sends an ACK if the computer receives fewer than delayed acknowledgment frequency of packets. The cmdlet gets settings that have the delayed ACK timeout values that you specify. Use the DelayedAckFrequency parameter to specify the delayed ACK frequency value. Reducing the time to wait can increase throughput on low latency networks by accelerating growth in TCP window size. The acceptable values for this parameter are: increments of 10, from 10 through 600.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DynamicPortRangeNumberOfPorts</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of the number of ports for the dynamic port range that starts from the port that you specify for the DynamicPortRangeStartPort parameter. The cmdlet gets settings that have the numbers of ports that you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DynamicPortRangeStartPort</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of starting ports for dynamic port ranges. The acceptable values for this parameter are: 1 through 65535. The cmdlet gets settings that have the starting ports that you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>EcnCapability</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of values that determine whether to enable ECN capability. The cmdlet gets settings that have ECN capability value that you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled. Uses ECN capability.  - Disabled. Does not use ECN capability.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">EcnCapability[]</command:parameterValue>
+          <dev:type>
+            <maml:name>EcnCapability[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ForceWS</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of values that determine whether to force window scaling for retransmission. The cmdlet gets settings that have the force window scaling value that you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled. Requires window scaling for retransmission.  - Disabled. Does not require window scaling for retransmission.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">ForceWS[]</command:parameterValue>
+          <dev:type>
+            <maml:name>ForceWS[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="InitialCongestionWindow">
+          <maml:name>InitialCongestionWindowMss</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of initial sizes of the congestion window. The cmdlet gets settings that have the initial congestion window value that you specify. Provide a value to multiply by the maximum segment size (MMS). The acceptable values for this parameter are: an even number from 2 through 64.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="InitialRto">
+          <maml:name>InitialRtoMs</maml:name>
+          <maml:description>
+            <maml:para>Specifies the period, in milliseconds, before connect, or SYN, retransmit. The cmdlet gets settings that have the initial connect retransmit values that you specify. The acceptable values for this parameter are: increments of 10, from 300 ms through 3000 ms.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MaxSynRetransmissions</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of times the computers sends SYN packets without receiving a response. The cmdlet gets settings that have the maximum values that you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Byte[]</command:parameterValue>
+          <dev:type>
+            <maml:name>Byte[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MemoryPressureProtection</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of values that determines whether to use memory pressure protection. The cmdlet gets settings that have the memory pressure protection values that you specify. TCP memory pressure protection helps ensure that a computer continues normal operation when low on memory due to denial of service attacks. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled. When low on memory, during an attack, close existing TCP connections and drop incoming SYN requests.  - Disabled. Do not use memory pressure protection.  - Default. Use the computer default value for memory pressure protection.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Default</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">MemoryPressureProtection[]</command:parameterValue>
+          <dev:type>
+            <maml:name>MemoryPressureProtection[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="MinRto">
+          <maml:name>MinRtoMs</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of values, in milliseconds, for the TCP retransmission to time out. The cmdlet gets settings that have the timeout values that you specify. The acceptable values for this parameter are: increments of 10, from 20 ms through 300 ms.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>NonSackRttResiliency</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of values that determine whether to enable round trip time resiliency for clients that do not support selective acknowledgment. The cmdlet gets settings that have the enable round trip time resiliency values that you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled. </maml:para>
+            <maml:para>- Disabled.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">NonSackRttResiliency[]</command:parameterValue>
+          <dev:type>
+            <maml:name>NonSackRttResiliency[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ScalingHeuristics</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of values that determine whether to enable scaling heuristics. The cmdlet gets settings that have scaling heuristics values that you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled </maml:para>
+            <maml:para>- Disabled</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">ScalingHeuristics[]</command:parameterValue>
+          <dev:type>
+            <maml:name>ScalingHeuristics[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Timestamps</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of values that determine whether to enable timestamps. The cmdlet gets settings that have the enable timestamps values that you specify. Timestamps facilitate round trip measurement, and can help protect against wrapped sequence numbers on high throughput links. For more information about TCP timestamps, see RFC 1323 (http://www.ietf.org/rfc/rfc1323.txt). The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled</maml:para>
+            <maml:para>- Disabled</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">Timestamps[]</command:parameterValue>
+          <dev:type>
+            <maml:name>Timestamps[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>AssociatedTransportFilter</maml:name>
+        <maml:description>
+          <maml:para>Specifies CIM object for a transport filter associated with a setting. The cmdlet gets the setting for this transport filter. To obtain a transport filter, use the Get-NetTransportFilter cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AutoReusePortRangeNumberOfPorts</maml:name>
+        <maml:description>
+          <maml:para>Specifies the number of ports for the auto-reuse port range, which is a port range used for local ephemeral port selection by outbound TCP connections for which either SO_REUSE_UNICASTPORT has been set on the socket, or for which connect() has been called without calling bind() on the socket.</maml:para>
+          <maml:para>If you specify 0, the auto-reuse feature is disabled and ephemeral ports are drawn instead from the dynamic port range as specified by DynamicPortRangeStartPort and DynamicPortRangeNumberOfPorts , even if SO_REUSE_UNICASTPORT is set on a socket.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt16[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AutoReusePortRangeStartPort</maml:name>
+        <maml:description>
+          <maml:para>Specifies the number of ports for the auto-reuse port range, which is a port range used for local ephemeral port selection by outbound TCP connections for which either SO_REUSE_UNICASTPORT has been set on the socket, or for which connect() has been called without calling bind() on the socket.</maml:para>
+          <maml:para>If you specify 0, the auto-reuse feature is disabled and ephemeral ports are drawn instead from the dynamic port range as specified by DynamicPortRangeStartPort and DynamicPortRangeNumberOfPorts , even if SO_REUSE_UNICASTPORT is set on a socket.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt16[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AutoTuningLevelEffective</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of values of the TCP auto-tuning level effective property. The cmdlet gets settings that the values that you specify. This property can improve throughput for high thoughput, high latency networks. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Local </maml:para>
+          <maml:para>- GroupPolicy</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">AutoTuningLevelEffective[]</command:parameterValue>
+        <dev:type>
+          <maml:name>AutoTuningLevelEffective[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AutoTuningLevelGroupPolicy</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of values for the group policy for the auto-tuning level. The cmdlet gets settings that have the values that you specify. This property determines the setting of the TCP auto-tuning level that group policy configures. A group policy applies uniformly across all NetTcpSetting objects. The auto-tuning level can improve throughput for high thoughput, high latency networks. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Disabled</maml:para>
+          <maml:para>- HighlyRestricted</maml:para>
+          <maml:para>- Restricted</maml:para>
+          <maml:para>- Normal</maml:para>
+          <maml:para>- Experimental</maml:para>
+          <maml:para>- NotConfigured</maml:para>
+          <maml:para>- NotChanged</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">AutoTuningLevelGroupPolicy[]</command:parameterValue>
+        <dev:type>
+          <maml:name>AutoTuningLevelGroupPolicy[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AutoTuningLevelLocal</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of TCP auto-tuning levels for the host computer. The cmdlet gets settings that have the values that you specify. TCP auto-tuning can improve throughput on high throughput, high latency networks. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Disabled. Sets the TCP receive window to the default value.  - HighlyRestricted. Sets the TCP receive window to grow beyond the default value, but very conservatively.  - Restricted. Sets the TCP receive window to grow beyond the default value, but less conservatively than HighlyRestricted.  - Normal. Sets the TCP receive window to grow to accommodate almost all scenarios.  - Experimental. Sets the TCP receive window to grow to accommodate extreme scenarios.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">AutoTuningLevelLocal[]</command:parameterValue>
+        <dev:type>
+          <maml:name>AutoTuningLevelLocal[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AutomaticUseCustom</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of values for whether the automatic profile assigns a custom template, either Datacenter Custom or Internet Custom, to a connection. The cmdlet gets settings that have the values you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- True</maml:para>
+          <maml:para>- False</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">AutomaticUseCustom[]</command:parameterValue>
+        <dev:type>
+          <maml:name>AutomaticUseCustom[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CongestionProvider</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of congestion provider properties that TCP uses. The cmdlet gets settings that have the congestion provider values that you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- CTCP. Compound TCP increases the receive window and amount of data sent. This value can improve throughput on higher latency connections.  - DCTCP. Data Center TCP adjusts the TCP window based on network congestion feedback based on Explicit Congestion Notification (ECN) signaling. This value can improve throughput on low latency links.  - Default. Servers use Data Center TCP by default. Clients use CUBIC (https://techcommunity.microsoft.com/t5/Networking-Blog/Top-10-Networking-Features-in-Windows-Server-2019-8-A-Faster/ba-p/339749).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CongestionProvider[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CongestionProvider[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CwndRestart</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of values that determine whether to enable congestion window restart. The cmdlet gets settings that have the congestion window restart values that you specify. Congestion window restart can avoid slow start to optimize throughput on low latency networks. For more information about congestion window restart, see RFC 2581 (http://www.ietf.org/rfc/rfc2581.txt). The acceptable values for this parameter are:</maml:para>
+          <maml:para>- True. TCP uses congestion window restart.  - False. TCP uses the default setting of the connection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CwndRestart[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CwndRestart[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DelayedAckFrequency</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of numbers of acknowledgments (ACKs) received before the computer sends a response. The cmdlet gets settings that have the delayed ACK frequency values that you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Byte[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Byte[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="DelayedAckTimeout">
+        <maml:name>DelayedAckTimeoutMs</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of the time to wait, in milliseconds, before the computer sends an ACK if the computer receives fewer than delayed acknowledgment frequency of packets. The cmdlet gets settings that have the delayed ACK timeout values that you specify. Use the DelayedAckFrequency parameter to specify the delayed ACK frequency value. Reducing the time to wait can increase throughput on low latency networks by accelerating growth in TCP window size. The acceptable values for this parameter are: increments of 10, from 10 through 600.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DynamicPortRangeNumberOfPorts</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of the number of ports for the dynamic port range that starts from the port that you specify for the DynamicPortRangeStartPort parameter. The cmdlet gets settings that have the numbers of ports that you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt16[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DynamicPortRangeStartPort</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of starting ports for dynamic port ranges. The acceptable values for this parameter are: 1 through 65535. The cmdlet gets settings that have the starting ports that you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt16[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt16[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>EcnCapability</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of values that determine whether to enable ECN capability. The cmdlet gets settings that have ECN capability value that you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Enabled. Uses ECN capability.  - Disabled. Does not use ECN capability.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">EcnCapability[]</command:parameterValue>
+        <dev:type>
+          <maml:name>EcnCapability[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ForceWS</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of values that determine whether to force window scaling for retransmission. The cmdlet gets settings that have the force window scaling value that you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Enabled. Requires window scaling for retransmission.  - Disabled. Does not require window scaling for retransmission.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">ForceWS[]</command:parameterValue>
+        <dev:type>
+          <maml:name>ForceWS[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="InitialCongestionWindow">
+        <maml:name>InitialCongestionWindowMss</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of initial sizes of the congestion window. The cmdlet gets settings that have the initial congestion window value that you specify. Provide a value to multiply by the maximum segment size (MMS). The acceptable values for this parameter are: an even number from 2 through 64.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="InitialRto">
+        <maml:name>InitialRtoMs</maml:name>
+        <maml:description>
+          <maml:para>Specifies the period, in milliseconds, before connect, or SYN, retransmit. The cmdlet gets settings that have the initial connect retransmit values that you specify. The acceptable values for this parameter are: increments of 10, from 300 ms through 3000 ms.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>MaxSynRetransmissions</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of times the computers sends SYN packets without receiving a response. The cmdlet gets settings that have the maximum values that you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Byte[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Byte[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>MemoryPressureProtection</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of values that determines whether to use memory pressure protection. The cmdlet gets settings that have the memory pressure protection values that you specify. TCP memory pressure protection helps ensure that a computer continues normal operation when low on memory due to denial of service attacks. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Enabled. When low on memory, during an attack, close existing TCP connections and drop incoming SYN requests.  - Disabled. Do not use memory pressure protection.  - Default. Use the computer default value for memory pressure protection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">MemoryPressureProtection[]</command:parameterValue>
+        <dev:type>
+          <maml:name>MemoryPressureProtection[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="MinRto">
+        <maml:name>MinRtoMs</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of values, in milliseconds, for the TCP retransmission to time out. The cmdlet gets settings that have the timeout values that you specify. The acceptable values for this parameter are: increments of 10, from 20 ms through 300 ms.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>NonSackRttResiliency</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of values that determine whether to enable round trip time resiliency for clients that do not support selective acknowledgment. The cmdlet gets settings that have the enable round trip time resiliency values that you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Enabled. </maml:para>
+          <maml:para>- Disabled.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">NonSackRttResiliency[]</command:parameterValue>
+        <dev:type>
+          <maml:name>NonSackRttResiliency[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ScalingHeuristics</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of values that determine whether to enable scaling heuristics. The cmdlet gets settings that have scaling heuristics values that you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Enabled </maml:para>
+          <maml:para>- Disabled</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">ScalingHeuristics[]</command:parameterValue>
+        <dev:type>
+          <maml:name>ScalingHeuristics[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>SettingName</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of setting names. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Internet. Optimized for networks with higher latency and lower throughput. - Datacenter. Optimized for networks with lower latency and higher throughput. - Compat. Optimized for compatibility with legacy network equipment. - Custom. Custom settings. - Automatic. The computer uses latency to select either Internet or Datacenter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Timestamps</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of values that determine whether to enable timestamps. The cmdlet gets settings that have the enable timestamps values that you specify. Timestamps facilitate round trip measurement, and can help protect against wrapped sequence numbers on high throughput links. For more information about TCP timestamps, see RFC 1323 (http://www.ietf.org/rfc/rfc1323.txt). The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Enabled</maml:para>
+          <maml:para>- Disabled</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Timestamps[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Timestamps[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root\StandardCimv2\MSFT_NetTCPSetting</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------------- Example 1: Get all TCP settings ---------------</maml:title>
+        <dev:code>PS C:\&gt;Get-NetTCPSetting</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets TCP settings. The command specifies no parameters, so it gets all TCP settings.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------- Example 2: Get Internet TCP settings -------------</maml:title>
+        <dev:code>PS C:\&gt;Get-NetTCPSetting -Setting Internet</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets TCP settings that are optimized for connectivity across the Internet.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------ Example 3: View formatted TCP settings ------------</maml:title>
+        <dev:code>PS C:\&gt;Get-NetTcpSetting | Format-Table</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets TCP settings, and then passes them to the Format-Table cmdlet by using the pipeline operator. That cmdlet displays the results as a summary in a table view. For more information, type `Get-Help Format-Table`.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/nettcpip/get-nettcpsetting?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>New-NetTransportFilter</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-NetTCPSetting</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-NetTCPSetting</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>NetTCPSetting</command:noun>
+      <maml:description>
+        <maml:para>Modifies a TCP setting.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-NetTCPSetting cmdlet modifies a TCP setting. TCP settings are optimized for different network conditions including latency and congestion. To apply a TCP setting to a port number or destination IP address range, create a transport filter by using the New-NetTransportFilter cmdlet. Note: &gt;1) You can modify custom and non-custom settings on Windows server 2016 and 2019. &gt;2) You can modify only custom settings. Internet and Datacenter settings cannot be modified on Windows 2012 or earlier versions. &gt;3) On Windows 10, the following parameters are read-only and cannot be modified:</maml:para>
+      <maml:para>&gt; * MinRtoMs &gt; * InitialCongestionWindowMss &gt; * AutomaticUseCustom &gt; * CongestionProvider &gt; * CwndRestart &gt; * DelayedAckTimeoutMs</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-NetTCPSetting</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutoReusePortRangeNumberOfPorts</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of ports for the auto-reuse port range, which is a port range used for local ephemeral port selection by outbound TCP connections for which either SO_REUSE_UNICASTPORT has been set on the socket, or for which connect() has been called without calling bind() on the socket.</maml:para>
+            <maml:para>If you specify 0, the auto-reuse feature is disabled and ephemeral ports are drawn instead from the dynamic port range as specified by DynamicPortRangeStartPort and DynamicPortRangeNumberOfPorts , even if SO_REUSE_UNICASTPORT is set on a socket.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutoReusePortRangeStartPort</maml:name>
+          <maml:description>
+            <maml:para>Specifies the starting port for the auto-reuse port range.</maml:para>
+            <maml:para>This parameter sets the starting port to send and receive TCP traffic, which is a port range used for local ephemeral port selection by outbound TCP connections for which either SO_REUSE_UNICASTPORT has been set on the socket, or for which connect() has been called without calling bind() on the socket.</maml:para>
+            <maml:para>If you specify 0, the auto-reuse feature is disabled and ephemeral ports are drawn instead from the dynamic port range as specified by DynamicPortRangeStartPort and DynamicPortRangeNumberOfPorts , even if SO_REUSE_UNICASTPORT is set on a socket.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutoTuningLevelLocal</maml:name>
+          <maml:description>
+            <maml:para>Specifies a TCP auto-tuning level for the host computer. TCP auto-tuning can improve throughput on high throughput, high latency networks. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Disabled. Sets the TCP receive window to the default value.  - HighlyRestricted. Sets the TCP receive window to grow beyond the default value, but very conservatively.  - Restricted. Sets the TCP receive window to grow beyond the default value, but less conservatively than HighlyRestricted.  - Normal. Sets the TCP receive window to grow to accommodate almost all scenarios.  - Experimental. Sets the TCP receive window to grow to accommodate extreme scenarios.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">HighlyRestricted</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Restricted</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Normal</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Experimental</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AutoTuningLevelLocal</command:parameterValue>
+          <dev:type>
+            <maml:name>AutoTuningLevelLocal</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutomaticUseCustom</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether the automatic profile assigns a custom template, either Datacenter Custom or Internet Custom, to a connection. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled </maml:para>
+            <maml:para>- Disabled</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AutomaticUseCustom</command:parameterValue>
+          <dev:type>
+            <maml:name>AutomaticUseCustom</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CongestionProvider</maml:name>
+          <maml:description>
+            <maml:para>Specifies the congestion provider property that TCP uses. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- CTCP. Compound TCP increases the receive window and amount of data sent. CTCP can improve throughput on higher latency connections.  - DCTCP. Data Center TCP adjusts the TCP window based on network congestion feedback based on Explicit Congestion Notification (ECN) signaling. DCTCP may improve throughput on low latency links.  - Default. Servers use DCTCP by default. Client computers use NewReno. For information about NewReno, see RFC 3782 (http://www.ietf.org/rfc/rfc3782.txt).</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Default</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">CTCP</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DCTCP</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">CongestionProvider</command:parameterValue>
+          <dev:type>
+            <maml:name>CongestionProvider</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CwndRestart</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to enable congestion window restart. Congestion window restart can avoid slow start to optimize throughput on low latency networks. For more information about congestion window restart, see RFC 2581 (http://www.ietf.org/rfc/rfc2581.txt). The acceptable values for this parameter are:</maml:para>
+            <maml:para>- True. TCP uses congestion window restart.  - False. TCP uses the default setting of the connection.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">False</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">True</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">CwndRestart</command:parameterValue>
+          <dev:type>
+            <maml:name>CwndRestart</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DelayedAckFrequency</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of acknowledgments (ACKs) received before the computer sends a response.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Byte</command:parameterValue>
+          <dev:type>
+            <maml:name>Byte</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="DelayedAckTimeout">
+          <maml:name>DelayedAckTimeoutMs</maml:name>
+          <maml:description>
+            <maml:para>Specifies the time to wait, in milliseconds, before the computer sends an ACK if the computer receives fewer than delayed acknowledgment frequency of packets. Use the DelayedAckFrequency parameter to specify the delayed ACK frequency value. Reducing the time to wait can increase throughput on low latency networks by accelerating growth in TCP window size. The acceptable values for this parameter are: increments of 10, from 10 through 600.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DynamicPortRangeNumberOfPorts</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of ports for the dynamic port range that starts from the port that you specify for the DynamicPortRangeStartPort parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DynamicPortRangeStartPort</maml:name>
+          <maml:description>
+            <maml:para>Specifies the starting port for the dynamic port range. This parameter sets the starting port to send and receive TCP traffic. The acceptable values for this parameter are: 1 through 65535.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>EcnCapability</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to enable ECN capability. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled. Uses ECN capability.  - Disabled. Does not use ECN capability. </maml:para>
+            <maml:para>If you specify a value of Disabled, UseECT0, or UseEct1 for the EcnMarking parameter of the Set-NetIPInterface cmdlet, the current parameter has no effect.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">EcnCapability</command:parameterValue>
+          <dev:type>
+            <maml:name>EcnCapability</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ForceWS</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to force window scaling for retransmission. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled. Requires window scaling for retransmission.  - Disabled. Does not require window scaling for retransmission. </maml:para>
+            <maml:para>The default value is Disabled.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">ForceWS</command:parameterValue>
+          <dev:type>
+            <maml:name>ForceWS</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="InitialCongestionWindow">
+          <maml:name>InitialCongestionWindowMss</maml:name>
+          <maml:description>
+            <maml:para>Specifies the initial size of the congestion window. Provide a value to multiply by the maximum segment size (MSS). The acceptable values for this parameter are: even numbers from 2 through 64.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="InitialRto">
+          <maml:name>InitialRtoMs</maml:name>
+          <maml:description>
+            <maml:para>Specifies the period, in milliseconds, before connect, or SYN, retransmit. The acceptable values for this parameter are: increments of 10, from 300 ms through 3000 ms.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MaxSynRetransmissions</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of times the computer sends SYN packets without receiving a response.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Byte</command:parameterValue>
+          <dev:type>
+            <maml:name>Byte</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MemoryPressureProtection</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to use memory pressure protection. TCP memory pressure protection helps ensure that a computer continues normal operation when low on memory due to denial of service attacks. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled. When low on memory, during an attack, close existing TCP connections and drop incoming SYN requests.  - Disabled. Do not use memory pressure protection.  - Default. Use the computer default value for memory pressure protection.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Default</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">MemoryPressureProtection</command:parameterValue>
+          <dev:type>
+            <maml:name>MemoryPressureProtection</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="MinRto">
+          <maml:name>MinRtoMs</maml:name>
+          <maml:description>
+            <maml:para>Specifies a value, in milliseconds, for the TCP retransmission to time out. The acceptable values for this parameter are: increments of 10, from 20 ms through 300 ms.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>NonSackRttResiliency</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to enable round trip time resiliency for clients that do not support selective acknowledgment. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled </maml:para>
+            <maml:para>- Disabled</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">NonSackRttResiliency</command:parameterValue>
+          <dev:type>
+            <maml:name>NonSackRttResiliency</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ScalingHeuristics</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to enable scaling heuristics. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled </maml:para>
+            <maml:para>- Disabled</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">ScalingHeuristics</command:parameterValue>
+          <dev:type>
+            <maml:name>ScalingHeuristics</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Timestamps</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to enable timestamps. Timestamps facilitate round trip measurement, and can help protect against wrapped sequence numbers on high throughput links. For more information about TCP timestamps, see RFC 1323 (http://www.ietf.org/rfc/rfc1323.txt). The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled </maml:para>
+            <maml:para>- Disabled</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">Timestamps</command:parameterValue>
+          <dev:type>
+            <maml:name>Timestamps</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Set-NetTCPSetting</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>SettingName</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of setting names. You can specify only Custom for this parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutoReusePortRangeNumberOfPorts</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of ports for the auto-reuse port range, which is a port range used for local ephemeral port selection by outbound TCP connections for which either SO_REUSE_UNICASTPORT has been set on the socket, or for which connect() has been called without calling bind() on the socket.</maml:para>
+            <maml:para>If you specify 0, the auto-reuse feature is disabled and ephemeral ports are drawn instead from the dynamic port range as specified by DynamicPortRangeStartPort and DynamicPortRangeNumberOfPorts , even if SO_REUSE_UNICASTPORT is set on a socket.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutoReusePortRangeStartPort</maml:name>
+          <maml:description>
+            <maml:para>Specifies the starting port for the auto-reuse port range.</maml:para>
+            <maml:para>This parameter sets the starting port to send and receive TCP traffic, which is a port range used for local ephemeral port selection by outbound TCP connections for which either SO_REUSE_UNICASTPORT has been set on the socket, or for which connect() has been called without calling bind() on the socket.</maml:para>
+            <maml:para>If you specify 0, the auto-reuse feature is disabled and ephemeral ports are drawn instead from the dynamic port range as specified by DynamicPortRangeStartPort and DynamicPortRangeNumberOfPorts , even if SO_REUSE_UNICASTPORT is set on a socket.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutoTuningLevelLocal</maml:name>
+          <maml:description>
+            <maml:para>Specifies a TCP auto-tuning level for the host computer. TCP auto-tuning can improve throughput on high throughput, high latency networks. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Disabled. Sets the TCP receive window to the default value.  - HighlyRestricted. Sets the TCP receive window to grow beyond the default value, but very conservatively.  - Restricted. Sets the TCP receive window to grow beyond the default value, but less conservatively than HighlyRestricted.  - Normal. Sets the TCP receive window to grow to accommodate almost all scenarios.  - Experimental. Sets the TCP receive window to grow to accommodate extreme scenarios.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">HighlyRestricted</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Restricted</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Normal</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Experimental</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AutoTuningLevelLocal</command:parameterValue>
+          <dev:type>
+            <maml:name>AutoTuningLevelLocal</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutomaticUseCustom</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether the automatic profile assigns a custom template, either Datacenter Custom or Internet Custom, to a connection. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled </maml:para>
+            <maml:para>- Disabled</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AutomaticUseCustom</command:parameterValue>
+          <dev:type>
+            <maml:name>AutomaticUseCustom</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CongestionProvider</maml:name>
+          <maml:description>
+            <maml:para>Specifies the congestion provider property that TCP uses. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- CTCP. Compound TCP increases the receive window and amount of data sent. CTCP can improve throughput on higher latency connections.  - DCTCP. Data Center TCP adjusts the TCP window based on network congestion feedback based on Explicit Congestion Notification (ECN) signaling. DCTCP may improve throughput on low latency links.  - Default. Servers use DCTCP by default. Client computers use NewReno. For information about NewReno, see RFC 3782 (http://www.ietf.org/rfc/rfc3782.txt).</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Default</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">CTCP</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DCTCP</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">CongestionProvider</command:parameterValue>
+          <dev:type>
+            <maml:name>CongestionProvider</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CwndRestart</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to enable congestion window restart. Congestion window restart can avoid slow start to optimize throughput on low latency networks. For more information about congestion window restart, see RFC 2581 (http://www.ietf.org/rfc/rfc2581.txt). The acceptable values for this parameter are:</maml:para>
+            <maml:para>- True. TCP uses congestion window restart.  - False. TCP uses the default setting of the connection.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">False</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">True</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">CwndRestart</command:parameterValue>
+          <dev:type>
+            <maml:name>CwndRestart</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DelayedAckFrequency</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of acknowledgments (ACKs) received before the computer sends a response.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Byte</command:parameterValue>
+          <dev:type>
+            <maml:name>Byte</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="DelayedAckTimeout">
+          <maml:name>DelayedAckTimeoutMs</maml:name>
+          <maml:description>
+            <maml:para>Specifies the time to wait, in milliseconds, before the computer sends an ACK if the computer receives fewer than delayed acknowledgment frequency of packets. Use the DelayedAckFrequency parameter to specify the delayed ACK frequency value. Reducing the time to wait can increase throughput on low latency networks by accelerating growth in TCP window size. The acceptable values for this parameter are: increments of 10, from 10 through 600.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DynamicPortRangeNumberOfPorts</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of ports for the dynamic port range that starts from the port that you specify for the DynamicPortRangeStartPort parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DynamicPortRangeStartPort</maml:name>
+          <maml:description>
+            <maml:para>Specifies the starting port for the dynamic port range. This parameter sets the starting port to send and receive TCP traffic. The acceptable values for this parameter are: 1 through 65535.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>EcnCapability</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to enable ECN capability. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled. Uses ECN capability.  - Disabled. Does not use ECN capability. </maml:para>
+            <maml:para>If you specify a value of Disabled, UseECT0, or UseEct1 for the EcnMarking parameter of the Set-NetIPInterface cmdlet, the current parameter has no effect.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">EcnCapability</command:parameterValue>
+          <dev:type>
+            <maml:name>EcnCapability</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ForceWS</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to force window scaling for retransmission. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled. Requires window scaling for retransmission.  - Disabled. Does not require window scaling for retransmission. </maml:para>
+            <maml:para>The default value is Disabled.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">ForceWS</command:parameterValue>
+          <dev:type>
+            <maml:name>ForceWS</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="InitialCongestionWindow">
+          <maml:name>InitialCongestionWindowMss</maml:name>
+          <maml:description>
+            <maml:para>Specifies the initial size of the congestion window. Provide a value to multiply by the maximum segment size (MSS). The acceptable values for this parameter are: even numbers from 2 through 64.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="InitialRto">
+          <maml:name>InitialRtoMs</maml:name>
+          <maml:description>
+            <maml:para>Specifies the period, in milliseconds, before connect, or SYN, retransmit. The acceptable values for this parameter are: increments of 10, from 300 ms through 3000 ms.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MaxSynRetransmissions</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of times the computer sends SYN packets without receiving a response.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Byte</command:parameterValue>
+          <dev:type>
+            <maml:name>Byte</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MemoryPressureProtection</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to use memory pressure protection. TCP memory pressure protection helps ensure that a computer continues normal operation when low on memory due to denial of service attacks. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled. When low on memory, during an attack, close existing TCP connections and drop incoming SYN requests.  - Disabled. Do not use memory pressure protection.  - Default. Use the computer default value for memory pressure protection.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Default</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">MemoryPressureProtection</command:parameterValue>
+          <dev:type>
+            <maml:name>MemoryPressureProtection</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="MinRto">
+          <maml:name>MinRtoMs</maml:name>
+          <maml:description>
+            <maml:para>Specifies a value, in milliseconds, for the TCP retransmission to time out. The acceptable values for this parameter are: increments of 10, from 20 ms through 300 ms.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>NonSackRttResiliency</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to enable round trip time resiliency for clients that do not support selective acknowledgment. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled </maml:para>
+            <maml:para>- Disabled</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">NonSackRttResiliency</command:parameterValue>
+          <dev:type>
+            <maml:name>NonSackRttResiliency</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ScalingHeuristics</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to enable scaling heuristics. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled </maml:para>
+            <maml:para>- Disabled</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">ScalingHeuristics</command:parameterValue>
+          <dev:type>
+            <maml:name>ScalingHeuristics</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Timestamps</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to enable timestamps. Timestamps facilitate round trip measurement, and can help protect against wrapped sequence numbers on high throughput links. For more information about TCP timestamps, see RFC 1323 (http://www.ietf.org/rfc/rfc1323.txt). The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Enabled </maml:para>
+            <maml:para>- Disabled</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Disabled</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enabled</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">Timestamps</command:parameterValue>
+          <dev:type>
+            <maml:name>Timestamps</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AutoReusePortRangeNumberOfPorts</maml:name>
+        <maml:description>
+          <maml:para>Specifies the number of ports for the auto-reuse port range, which is a port range used for local ephemeral port selection by outbound TCP connections for which either SO_REUSE_UNICASTPORT has been set on the socket, or for which connect() has been called without calling bind() on the socket.</maml:para>
+          <maml:para>If you specify 0, the auto-reuse feature is disabled and ephemeral ports are drawn instead from the dynamic port range as specified by DynamicPortRangeStartPort and DynamicPortRangeNumberOfPorts , even if SO_REUSE_UNICASTPORT is set on a socket.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt16</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AutoReusePortRangeStartPort</maml:name>
+        <maml:description>
+          <maml:para>Specifies the starting port for the auto-reuse port range.</maml:para>
+          <maml:para>This parameter sets the starting port to send and receive TCP traffic, which is a port range used for local ephemeral port selection by outbound TCP connections for which either SO_REUSE_UNICASTPORT has been set on the socket, or for which connect() has been called without calling bind() on the socket.</maml:para>
+          <maml:para>If you specify 0, the auto-reuse feature is disabled and ephemeral ports are drawn instead from the dynamic port range as specified by DynamicPortRangeStartPort and DynamicPortRangeNumberOfPorts , even if SO_REUSE_UNICASTPORT is set on a socket.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt16</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AutoTuningLevelLocal</maml:name>
+        <maml:description>
+          <maml:para>Specifies a TCP auto-tuning level for the host computer. TCP auto-tuning can improve throughput on high throughput, high latency networks. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Disabled. Sets the TCP receive window to the default value.  - HighlyRestricted. Sets the TCP receive window to grow beyond the default value, but very conservatively.  - Restricted. Sets the TCP receive window to grow beyond the default value, but less conservatively than HighlyRestricted.  - Normal. Sets the TCP receive window to grow to accommodate almost all scenarios.  - Experimental. Sets the TCP receive window to grow to accommodate extreme scenarios.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">AutoTuningLevelLocal</command:parameterValue>
+        <dev:type>
+          <maml:name>AutoTuningLevelLocal</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AutomaticUseCustom</maml:name>
+        <maml:description>
+          <maml:para>Specifies whether the automatic profile assigns a custom template, either Datacenter Custom or Internet Custom, to a connection. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Enabled </maml:para>
+          <maml:para>- Disabled</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">AutomaticUseCustom</command:parameterValue>
+        <dev:type>
+          <maml:name>AutomaticUseCustom</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CongestionProvider</maml:name>
+        <maml:description>
+          <maml:para>Specifies the congestion provider property that TCP uses. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- CTCP. Compound TCP increases the receive window and amount of data sent. CTCP can improve throughput on higher latency connections.  - DCTCP. Data Center TCP adjusts the TCP window based on network congestion feedback based on Explicit Congestion Notification (ECN) signaling. DCTCP may improve throughput on low latency links.  - Default. Servers use DCTCP by default. Client computers use NewReno. For information about NewReno, see RFC 3782 (http://www.ietf.org/rfc/rfc3782.txt).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CongestionProvider</command:parameterValue>
+        <dev:type>
+          <maml:name>CongestionProvider</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CwndRestart</maml:name>
+        <maml:description>
+          <maml:para>Specifies whether to enable congestion window restart. Congestion window restart can avoid slow start to optimize throughput on low latency networks. For more information about congestion window restart, see RFC 2581 (http://www.ietf.org/rfc/rfc2581.txt). The acceptable values for this parameter are:</maml:para>
+          <maml:para>- True. TCP uses congestion window restart.  - False. TCP uses the default setting of the connection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CwndRestart</command:parameterValue>
+        <dev:type>
+          <maml:name>CwndRestart</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DelayedAckFrequency</maml:name>
+        <maml:description>
+          <maml:para>Specifies the number of acknowledgments (ACKs) received before the computer sends a response.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Byte</command:parameterValue>
+        <dev:type>
+          <maml:name>Byte</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="DelayedAckTimeout">
+        <maml:name>DelayedAckTimeoutMs</maml:name>
+        <maml:description>
+          <maml:para>Specifies the time to wait, in milliseconds, before the computer sends an ACK if the computer receives fewer than delayed acknowledgment frequency of packets. Use the DelayedAckFrequency parameter to specify the delayed ACK frequency value. Reducing the time to wait can increase throughput on low latency networks by accelerating growth in TCP window size. The acceptable values for this parameter are: increments of 10, from 10 through 600.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DynamicPortRangeNumberOfPorts</maml:name>
+        <maml:description>
+          <maml:para>Specifies the number of ports for the dynamic port range that starts from the port that you specify for the DynamicPortRangeStartPort parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt16</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DynamicPortRangeStartPort</maml:name>
+        <maml:description>
+          <maml:para>Specifies the starting port for the dynamic port range. This parameter sets the starting port to send and receive TCP traffic. The acceptable values for this parameter are: 1 through 65535.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt16</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>EcnCapability</maml:name>
+        <maml:description>
+          <maml:para>Specifies whether to enable ECN capability. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Enabled. Uses ECN capability.  - Disabled. Does not use ECN capability. </maml:para>
+          <maml:para>If you specify a value of Disabled, UseECT0, or UseEct1 for the EcnMarking parameter of the Set-NetIPInterface cmdlet, the current parameter has no effect.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">EcnCapability</command:parameterValue>
+        <dev:type>
+          <maml:name>EcnCapability</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ForceWS</maml:name>
+        <maml:description>
+          <maml:para>Specifies whether to force window scaling for retransmission. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Enabled. Requires window scaling for retransmission.  - Disabled. Does not require window scaling for retransmission. </maml:para>
+          <maml:para>The default value is Disabled.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">ForceWS</command:parameterValue>
+        <dev:type>
+          <maml:name>ForceWS</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="InitialCongestionWindow">
+        <maml:name>InitialCongestionWindowMss</maml:name>
+        <maml:description>
+          <maml:para>Specifies the initial size of the congestion window. Provide a value to multiply by the maximum segment size (MSS). The acceptable values for this parameter are: even numbers from 2 through 64.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="InitialRto">
+        <maml:name>InitialRtoMs</maml:name>
+        <maml:description>
+          <maml:para>Specifies the period, in milliseconds, before connect, or SYN, retransmit. The acceptable values for this parameter are: increments of 10, from 300 ms through 3000 ms.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>MaxSynRetransmissions</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of times the computer sends SYN packets without receiving a response.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Byte</command:parameterValue>
+        <dev:type>
+          <maml:name>Byte</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>MemoryPressureProtection</maml:name>
+        <maml:description>
+          <maml:para>Specifies whether to use memory pressure protection. TCP memory pressure protection helps ensure that a computer continues normal operation when low on memory due to denial of service attacks. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Enabled. When low on memory, during an attack, close existing TCP connections and drop incoming SYN requests.  - Disabled. Do not use memory pressure protection.  - Default. Use the computer default value for memory pressure protection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">MemoryPressureProtection</command:parameterValue>
+        <dev:type>
+          <maml:name>MemoryPressureProtection</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="MinRto">
+        <maml:name>MinRtoMs</maml:name>
+        <maml:description>
+          <maml:para>Specifies a value, in milliseconds, for the TCP retransmission to time out. The acceptable values for this parameter are: increments of 10, from 20 ms through 300 ms.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>NonSackRttResiliency</maml:name>
+        <maml:description>
+          <maml:para>Specifies whether to enable round trip time resiliency for clients that do not support selective acknowledgment. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Enabled </maml:para>
+          <maml:para>- Disabled</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">NonSackRttResiliency</command:parameterValue>
+        <dev:type>
+          <maml:name>NonSackRttResiliency</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+          <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ScalingHeuristics</maml:name>
+        <maml:description>
+          <maml:para>Specifies whether to enable scaling heuristics. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Enabled </maml:para>
+          <maml:para>- Disabled</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">ScalingHeuristics</command:parameterValue>
+        <dev:type>
+          <maml:name>ScalingHeuristics</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>SettingName</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of setting names. You can specify only Custom for this parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Timestamps</maml:name>
+        <maml:description>
+          <maml:para>Specifies whether to enable timestamps. Timestamps facilitate round trip measurement, and can help protect against wrapped sequence numbers on high throughput links. For more information about TCP timestamps, see RFC 1323 (http://www.ietf.org/rfc/rfc1323.txt). The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Enabled </maml:para>
+          <maml:para>- Disabled</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Timestamps</command:parameterValue>
+        <dev:type>
+          <maml:name>Timestamps</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root\StandardCimv2\MSFT_NetTCPSetting</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>----------- Example 1: Change the custom TCP setting -----------</maml:title>
+        <dev:code>PS C:\&gt;Set-NetTCPSetting -SettingName "InternetCustom" -CongestionProvider CTCP -InitialCongestionWindowMss 6</dev:code>
+        <dev:remarks>
+          <maml:para>This command changes the custom TCP setting to have a value of 6 for the initial congestion window and use compound TCP.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/nettcpip/set-nettcpsetting?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetTCPSetting</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetTransportFilter</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetUDPSetting</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>New-NetTransportFilter</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Remove-NetTransportFilter</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-NetUDPSetting</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

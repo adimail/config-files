@@ -1,0 +1,2060 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-NetNeighbor</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>NetNeighbor</command:noun>
+      <maml:description>
+        <maml:para>Gets neighbor cache entries.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-NetNeighbor cmdlet gets neighbor cache entries. The cmdlet returns information about IP addresses and link-layer addresses for the neighbor cache entries.</maml:para>
+      <maml:para>The neighbor cache maintains information for each on-link neighbor, including the IP address and the associated link-layer address. In IPv4, the neighbor cache is commonly known as the Address Resolution Protocol (ARP) cache.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-NetNeighbor</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>IPAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of IP addresses. The cmdlet gets neighbor cache entries that have the IP addresses you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AddressFamily</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of IP address families. The cmdlet gets the neighbor cache entries that belong to the IP address families you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- IPv4</maml:para>
+            <maml:para>- IPv6</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">IPv4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">IPv6</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AddressFamily[]</command:parameterValue>
+          <dev:type>
+            <maml:name>AddressFamily[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>AssociatedIPInterface</maml:name>
+          <maml:description>
+            <maml:para>Specifies an IP interface as a CIM object. The cmdlet gets neighbor cache entries that belong to this interface. To obtain an IP interface, use the Get-NetIPInterface cmdlet.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>IncludeAllCompartments</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet includes neighbor cache entries from all configured network compartments. If you do not specify this parameter, the cmdlet gets only neighbor cache entries in the default network compartment.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifAlias">
+          <maml:name>InterfaceAlias</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of aliases of network interfaces. The cmdlet gets neighbor cache entries for the network interfaces that have the aliases you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifIndex">
+          <maml:name>InterfaceIndex</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of indexes of network interfaces. The cmdlet gets neighbor cache entries for the network interfaces located at the indexes you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>LinkLayerAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of link-layer addresses of the neighbor cache entry. The cmdlet gets neighbor cache entries that have the link-layer addresses you specify.</maml:para>
+            <maml:para>The link-layer address is also called the media access control (MAC) address. A link-layer address that uses IPv4 address syntax is a tunnel technology that encapsulates packets over an IPv4 tunnel, such as Intra-Site Automatic Tunnel Addressing Protocol (ISATAP) or Teredo. A link-layer address of all zeroes indicates that the neighbor is unreachable and the neighbor cache entry does not have a link-layer address entry. An empty link-layer address indicates that the link layer does not use link-layer addresses, such as on a loopback interface.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PolicyStore</maml:name>
+          <maml:description>
+            <maml:para>Specifies a PolicyStore value. The cmdlet gets neighbor cache entries that have the PolicyStore value you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- ActiveStore. The IP address information is valid.  - PersistentStore. The computer saves IP address information across restarts. When the computer restarts, it copies the saved settings to the ActiveStore.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>State</maml:name>
+          <maml:description>
+            <maml:para>Specifies an arrary of states of neighbor cache entries. The cmdlet gets neighbor cache entries that have the state you specify. The neighbor cache contains information maintained by Neighbor Unreachability Detection. Neighbor Unreachability Detection for IPv4 tracks the reachable state of IPv4 nodes in the IPv4 route cache. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Unreachable. The IP address is unreachable.  - Incomplete. Address resolution is in progress and Neighbor Unreachability Detection has not determined the link-layer address of the neighbor.  - Probe. The neighbor is no longer known to be reachable, and Neighbor Unreachability Detection is sending unicast Neighbor Solicitation probes to verify reachability.  - Delay. The neighbor is no longer known to be reachable, and traffic was recently sent to the neighbor. Neighbor Unreachability Detection does not probe the neighbor immediately. Neighbor Unreachability Detection delays sending probes for a short time  so that the upper layer protocols can provide reachability confirmation.  - Stale. The neighbor is no longer known to be reachable. and Until traffic is sent to the neighbor, Neighbor Unreachability Detection makes no attempt to verify its reachability.  - Reachable. The neighbor is known to have been reachable recently, within the last minute.  - Permanent. The neighbor is statically provisioned and will not expire unless you remove it  through configuration.  - Maximum. A maximum value for testing purposes.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Unreachable</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Incomplete</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Probe</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Delay</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Stale</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Reachable</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Permanent</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">State[]</command:parameterValue>
+          <dev:type>
+            <maml:name>State[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AddressFamily</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of IP address families. The cmdlet gets the neighbor cache entries that belong to the IP address families you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- IPv4</maml:para>
+          <maml:para>- IPv6</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">AddressFamily[]</command:parameterValue>
+        <dev:type>
+          <maml:name>AddressFamily[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>AssociatedIPInterface</maml:name>
+        <maml:description>
+          <maml:para>Specifies an IP interface as a CIM object. The cmdlet gets neighbor cache entries that belong to this interface. To obtain an IP interface, use the Get-NetIPInterface cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>IPAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of IP addresses. The cmdlet gets neighbor cache entries that have the IP addresses you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>IncludeAllCompartments</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the cmdlet includes neighbor cache entries from all configured network compartments. If you do not specify this parameter, the cmdlet gets only neighbor cache entries in the default network compartment.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifAlias">
+        <maml:name>InterfaceAlias</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of aliases of network interfaces. The cmdlet gets neighbor cache entries for the network interfaces that have the aliases you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifIndex">
+        <maml:name>InterfaceIndex</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of indexes of network interfaces. The cmdlet gets neighbor cache entries for the network interfaces located at the indexes you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>LinkLayerAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of link-layer addresses of the neighbor cache entry. The cmdlet gets neighbor cache entries that have the link-layer addresses you specify.</maml:para>
+          <maml:para>The link-layer address is also called the media access control (MAC) address. A link-layer address that uses IPv4 address syntax is a tunnel technology that encapsulates packets over an IPv4 tunnel, such as Intra-Site Automatic Tunnel Addressing Protocol (ISATAP) or Teredo. A link-layer address of all zeroes indicates that the neighbor is unreachable and the neighbor cache entry does not have a link-layer address entry. An empty link-layer address indicates that the link layer does not use link-layer addresses, such as on a loopback interface.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PolicyStore</maml:name>
+        <maml:description>
+          <maml:para>Specifies a PolicyStore value. The cmdlet gets neighbor cache entries that have the PolicyStore value you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- ActiveStore. The IP address information is valid.  - PersistentStore. The computer saves IP address information across restarts. When the computer restarts, it copies the saved settings to the ActiveStore.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>State</maml:name>
+        <maml:description>
+          <maml:para>Specifies an arrary of states of neighbor cache entries. The cmdlet gets neighbor cache entries that have the state you specify. The neighbor cache contains information maintained by Neighbor Unreachability Detection. Neighbor Unreachability Detection for IPv4 tracks the reachable state of IPv4 nodes in the IPv4 route cache. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Unreachable. The IP address is unreachable.  - Incomplete. Address resolution is in progress and Neighbor Unreachability Detection has not determined the link-layer address of the neighbor.  - Probe. The neighbor is no longer known to be reachable, and Neighbor Unreachability Detection is sending unicast Neighbor Solicitation probes to verify reachability.  - Delay. The neighbor is no longer known to be reachable, and traffic was recently sent to the neighbor. Neighbor Unreachability Detection does not probe the neighbor immediately. Neighbor Unreachability Detection delays sending probes for a short time  so that the upper layer protocols can provide reachability confirmation.  - Stale. The neighbor is no longer known to be reachable. and Until traffic is sent to the neighbor, Neighbor Unreachability Detection makes no attempt to verify its reachability.  - Reachable. The neighbor is known to have been reachable recently, within the last minute.  - Permanent. The neighbor is statically provisioned and will not expire unless you remove it  through configuration.  - Maximum. A maximum value for testing purposes.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">State[]</command:parameterValue>
+        <dev:type>
+          <maml:name>State[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root\StandardCimv2\MSFT_NetNeighbor</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>---------- Example 1: Get all neighbor cache entries ----------</maml:title>
+        <dev:code>PS C:\&gt;Get-NetNeighbor</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets all the neighbor cache entries. The default output for the cmdlet does not include all properties of the NetNeighbor object.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>- Example 2: Output all properties for neighbor cache entries -</maml:title>
+        <dev:code>PS C:\&gt;Get-NetNeighbor | Format-List -Property *</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets all the neighbor cache entries. The command uses the Format-List cmdlet to display all the properties in the output in the form of a table. For more information, type `Get-Help Format-Table`.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 3: Get neighbor cache entries that have an IPv6 address</maml:title>
+        <dev:code>PS C:\&gt;Get-NetNeighbor -AddressFamily IPv6</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets information about the neighbor cache for neighbors that have an IPv6 address.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title> Example 4: Get network adapters that have reachable neighbors </maml:title>
+        <dev:code>PS C:\&gt;Get-NetNeighbor -State Reachable | Get-NetAdapter</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets a NetNeighbor object that contains neighbor cache entries that are reachable. The command passes the NetNeighbor object to the Get-NetAdapter cmdlet by using the pipeline operator. The Get-NetAdapter cmdlet gets the network adapters that have the interface index number for the network neighbors stored the NetNeighbor object.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/nettcpip/get-netneighbor?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetAdapter</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>New-NetNeighbor</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Remove-NetNeighbor</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-NetNeighbor</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>New-NetNeighbor</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>NetNeighbor</command:noun>
+      <maml:description>
+        <maml:para>Creates a neighbor cache entry.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The New-NetNeighbor cmdlet creates a neighbor cache entry. The neighbor cache maintains information for each on-link neighbor, including the IP address and the associated link-layer address. The address family that you specify for the neighbor cache entry must match the address family of the IP interface.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-NetNeighbor</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>IPAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies an IP address. The cmdlet adds a neighbor cache entry that has the IP address you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AddressFamily</maml:name>
+          <maml:description>
+            <maml:para>Specifies the IP address family. The cmdlet adds a neighbor cache entry that belongs to the IP address family you specify. If you do not specify this parameter, the cmdlet automatically generates the address families of the neighbor cache entries. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- IPv4</maml:para>
+            <maml:para>- IPv6</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">IPv4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">IPv6</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AddressFamily</command:parameterValue>
+          <dev:type>
+            <maml:name>AddressFamily</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifAlias">
+          <maml:name>InterfaceAlias</maml:name>
+          <maml:description>
+            <maml:para>Specifies the alias of a network interface. The cmdlet adds a neighbor cache entry for the network interface that has the alias you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>LinkLayerAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies the link-layer address of the neighbor cache entry. The cmdlet adds a neighbor cache entry that has the link-layer address you specify.</maml:para>
+            <maml:para>The link-layer address is also called the media access control (MAC) address. A link-layer address that uses IPv4 address syntax is a tunnel technology that encapsulates packets over an IPv4 tunnel, such as Intra-Site Automatic Tunnel Addressing Protocol (ISATAP) or Teredo. A link-layer address of all zeroes indicates that the neighbor is unreachable and the neighbor cache entry does not have a link-layer address entry. An empty link-layer address indicates that the link layer does not use link-layer addresses, such as on a loopback interface.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PolicyStore</maml:name>
+          <maml:description>
+            <maml:para>Specifies a PolicyStore value. The cmdlet adds a neighbor cache entry that has the PolicyStore value you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- ActiveStore: The IP address information is valid. </maml:para>
+            <maml:para>- PersistentStore: The computer saves IP address information across restarts.</maml:para>
+            <maml:para>When the computer restarts, it copies the saved settings to the ActiveStore. </maml:para>
+            <maml:para>Specify ActiveStore only.</maml:para>
+            <maml:para>If you do not specify this parameter, the default entries are created in both the ActiveStore and the PersistentStore.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>State</maml:name>
+          <maml:description>
+            <maml:para>Specifies the state of the neighbor cache entry. The cmdlet adds a neighbor cache entry that has the state you specify. You can create only neighbor cache entries that are in a permanent state. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Permanent. The neighbor is statically provisioned and will not expire unless you remove it.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Unreachable</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Incomplete</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Probe</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Delay</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Stale</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Reachable</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Permanent</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">State</command:parameterValue>
+          <dev:type>
+            <maml:name>State</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>New-NetNeighbor</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>IPAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies an IP address. The cmdlet adds a neighbor cache entry that has the IP address you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AddressFamily</maml:name>
+          <maml:description>
+            <maml:para>Specifies the IP address family. The cmdlet adds a neighbor cache entry that belongs to the IP address family you specify. If you do not specify this parameter, the cmdlet automatically generates the address families of the neighbor cache entries. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- IPv4</maml:para>
+            <maml:para>- IPv6</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">IPv4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">IPv6</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AddressFamily</command:parameterValue>
+          <dev:type>
+            <maml:name>AddressFamily</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifIndex">
+          <maml:name>InterfaceIndex</maml:name>
+          <maml:description>
+            <maml:para>Specifies the alias of a network interface. The cmdlet adds a neighbor cache entry for the network interface located at the index you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>LinkLayerAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies the link-layer address of the neighbor cache entry. The cmdlet adds a neighbor cache entry that has the link-layer address you specify.</maml:para>
+            <maml:para>The link-layer address is also called the media access control (MAC) address. A link-layer address that uses IPv4 address syntax is a tunnel technology that encapsulates packets over an IPv4 tunnel, such as Intra-Site Automatic Tunnel Addressing Protocol (ISATAP) or Teredo. A link-layer address of all zeroes indicates that the neighbor is unreachable and the neighbor cache entry does not have a link-layer address entry. An empty link-layer address indicates that the link layer does not use link-layer addresses, such as on a loopback interface.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PolicyStore</maml:name>
+          <maml:description>
+            <maml:para>Specifies a PolicyStore value. The cmdlet adds a neighbor cache entry that has the PolicyStore value you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- ActiveStore: The IP address information is valid. </maml:para>
+            <maml:para>- PersistentStore: The computer saves IP address information across restarts.</maml:para>
+            <maml:para>When the computer restarts, it copies the saved settings to the ActiveStore. </maml:para>
+            <maml:para>Specify ActiveStore only.</maml:para>
+            <maml:para>If you do not specify this parameter, the default entries are created in both the ActiveStore and the PersistentStore.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>State</maml:name>
+          <maml:description>
+            <maml:para>Specifies the state of the neighbor cache entry. The cmdlet adds a neighbor cache entry that has the state you specify. You can create only neighbor cache entries that are in a permanent state. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Permanent. The neighbor is statically provisioned and will not expire unless you remove it.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Unreachable</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Incomplete</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Probe</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Delay</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Stale</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Reachable</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Permanent</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">State</command:parameterValue>
+          <dev:type>
+            <maml:name>State</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AddressFamily</maml:name>
+        <maml:description>
+          <maml:para>Specifies the IP address family. The cmdlet adds a neighbor cache entry that belongs to the IP address family you specify. If you do not specify this parameter, the cmdlet automatically generates the address families of the neighbor cache entries. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- IPv4</maml:para>
+          <maml:para>- IPv6</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">AddressFamily</command:parameterValue>
+        <dev:type>
+          <maml:name>AddressFamily</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>IPAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies an IP address. The cmdlet adds a neighbor cache entry that has the IP address you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifAlias">
+        <maml:name>InterfaceAlias</maml:name>
+        <maml:description>
+          <maml:para>Specifies the alias of a network interface. The cmdlet adds a neighbor cache entry for the network interface that has the alias you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifIndex">
+        <maml:name>InterfaceIndex</maml:name>
+        <maml:description>
+          <maml:para>Specifies the alias of a network interface. The cmdlet adds a neighbor cache entry for the network interface located at the index you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>LinkLayerAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies the link-layer address of the neighbor cache entry. The cmdlet adds a neighbor cache entry that has the link-layer address you specify.</maml:para>
+          <maml:para>The link-layer address is also called the media access control (MAC) address. A link-layer address that uses IPv4 address syntax is a tunnel technology that encapsulates packets over an IPv4 tunnel, such as Intra-Site Automatic Tunnel Addressing Protocol (ISATAP) or Teredo. A link-layer address of all zeroes indicates that the neighbor is unreachable and the neighbor cache entry does not have a link-layer address entry. An empty link-layer address indicates that the link layer does not use link-layer addresses, such as on a loopback interface.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PolicyStore</maml:name>
+        <maml:description>
+          <maml:para>Specifies a PolicyStore value. The cmdlet adds a neighbor cache entry that has the PolicyStore value you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- ActiveStore: The IP address information is valid. </maml:para>
+          <maml:para>- PersistentStore: The computer saves IP address information across restarts.</maml:para>
+          <maml:para>When the computer restarts, it copies the saved settings to the ActiveStore. </maml:para>
+          <maml:para>Specify ActiveStore only.</maml:para>
+          <maml:para>If you do not specify this parameter, the default entries are created in both the ActiveStore and the PersistentStore.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>State</maml:name>
+        <maml:description>
+          <maml:para>Specifies the state of the neighbor cache entry. The cmdlet adds a neighbor cache entry that has the state you specify. You can create only neighbor cache entries that are in a permanent state. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Permanent. The neighbor is statically provisioned and will not expire unless you remove it.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">State</command:parameterValue>
+        <dev:type>
+          <maml:name>State</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root\StandardCimv2\MSFT_NetNeighbor</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------- Example 1: Create an IPv4 neighbor cache entry --------</maml:title>
+        <dev:code>PS C:\&gt;New-NetNeighbor -InterfaceIndex 12 -IPAddress "192.168.0.5" -LinkLayerAddress "00-00-12-00-00-ff"</dev:code>
+        <dev:remarks>
+          <maml:para>This command creates a neighbor cache entry that has the IP address 192.168.0.5. The command specifies that the neighbor is connected to the interface that has the index 12. The command specifies that the link-layer address of the neighbor cache entry is 00-00-12-00-00-ff.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------- Example 2: Create an IPv6 neighbor cache entry --------</maml:title>
+        <dev:code>PS C:\&gt;New-NetNeighbor -InterfaceIndex 13 -IPAddress "fe80::5efe:192.168.0.5"</dev:code>
+        <dev:remarks>
+          <maml:para>This command creates a neighbor cache entry on a virtual ISATAP interface that has the IP address fe80::5efe:192.168.0.5. The command specifies that the neighbor is connected to the interface that has the index 13.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/nettcpip/new-netneighbor?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetAdapter</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetNeighbor</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Remove-NetNeighbor</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-NetNeighbor</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Remove-NetNeighbor</command:name>
+      <command:verb>Remove</command:verb>
+      <command:noun>NetNeighbor</command:noun>
+      <maml:description>
+        <maml:para>Removes neighbor cache entries.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Remove-NetNeighbor cmdlet removes neighbor cache entries. The neighbor cache maintains information for each on-link neighbor, including the IP address and the associated link-layer address.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-NetNeighbor</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>IPAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of IP addresses. The cmdlet removes neighbor cache entries that have the IP addresses you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AddressFamily</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of IP address families. The cmdlet removes the neighbor cache entries that belong to the IP address families you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- IPv4</maml:para>
+            <maml:para>- IPv6</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">IPv4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">IPv6</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AddressFamily[]</command:parameterValue>
+          <dev:type>
+            <maml:name>AddressFamily[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>AssociatedIPInterface</maml:name>
+          <maml:description>
+            <maml:para>Specifies an IP interface as a CIM object. The cmdlet removes neighbor cache entries that belong to this interface. To obtain an IP interface, use the Get-NetIPInterface cmdlet.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>IncludeAllCompartments</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet includes neighbor cache entries from all configured network compartments. If you do not specify this parameter, the cmdlet removes only neighbor cache entries in the default network compartment.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifAlias">
+          <maml:name>InterfaceAlias</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of aliases of network interfaces. The cmdlet removes neighbor cache entries for the network interfaces that have the aliases you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifIndex">
+          <maml:name>InterfaceIndex</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of indexes of network interfaces. The cmdlet removes neighbor cache entries for the network interfaces located at the indexes you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>LinkLayerAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of link-layer addresses of the neighbor cache entry. The cmdlet removes the neighbor cache entries that have the link-layer addresses you specify.</maml:para>
+            <maml:para>The link-layer address is also called the media access control (MAC) address. A link-layer address that uses IPv4 address syntax is a tunnel technology that encapsulates packets over an IPv4 tunnel, such as Intra-Site Automatic Tunnel Addressing Protocol (ISATAP) or Teredo. A link-layer address of all zeroes indicates that the neighbor is unreachable and the neighbor cache entry does not have a link-layer address entry. An empty link-layer address indicates that the link layer does not use link-layer addresses, such as on a loopback interface.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PolicyStore</maml:name>
+          <maml:description>
+            <maml:para>Specifies a PolicyStore value. The cmdlet removes the neighbor cache entries that have the PolicyStore value you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- ActiveStore: The IP address information is valid. </maml:para>
+            <maml:para>- PersistentStore: The computer saves IP address information across restarts.</maml:para>
+            <maml:para>When the computer restarts, it copies the saved settings to the ActiveStore.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>State</maml:name>
+          <maml:description>
+            <maml:para>Specifies an arrary of states of neighbor cache entries. The cmdlet removes the neighbor cache entries that have the states you specify. The neighbor cache contains information maintained by Neighbor Unreachability Detection. Neighbor Unreachability Detection for IPv4 tracks the reachable state of IPv4 nodes in the IPv4 route cache. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Unreachable. The IP address is unreachable.  - Incomplete. Address resolution is in progress and Neighbor Unreachability Detection has not determined the link-layer address of the neighbor.  - Probe. The neighbor is no longer known to be reachable, and Neighbor Unreachability Detection is sending unicast Neighbor Solicitation probes to verify reachability.  - Delay. The neighbor is no longer known to be reachable, and traffic was recently sent to the neighbor. Neighbor Unreachability Detection does not probe the neighbor immediately. Neighbor Unreachability Detection delays sending probes for a short time  so that the upper layer protocols can provide reachability confirmation.  - Stale. The neighbor is no longer known to be reachable. and Until traffic is sent to the neighbor, Neighbor Unreachability Detection makes no attempt to verify its reachability.  - Reachable. The neighbor is known to have been reachable recently, within the last minute.  - Permanent. The neighbor is statically provisioned and will not expire unless you remove it  through configuration.  - Maximum. A maximum value for testing purposes.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Unreachable</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Incomplete</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Probe</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Delay</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Stale</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Reachable</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Permanent</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">State[]</command:parameterValue>
+          <dev:type>
+            <maml:name>State[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Remove-NetNeighbor</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AddressFamily</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of IP address families. The cmdlet removes the neighbor cache entries that belong to the IP address families you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- IPv4</maml:para>
+          <maml:para>- IPv6</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">AddressFamily[]</command:parameterValue>
+        <dev:type>
+          <maml:name>AddressFamily[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>AssociatedIPInterface</maml:name>
+        <maml:description>
+          <maml:para>Specifies an IP interface as a CIM object. The cmdlet removes neighbor cache entries that belong to this interface. To obtain an IP interface, use the Get-NetIPInterface cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>IPAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of IP addresses. The cmdlet removes neighbor cache entries that have the IP addresses you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>IncludeAllCompartments</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the cmdlet includes neighbor cache entries from all configured network compartments. If you do not specify this parameter, the cmdlet removes only neighbor cache entries in the default network compartment.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifAlias">
+        <maml:name>InterfaceAlias</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of aliases of network interfaces. The cmdlet removes neighbor cache entries for the network interfaces that have the aliases you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifIndex">
+        <maml:name>InterfaceIndex</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of indexes of network interfaces. The cmdlet removes neighbor cache entries for the network interfaces located at the indexes you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>LinkLayerAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of link-layer addresses of the neighbor cache entry. The cmdlet removes the neighbor cache entries that have the link-layer addresses you specify.</maml:para>
+          <maml:para>The link-layer address is also called the media access control (MAC) address. A link-layer address that uses IPv4 address syntax is a tunnel technology that encapsulates packets over an IPv4 tunnel, such as Intra-Site Automatic Tunnel Addressing Protocol (ISATAP) or Teredo. A link-layer address of all zeroes indicates that the neighbor is unreachable and the neighbor cache entry does not have a link-layer address entry. An empty link-layer address indicates that the link layer does not use link-layer addresses, such as on a loopback interface.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+          <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PolicyStore</maml:name>
+        <maml:description>
+          <maml:para>Specifies a PolicyStore value. The cmdlet removes the neighbor cache entries that have the PolicyStore value you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- ActiveStore: The IP address information is valid. </maml:para>
+          <maml:para>- PersistentStore: The computer saves IP address information across restarts.</maml:para>
+          <maml:para>When the computer restarts, it copies the saved settings to the ActiveStore.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>State</maml:name>
+        <maml:description>
+          <maml:para>Specifies an arrary of states of neighbor cache entries. The cmdlet removes the neighbor cache entries that have the states you specify. The neighbor cache contains information maintained by Neighbor Unreachability Detection. Neighbor Unreachability Detection for IPv4 tracks the reachable state of IPv4 nodes in the IPv4 route cache. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Unreachable. The IP address is unreachable.  - Incomplete. Address resolution is in progress and Neighbor Unreachability Detection has not determined the link-layer address of the neighbor.  - Probe. The neighbor is no longer known to be reachable, and Neighbor Unreachability Detection is sending unicast Neighbor Solicitation probes to verify reachability.  - Delay. The neighbor is no longer known to be reachable, and traffic was recently sent to the neighbor. Neighbor Unreachability Detection does not probe the neighbor immediately. Neighbor Unreachability Detection delays sending probes for a short time  so that the upper layer protocols can provide reachability confirmation.  - Stale. The neighbor is no longer known to be reachable. and Until traffic is sent to the neighbor, Neighbor Unreachability Detection makes no attempt to verify its reachability.  - Reachable. The neighbor is known to have been reachable recently, within the last minute.  - Permanent. The neighbor is statically provisioned and will not expire unless you remove it  through configuration.  - Maximum. A maximum value for testing purposes.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">State[]</command:parameterValue>
+        <dev:type>
+          <maml:name>State[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root\StandardCimv2\MSFT_NetNeighbor</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>----- Example 1: Remove unreachable neighbor cache entries -----</maml:title>
+        <dev:code>PS C:\&gt;Remove-NetNeighbor -State Unreachable</dev:code>
+        <dev:remarks>
+          <maml:para>This command removes all neighbor cache entries that are unreachable.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 2: Remove neighbor cache entries associated with a network adapter</maml:title>
+        <dev:code>PS C:\&gt;Get-NetAdapter | Where-Object -FilterScript {$_.LinkSpeed -Eq "100 Mbps"} | Remove-NetNeighbor -AddressFamily IPv4</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets a NetAdapter object that contains network adapters, and then passes the NetAdapter object to the Where-Object cmdlet by using the pipeline operator. The Where-Object cmdlet filters the network adapters that have a link speed of 100 Mbps, and then passes the network NetAdapter object to the Remove-NetNeighbor cmdlet. The Remove-NetNeighbor cmdlet  removes all neighbor cache entries that have IPv4 addresses and are associated with a network adapter that has a link speed of 100 Mbps.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/nettcpip/remove-netneighbor?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetAdapter</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetNeighbor</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>New-NetNeighbor</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-NetNeighbor</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-NetNeighbor</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>NetNeighbor</command:noun>
+      <maml:description>
+        <maml:para>Modifies a neighbor cache entry.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-NetNeighbor cmdlet modifies a neighbor cache entry. The neighbor cache maintains information for each on-link neighbor, including the IP address and the associated link-layer address. You can modify only neighbor cache entries that are in a permanent state on interfaces that have link-layer addresses. Use this cmdlet to modify the link-layer address and policy store setting of a neighbor cache entry.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-NetNeighbor</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>IPAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of IP addresses. The cmdlet modifies neighbor cache entries that have the IP addresses you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AddressFamily</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of IP address families. The cmdlet modifies the neighbor cache entries that belong to the IP address families you specify. If you do not specify this parameter, the cmdlet automatically generates the address families of the neighbor cache entries. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- IPv4</maml:para>
+            <maml:para>- IPv6</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">IPv4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">IPv6</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">AddressFamily[]</command:parameterValue>
+          <dev:type>
+            <maml:name>AddressFamily[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>IncludeAllCompartments</maml:name>
+          <maml:description>
+            <maml:para>Indicates that the cmdlet includes neighbor cache entries from all configured network compartments. If you do not specify this parameter, the cmdlet modifies only neighbor cache entries in the default network compartment.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifAlias">
+          <maml:name>InterfaceAlias</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of aliases of network interfaces. The cmdlet modifies neighbor cache entries for the network interfaces that have the aliases you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifIndex">
+          <maml:name>InterfaceIndex</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of indexes of network interfaces. The cmdlet modifies neighbor cache entries for the network interfaces located at the indexes you specify.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt32[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>LinkLayerAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies the link-layer address of the neighbor cache entry. The cmdlet modifies the link-layer address of the neighbor cache entry you specify.</maml:para>
+            <maml:para>The link-layer address is also called the media access control (MAC) address. A link-layer address that uses IPv4 address syntax is a tunnel technology that encapsulates packets over an IPv4 tunnel, such as Intra-Site Automatic Tunnel Addressing Protocol (ISATAP) or Teredo. A link-layer address of all zeroes indicates that the neighbor is unreachable and the neighbor cache entry does not have a link-layer address entry. An empty link-layer address indicates that the link layer does not use link-layer addresses, such as on a loopback interface.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PolicyStore</maml:name>
+          <maml:description>
+            <maml:para>Specifies a PolicyStore value. The cmdlet modifies the PolicyStore setting for the neighbor cache entry to the value you specify. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- ActiveStore: The IP address information is valid. </maml:para>
+            <maml:para>- PersistentStore: The computer saves IP address information across restarts.</maml:para>
+            <maml:para>When the computer restarts, it copies the saved settings to the ActiveStore. </maml:para>
+            <maml:para>Specify ActiveStore only.</maml:para>
+            <maml:para>If you do not specify this parameter, the default entries are created in both the ActiveStore and the PersistentStore.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>State</maml:name>
+          <maml:description>
+            <maml:para>Specifies an array of states of the neighbor cache entry. The cmdlet modifies the neighbor cache entries that have the states you specify. You can modify only neighbor cache entries that are in a permanent state. The acceptable values for this parameter are:</maml:para>
+            <maml:para>- Permanent. The neighbor is statically provisioned and will not expire unless you remove it.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Unreachable</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Incomplete</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Probe</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Delay</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Stale</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Reachable</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Permanent</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">State[]</command:parameterValue>
+          <dev:type>
+            <maml:name>State[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Set-NetNeighbor</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>LinkLayerAddress</maml:name>
+          <maml:description>
+            <maml:para>Specifies the link-layer address of the neighbor cache entry. The cmdlet modifies the link-layer address of the neighbor cache entry you specify.</maml:para>
+            <maml:para>The link-layer address is also called the media access control (MAC) address. A link-layer address that uses IPv4 address syntax is a tunnel technology that encapsulates packets over an IPv4 tunnel, such as Intra-Site Automatic Tunnel Addressing Protocol (ISATAP) or Teredo. A link-layer address of all zeroes indicates that the neighbor is unreachable and the neighbor cache entry does not have a link-layer address entry. An empty link-layer address indicates that the link layer does not use link-layer addresses, such as on a loopback interface.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AddressFamily</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of IP address families. The cmdlet modifies the neighbor cache entries that belong to the IP address families you specify. If you do not specify this parameter, the cmdlet automatically generates the address families of the neighbor cache entries. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- IPv4</maml:para>
+          <maml:para>- IPv6</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">AddressFamily[]</command:parameterValue>
+        <dev:type>
+          <maml:name>AddressFamily[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>IPAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of IP addresses. The cmdlet modifies neighbor cache entries that have the IP addresses you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>IncludeAllCompartments</maml:name>
+        <maml:description>
+          <maml:para>Indicates that the cmdlet includes neighbor cache entries from all configured network compartments. If you do not specify this parameter, the cmdlet modifies only neighbor cache entries in the default network compartment.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifAlias">
+        <maml:name>InterfaceAlias</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of aliases of network interfaces. The cmdlet modifies neighbor cache entries for the network interfaces that have the aliases you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ifIndex">
+        <maml:name>InterfaceIndex</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of indexes of network interfaces. The cmdlet modifies neighbor cache entries for the network interfaces located at the indexes you specify.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt32[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>LinkLayerAddress</maml:name>
+        <maml:description>
+          <maml:para>Specifies the link-layer address of the neighbor cache entry. The cmdlet modifies the link-layer address of the neighbor cache entry you specify.</maml:para>
+          <maml:para>The link-layer address is also called the media access control (MAC) address. A link-layer address that uses IPv4 address syntax is a tunnel technology that encapsulates packets over an IPv4 tunnel, such as Intra-Site Automatic Tunnel Addressing Protocol (ISATAP) or Teredo. A link-layer address of all zeroes indicates that the neighbor is unreachable and the neighbor cache entry does not have a link-layer address entry. An empty link-layer address indicates that the link layer does not use link-layer addresses, such as on a loopback interface.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+          <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PolicyStore</maml:name>
+        <maml:description>
+          <maml:para>Specifies a PolicyStore value. The cmdlet modifies the PolicyStore setting for the neighbor cache entry to the value you specify. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- ActiveStore: The IP address information is valid. </maml:para>
+          <maml:para>- PersistentStore: The computer saves IP address information across restarts.</maml:para>
+          <maml:para>When the computer restarts, it copies the saved settings to the ActiveStore. </maml:para>
+          <maml:para>Specify ActiveStore only.</maml:para>
+          <maml:para>If you do not specify this parameter, the default entries are created in both the ActiveStore and the PersistentStore.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>State</maml:name>
+        <maml:description>
+          <maml:para>Specifies an array of states of the neighbor cache entry. The cmdlet modifies the neighbor cache entries that have the states you specify. You can modify only neighbor cache entries that are in a permanent state. The acceptable values for this parameter are:</maml:para>
+          <maml:para>- Permanent. The neighbor is statically provisioned and will not expire unless you remove it.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">State[]</command:parameterValue>
+        <dev:type>
+          <maml:name>State[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root\StandardCimv2\MSFT_NetNeighbor</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>Example 1: Set the link-layer address for a neighbor cache entry</maml:title>
+        <dev:code>PS C:\&gt;Set-NetNeighbor -InterfaceIndex 12 -IPAddress "192.168.0.5" -LinkLayerAddress "00-00-12-00-00-ff"</dev:code>
+        <dev:remarks>
+          <maml:para>This command sets the link-layer address for the neighbor cache entry that has the IP address 192.168.0.5 and the interface index value of 12.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 2: Set the link-layer address for a neighbor cache entry by using an input object</maml:title>
+        <dev:code>PS C:\&gt;Get-NetNeighbor -InterfaceIndex 12 -IPAddress "192.168.0.5" | Set-NetNeighbor -LinkLayerAddress "00-00-12-00-00-ff"</dev:code>
+        <dev:remarks>
+          <maml:para>This command gets the NetNeighbor object that has the IP address 192.168.0.5 and the interface index value of 12. The command passes the object to the Set-NetNeighbor cmdlet by using the pipeline operator. Set-NetNeighbor sets the link-layer address for the neighbor cache entry to 00-00-12-00-00-ff.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/nettcpip/set-netneighbor?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-NetNeighbor</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>New-NetNeighbor</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Remove-NetNeighbor</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

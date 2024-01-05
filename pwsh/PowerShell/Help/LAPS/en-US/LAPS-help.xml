@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-LapsAADPassword</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>LapsAADPassword</command:noun>
+      <maml:description>
+        <maml:para>Queries Microsoft Entra ID for the Windows Local Administrator Password Solution (LAPS) credentials on a specified Microsoft Entra device.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The `Get-LapsAADPassword` cmdlet allows administrators to retrieve LAPS passwords and password history for a Microsoft Entra joined device. This is implemented by sending queries to Microsoft Graph over the deviceLocalCredentials collection.</maml:para>
+      <maml:para>The `Get-LapsAADPassword` cmdlet supports two basic modes when querying LAPS passwords:</maml:para>
+      <maml:para>The first mode queries for non-sensitive metadata, for example time the password was backed up to Azure and the expected expiration time of a password. This mode requires that the client be granted the Microsoft Graph `DeviceLocalCredential.ReadBasic.All` permission.</maml:para>
+      <maml:para>The second mode queries for all password information including both the metadata information described above and the clear-text form of the password(s). This mode requires that the client be granted the Microsoft Graph `DeviceLocalCredential.Read.All` permission.</maml:para>
+      <maml:para>The DeviceIds parameter accepts either device names or device IDs, but the underlying Microsoft Graph queries only supports querying by device ID. To support this query, the cmdlet maps a device name input to its corresponding device ID by issuing a separate Microsoft Graph query. This extra query requires the `Device.Read.All` permission. If the target is a Microsoft Managed Desktop device, the `DeviceManagementManagedDevices.Read.All` permission may also be required.</maml:para>
+      <maml:para>&gt; [!TIP] &gt; If there are multiple devices in the tenant with the same name, the cmdlet fails. The workaround &gt; is to input the device ID directly.</maml:para>
+      <maml:para>&gt; [!IMPORTANT] &gt; The `Get-LapsAADPassword` cmdlet is implemented as a wrapper around the Microsoft Graph PowerShell &gt; library, which must be manually installed on the device before `Get-LapsAADPassword` can work. &gt; Additional configuration steps are required in your Microsoft Entra tenant to enable authentication to &gt; Microsoft Graph and to grant the necessary Microsoft Graph permissions. For more information, see &gt; Get started with Windows LAPS and Microsoft Entra ID (https://go.microsoft.com/fwlink/?linkid=2233704)The Verbose parameter may be used to get additional information about the cmdlet's operation.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-LapsAADPassword</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsPlainText</maml:name>
+          <maml:description>
+            <maml:para>Specify this parameter to return the LAPS passwords in clear-text format. The default behavior is to return the LAPS passwords wrapped in a .NET SecureString object.</maml:para>
+            <maml:para>&gt; [!IMPORTANT] &gt; Using this parameter exposes the returned clear-text password to casual viewing and may pose a &gt; security risk. This parameter should be used with caution and only in support or testing &gt; situations.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DeviceIds</maml:name>
+          <maml:description>
+            <maml:para>Specifies the device name or device ID to query LAPS credentials.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>IncludeHistory</maml:name>
+          <maml:description>
+            <maml:para>Specifies that any older LAPS credentials on the device object should also be displayed.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>IncludePasswords</maml:name>
+          <maml:description>
+            <maml:para>Specifies whether to return password information.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsPlainText</maml:name>
+        <maml:description>
+          <maml:para>Specify this parameter to return the LAPS passwords in clear-text format. The default behavior is to return the LAPS passwords wrapped in a .NET SecureString object.</maml:para>
+          <maml:para>&gt; [!IMPORTANT] &gt; Using this parameter exposes the returned clear-text password to casual viewing and may pose a &gt; security risk. This parameter should be used with caution and only in support or testing &gt; situations.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DeviceIds</maml:name>
+        <maml:description>
+          <maml:para>Specifies the device name or device ID to query LAPS credentials.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>IncludeHistory</maml:name>
+        <maml:description>
+          <maml:para>Specifies that any older LAPS credentials on the device object should also be displayed.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>IncludePasswords</maml:name>
+        <maml:description>
+          <maml:para>Specifies whether to return password information.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>Connect-MgGraph -TenantId b20f5886-bddf-43bb-aee6-dda0c87c5fa2 -ClientId 9fa98e34-277f-47fa-9847-e36bdf6bca1f
+Get-LapsAADPassword -DeviceIds LAPSAAD
+
+DeviceName DeviceId                             PasswordExpirationTime
+---------- --------                             ----------------------
+LAPSAAD    dfc6d5f0-225a-4b46-adcf-73a349a31e70 4/22/2023 8:45:29 AM</dev:code>
+        <dev:remarks>
+          <maml:para>This example shows how to query basic LAPS password metadata information for the target device that is specified by device name.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>Connect-MgGraph -TenantId b20f5886-bddf-43bb-aee6-dda0c87c5fa2 -ClientId 9fa98e34-277f-47fa-9847-e36bdf6bca1f
+Get-LapsAADPassword -DeviceIds dfc6d5f0-225a-4b46-adcf-73a349a31e70 -IncludePasswords
+
+DeviceName             : LAPSAAD
+DeviceId               : dfc6d5f0-225a-4b46-adcf-73a349a31e70
+Account                : LapsAdmin
+Password               : System.Security.SecureString
+PasswordExpirationTime : 4/22/2023 8:45:29 AM
+PasswordUpdateTime     : 4/11/2023 8:45:29 AM</dev:code>
+        <dev:remarks>
+          <maml:para>This example shows how to query the full LAPS password information for the target device that is specified by device ID.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 3 --------------------------</maml:title>
+        <dev:code>Connect-MgGraph -TenantId b20f5886-bddf-43bb-aee6-dda0c87c5fa2 -ClientId 9fa98e34-277f-47fa-9847-e36bdf6bca1f
+Get-LapsAADPassword -DeviceIds dfc6d5f0-225a-4b46-adcf-73a349a31e70 -IncludePasswords -AsPlainText
+
+DeviceName             : LAPSAAD
+DeviceId               : dfc6d5f0-225a-4b46-adcf-73a349a31e70
+Account                : LapsAdmin
+Password               : g4q22s[Xz8}!T32[4;Z#0M}v35udF[xB0}iB;P@xk%9E9Tgw,W]7)vx9O!-
+PasswordExpirationTime : 4/22/2023 8:45:29 AM
+PasswordUpdateTime     : 4/11/2023 8:45:29 AM</dev:code>
+        <dev:remarks>
+          <maml:para>This example shows how to query the full LAPS password information for the target device that is specified by device ID, and displaying the password in clear-text form.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 4 --------------------------</maml:title>
+        <dev:code>Connect-MgGraph -TenantId b20f5886-bddf-43bb-aee6-dda0c87c5fa2 -ClientId 9fa98e34-277f-47fa-9847-e36bdf6bca1f
+Get-LapsAADPassword -DeviceIds lapsAAD -IncludePasswords -AsPlainText -IncludeHistory
+
+DeviceName             : LAPSAAD
+DeviceId               : dfc6d5f0-225a-4b46-adcf-73a349a31e70
+Account                : LapsAdmin
+Password               : ]5j)1fi]Rv&amp;Pj+IMiAzq1R9b+yJ.@Q,80#01U541vsC8$Vv${hac8TJlkT8
+PasswordExpirationTime : 4/22/2023 8:55:20 AM
+PasswordUpdateTime     : 4/11/2023 8:55:21 AM
+
+DeviceName             : LAPSAAD
+DeviceId               : dfc6d5f0-225a-4b46-adcf-73a349a31e70
+Account                : LapsAdmin
+Password               : t&amp;.1P%9891]24I0X4AA4O22a30R1lz(ar7N9{tTf349.Iz{L82O6v{I+,gg
+PasswordExpirationTime :
+PasswordUpdateTime     : 4/11/2023 8:55:16 AM
+
+DeviceName             : LAPSAAD
+DeviceId               : dfc6d5f0-225a-4b46-adcf-73a349a31e70
+Account                : LapsAdmin
+Password               : g4q22s[Xz8}!T32[4;Z#0M}v35udF[xB0}iB;P@xk%9E9Tgw,W]7)vx9O!-
+PasswordExpirationTime :
+PasswordUpdateTime     : 4/11/2023 8:45:29 AM</dev:code>
+        <dev:remarks>
+          <maml:para>This example shows how to query the full LAPS password information for the target device that is specified by device name, requesting password history, and displaying the passwords in clear-text form.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/laps/get-lapsaadpassword?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Windows LAPS Overview</maml:linkText>
+        <maml:uri>https://go.microsoft.com/fwlink/?linkid=2233901</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get started with Windows LAPS and Microsoft Entra ID</maml:linkText>
+        <maml:uri>https://go.microsoft.com/fwlink/?linkid=2233704</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-LapsDiagnostics</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>LapsDiagnostics</command:noun>
+      <maml:description>
+        <maml:para>Collects Windows Local Administrator Password Solution (LAPS) logs and tracing from the local machine.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The `Get-LapsDiagnostics` cmdlet collects LAPS logs and tracing from the local machine, and copies them into a `.zip` file. This cmdlet is primarily intended for support and testing scenarios but of course may be used at any time. The name of the resultant `.zip` file includes the machine name and current timestamp, and by default is written under the `$env:TEMP\LapsDiagnostics` folder. The output folder may be customized using the OutputFolder .</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-LapsDiagnostics</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>OutputFolder</maml:name>
+          <maml:description>
+            <maml:para>Specifies that the resultant `.zip` file should be placed under the specified folder.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CollectNetworkTrace</maml:name>
+          <maml:description>
+            <maml:para>Specifies that network tracing should also be collected and included in the resultant `.zip` file.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ResetPassword</maml:name>
+          <maml:description>
+            <maml:para>Specifies that logs and tracing should be collected across a forced password reset for the currently managed local account. In this mode the cmdlet collects tracing across a call to the `Reset-LapsPassword` cmdlet.</maml:para>
+            <maml:para>If this parameter isn't specified, the cmdlet collects tracing across a call to the `Invoke-LapsProcessingCycle` cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CollectNetworkTrace</maml:name>
+        <maml:description>
+          <maml:para>Specifies that network tracing should also be collected and included in the resultant `.zip` file.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>OutputFolder</maml:name>
+        <maml:description>
+          <maml:para>Specifies that the resultant `.zip` file should be placed under the specified folder.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ResetPassword</maml:name>
+        <maml:description>
+          <maml:para>Specifies that logs and tracing should be collected across a forced password reset for the currently managed local account. In this mode the cmdlet collects tracing across a call to the `Reset-LapsPassword` cmdlet.</maml:para>
+          <maml:para>If this parameter isn't specified, the cmdlet collects tracing across a call to the `Invoke-LapsProcessingCycle` cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>Get-LapsDiagnostics
+
+Get-LapsDiagnostics: all data for this run was written to the following zip file:
+
+C:\Users\ADMINI~1\AppData\Local\Temp\LapsDiagnostics\LapsDiagnostics_LAPSCLIENT_2023041004_072649.zip</dev:code>
+        <dev:remarks>
+          <maml:para>This example demonstrates basic collection of LAPS diagnostic info using all default parameters.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>Get-LapsDiagnostics -OutputFolder c:\LapsDiagFolder
+
+Get-LapsDiagnostics: all data for this run was written to the following zip file:
+
+c:\LapsDiagFolder\LapsDiagnostics_LAPSCLIENT_2023041004_072702.zip</dev:code>
+        <dev:remarks>
+          <maml:para>This example demonstrates basic collection of LAPS diagnostic info to a specific output folder.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 3 --------------------------</maml:title>
+        <dev:code>Get-LapsDiagnostics -OutputFolder c:\LapsDiagFolder -ResetPassword
+
+Get-LapsDiagnostics: all data for this run was written to the following zip file:
+
+c:\LapsDiagFolder\LapsDiagnostics_LAPSCLIENT_2023041004_072709.zip</dev:code>
+        <dev:remarks>
+          <maml:para>This example demonstrates basic collection of LAPS diagnostic info across a forced password reset operation to a specific output folder.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 4 --------------------------</maml:title>
+        <dev:code>Get-LapsDiagnostics -CollectNetworkTrace
+
+Get-LapsDiagnostics: all data for this run was written to the following zip file:
+
+C:\Users\ADMINI~1\AppData\Local\Temp\LapsDiagnostics\LapsDiagnostics_LAPSCLIENT_2023041004_072719.zip</dev:code>
+        <dev:remarks>
+          <maml:para>This example demonstrates basic collection of LAPS diagnostic info while also collecting network tracing.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/laps/get-lapsdiagnostics?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Windows LAPS Overview</maml:linkText>
+        <maml:uri>https://go.microsoft.com/fwlink/?linkid=2233901</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

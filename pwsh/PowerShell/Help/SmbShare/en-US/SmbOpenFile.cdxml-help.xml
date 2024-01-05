@@ -1,0 +1,992 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Close-SmbOpenFile</command:name>
+      <command:verb>Close</command:verb>
+      <command:noun>SmbOpenFile</command:noun>
+      <maml:description>
+        <maml:para>Closes a file that is open by one of the clients of the SMB server.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Close-SmbOpenFile cmdlet forcibly closes a file that is open by one of the clients of the Server Message Block (SMB) server. This cmdlet can cause data loss to the client for which the file is being closed if the client has not flushed all of the file modifications back to the server before the file is closed.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Close-SmbOpenFile</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+          <maml:name>FileId</maml:name>
+          <maml:description>
+            <maml:para>Specifies the file identifier (ID) of the file to forcibly close.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt64[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt64[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ClientComputerName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the client computer name to filter the returned open files so that only the matching files are opened.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ClientUserName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the user for which the open files are retrieved.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ClusterNodeName</maml:name>
+          <maml:description>
+            <maml:para>Specifies, if a share is hosted by a windows cluster, the name of the server which is hosting the open files to be retrieved.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para>Forces the command to run without asking for user confirmation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ScopeName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the scope of the open files to be retrieved.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>SessionId</maml:name>
+          <maml:description>
+            <maml:para>Specifies a session ID. Only files that have been opened in the specified session will be returned.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt64[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt64[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>SmbInstance</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input to this cmdlet. You can use this parameter, or you can pipe the input to this cmdlet.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Default</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">CSV</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SBL</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SR</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">SmbInstance</command:parameterValue>
+          <dev:type>
+            <maml:name>SmbInstance</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Close-SmbOpenFile</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para>Forces the command to run without asking for user confirmation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimInstance[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>ClientComputerName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the client computer name to filter the returned open files so that only the matching files are opened.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>ClientUserName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the user for which the open files are retrieved.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>ClusterNodeName</maml:name>
+        <maml:description>
+          <maml:para>Specifies, if a share is hosted by a windows cluster, the name of the server which is hosting the open files to be retrieved.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+        <maml:name>FileId</maml:name>
+        <maml:description>
+          <maml:para>Specifies the file identifier (ID) of the file to forcibly close.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt64[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt64[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para>Forces the command to run without asking for user confirmation.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the input object that is used in a pipeline command.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimInstance[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimInstance[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+          <maml:para>Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>ScopeName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the scope of the open files to be retrieved.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>SessionId</maml:name>
+        <maml:description>
+          <maml:para>Specifies a session ID. Only files that have been opened in the specified session will be returned.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt64[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt64[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>SmbInstance</maml:name>
+        <maml:description>
+          <maml:para>Specifies the input to this cmdlet. You can use this parameter, or you can pipe the input to this cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">SmbInstance</command:parameterValue>
+        <dev:type>
+          <maml:name>SmbInstance</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>---------------- Example 1: Close an open file ----------------</maml:title>
+        <dev:code>PS C:\&gt; Close-SmbOpenFile -FileId 4415226383589
+
+Confirm 
+Are you sure you want to perform this action? 
+Performing operation 'Close-File' on Target '4415226383589'. 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N</dev:code>
+        <dev:remarks>
+          <maml:para>This command closes a file identified as 4415226383589 that is open by one of the clients of the SMB server.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>---------- Example 2: Close open files for a session ----------</maml:title>
+        <dev:code>PS C:\&gt; Close-SmbOpenFile -SessionId 4415226380393
+
+Confirm 
+Are you sure you want to perform this action? 
+Performing operation 'Close-File' on Target '4415226383589'. 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N 
+
+Confirm 
+Are you sure you want to perform this action? 
+Performing operation 'Close-File' on Target '4415226383529'. 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N 
+
+Confirm 
+Are you sure you want to perform this action? 
+Performing operation 'Close-File' on Target '4415226383517'. 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N 
+
+Confirm 
+Are you sure you want to perform this action? 
+Performing operation 'Close-File' on Target '4415226383521'. 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N 
+
+Confirm 
+Are you sure you want to perform this action? 
+Performing operation 'Close-File' on Target '4415226383569'. 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N</dev:code>
+        <dev:remarks>
+          <maml:para>This command closes one or more files that are open by one of the clients identified with the session ID 4415226380393 of the SMB server.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>- Example 3: Close open files that match a file name extension -</maml:title>
+        <dev:code>PS C:\&gt; Get-SmbOpenFile | Where-Object -Property ShareRelativePath -Match "\.DOCX" | Close-SmbOpenFile -Force</dev:code>
+        <dev:remarks>
+          <maml:para>This command closes, without user confirmation, one or more files that are open by one of the clients of the SMB server and that match the file name extension .DOCX.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/smbshare/close-smbopenfile?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-SmbOpenFile</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-SmbOpenFile</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>SmbOpenFile</command:noun>
+      <maml:description>
+        <maml:para>Retrieves basic information about the files that are open on behalf of the clients of the SMB server.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-SmbOpenFile cmdlet retrieves basic information about the files that are open on behalf of the clients of the Server Message Block (SMB) server.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-SmbOpenFile</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+          <maml:name>FileId</maml:name>
+          <maml:description>
+            <maml:para>Specifies the file identifier (ID) of the file for which the information is retrieved.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt64[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt64[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="none">
+          <maml:name>SessionId</maml:name>
+          <maml:description>
+            <maml:para>Specifies a session ID. This cmdlet returns only files that have been opened in the specified session.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt64[]</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt64[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="3" aliases="none">
+          <maml:name>ClientComputerName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the filters for the returned open files so that only files opened from the specified client computer are returned.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="4" aliases="none">
+          <maml:name>ClientUserName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the user whose open files are retrieved.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="5" aliases="none">
+          <maml:name>ScopeName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the scope of the open files that are retrieved.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+          <maml:name>ClusterNodeName</maml:name>
+          <maml:description>
+            <maml:para>Specifies, in the case of a share hosted by a windows cluster, the name of the server which hosts the open files that are retrieved.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+          <maml:name>CimSession</maml:name>
+          <maml:description>
+            <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+          <dev:type>
+            <maml:name>CimSession[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>IncludeHidden</maml:name>
+          <maml:description>
+            <maml:para>Indicates that handles that are created and used internally are enumerated also.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>SmbInstance</maml:name>
+          <maml:description>
+            <maml:para>Specifies the input to this cmdlet. You can use this parameter, or you can pipe the input to this cmdlet.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Default</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">CSV</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SBL</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SR</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">SmbInstance</command:parameterValue>
+          <dev:type>
+            <maml:name>SmbInstance</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ThrottleLimit</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet as a background job. Use this parameter to run commands that take a long time to complete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Session">
+        <maml:name>CimSession</maml:name>
+        <maml:description>
+          <maml:para>Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session object, such as the output of a New-CimSession (https://go.microsoft.com/fwlink/p/?LinkId=227967) or [Get-CimSession](https://go.microsoft.com/fwlink/p/?LinkId=227966)cmdlet. The default is the current session on the local computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+        <dev:type>
+          <maml:name>CimSession[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="3" aliases="none">
+        <maml:name>ClientComputerName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the filters for the returned open files so that only files opened from the specified client computer are returned.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="4" aliases="none">
+        <maml:name>ClientUserName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the user whose open files are retrieved.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+        <maml:name>ClusterNodeName</maml:name>
+        <maml:description>
+          <maml:para>Specifies, in the case of a share hosted by a windows cluster, the name of the server which hosts the open files that are retrieved.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+        <maml:name>FileId</maml:name>
+        <maml:description>
+          <maml:para>Specifies the file identifier (ID) of the file for which the information is retrieved.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt64[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt64[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>IncludeHidden</maml:name>
+        <maml:description>
+          <maml:para>Indicates that handles that are created and used internally are enumerated also.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="5" aliases="none">
+        <maml:name>ScopeName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the scope of the open files that are retrieved.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="none">
+        <maml:name>SessionId</maml:name>
+        <maml:description>
+          <maml:para>Specifies a session ID. This cmdlet returns only files that have been opened in the specified session.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt64[]</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt64[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>SmbInstance</maml:name>
+        <maml:description>
+          <maml:para>Specifies the input to this cmdlet. You can use this parameter, or you can pipe the input to this cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">SmbInstance</command:parameterValue>
+        <dev:type>
+          <maml:name>SmbInstance</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ThrottleLimit</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of concurrent operations that can be established to run the cmdlet. If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer. The throttle limit applies only to the current cmdlet, not to the session or to the computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Management.Infrastructure.CimInstance#root/Microsoft/Windows/SMB/MSFT_SmbOpenFile</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>The `Microsoft.Management.Infrastructure.CimInstance` object is a wrapper class that displays Windows Management Instrumentation (WMI) objects. The path after the pound sign (`#`) provides the namespace and class name for the underlying WMI object. This cmdlet return a MSFT_SmbOpenFile object that represents the files opened on the SMB server.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------- Example 1: Get information about opened files --------</maml:title>
+        <dev:code>PS C:\&gt;Get-SMBOpenFile
+FileId              SessionId           Path                ShareRelativePath   ClientComputerName  ClientUserName 
+------              ---------           ----                -----------------   ------------------  -------------- 
+4415226382229       4415226380377       C:\ClusterStorag... VM4\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226382237       4415226380385       C:\ClusterStorag... VM4\VIRTUAL MACH... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383517       4415226380393       C:\ClusterStorag... VM4\VIRTUAL MACH... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383521       4415226380393       C:\ClusterStorag... VM4\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383529       4415226380393       C:\ClusterStorag... VM4\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383569       4415226380393       C:\ClusterStorag... VM4.VHDX            192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383589       4415226380393       C:\ClusterStorag... VM4.VHDX            192.168.102.14      Contoso\Contoso-HV2$ 
+8813541326973       8813272891469       I:\VMS\VM1\VIRTU... VM1\VIRTUAL MACH... 192.168.101.13      Contoso\Contoso-HV1$ 
+8813541326977       8813272891469       I:\VMS\VM1\Virtu... VM1\Virtual Mach... 192.168.101.13      Contoso\Contoso-HV1$ 
+8813541326993       8813272891469       I:\VMS\VM1.VHDX     VM1.VHDX            192.168.101.13      Contoso\Contoso-HV1$ 
+8813541326997       8813272891469       I:\VMS\VM1\Virtu... VM1\Virtual Mach... 192.168.101.13      Contoso\Contoso-HV1$ 
+8813541327109       8813272891469       I:\VMS\VM1.VHDX     VM1.VHDX            192.168.101.13      Contoso\Contoso-HV1$ 
+8813272891805       8813272891441       I:\VMS\VM1\Virtu... VM1\Virtual Mach... 192.168.101.13      Contoso\Contoso-HV1$ 
+8813272891813       8813272891449       I:\VMS\VM1\VIRTU... VM1\VIRTUAL MACH... 192.168.101.13      Contoso\Contoso-HV1$ 
+8813541327273       8813272891581       D:\VMS\VM5\VIRTU... VM5\VIRTUAL MACH... 192.168.102.13      Contoso\Contoso-HV1$ 
+8813541327281       8813272891585       D:\VMS\VM5\VIRTU... VM5\VIRTUAL MACH... 192.168.102.13      Contoso\Contoso-HV1$ 
+8813272892105       8813272891457       C:\ClusterStorag... VM3\Virtual Mach... 192.168.101.13      Contoso\Contoso-HV1$ 
+8813272892113       8813272891461       C:\ClusterStorag... VM3\VIRTUAL MACH... 192.168.101.13      Contoso\Contoso-HV1$ 
+8813541328145       8813272891517       J:\VMS\VM2\VIRTU... VM2\VIRTUAL MACH... 192.168.102.14      Contoso\Contoso-HV2$ 
+8813541328149       8813272891517       J:\VMS\VM2\Virtu... VM2\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
+8813541328157       8813272891517       J:\VMS\VM2\Virtu... VM2\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
+8813541328213       8813272891517       J:\VMS\VM2.VHDX     VM2.VHDX            192.168.102.14      Contoso\Contoso-HV2$ 
+8813272892765       8813272891489       J:\VMS\VM2\Virtu... VM2\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
+8813541328225       8813272891517       J:\VMS\VM2.VHDX     VM2.VHDX            192.168.102.14      Contoso\Contoso-HV2$ 
+8813272892773       8813272891493       J:\VMS\VM2\VIRTU... VM2\VIRTUAL MACH... 192.168.102.14      Contoso\Contoso-HV2$ 
+8813541328421       8813272891609       D:\VMS\VM5\Virtu... VM5\Virtual Mach... 192.168.102.13      Contoso\Contoso-HV1$ 
+8813541328425       8813272891609       D:\VMS\VM5\VIRTU... VM5\VIRTUAL MACH... 192.168.102.13      Contoso\Contoso-HV1$ 
+8813541328457       8813272891609       D:\VMS\VM5\Virtu... VM5\Virtual Mach... 192.168.102.13      Contoso\Contoso-HV1$ 
+8813541328501       8813272891613       C:\ClusterStorag... VM3.VHDX            192.168.101.13      Contoso\Contoso-HV1$ 
+8813541328529       8813272891613       C:\ClusterStorag... VM3.VHDX            192.168.101.13      Contoso\Contoso-HV1$</dev:code>
+        <dev:remarks>
+          <maml:para>This command retrieves basic information about the files that are open on behalf of the clients of the SMB server.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------- Example 2: Get information about an opened file -------</maml:title>
+        <dev:code>PS C:\&gt;Get-SmbOpenFile -FileId 4415226383569 | Select-Object -Property *
+ClientComputerName    : 192.168.102.14 
+ClientUserName        : Contoso\Contoso-HV2$ 
+ClusterNodeName       : Contoso-FS2 
+ContinuouslyAvailable : True 
+Encrypted             : False 
+FileId                : 4415226383569 
+Locks                 : 1 
+Path                  : C:\ClusterStorage\Volume2\VMS\VM4.VHDX 
+Permissions           : 1179785 
+ScopeName             : Contoso-SO 
+SessionId             : 4415226380393 
+ShareRelativePath     : VM4.VHDX 
+PSComputerName        : 
+CimClass              : ROOT/Microsoft/Windows/SMB:MSFT_SmbOpenFile 
+CimInstanceProperties : {ClientComputerName, ClientUserName, ClusterNodeName, ContinuouslyAvailable...} 
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties</dev:code>
+        <dev:remarks>
+          <maml:para>This command retrieves all information about the file identified as 4415226383569 that is open on behalf of the clients of the SMB server.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 3: Get information about a file opened for an SMB client</maml:title>
+        <dev:code>PS C:\&gt;Get-SmbOpenFile -SessionId 4415226380393
+FileId              SessionId           Path                ShareRelativePath   ClientComputerName  ClientUserName 
+------              ---------           ----                -----------------   ------------------  -------------- 
+4415226383517       4415226380393       C:\ClusterStorag... VM4\VIRTUAL MACH... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383521       4415226380393       C:\ClusterStorag... VM4\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383529       4415226380393       C:\ClusterStorag... VM4\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383569       4415226380393       C:\ClusterStorag... VM4.VHDX            192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383589       4415226380393       C:\ClusterStorag... VM4.VHDX            192.168.102.14      Contoso\Contoso-HV2$</dev:code>
+        <dev:remarks>
+          <maml:para>This command retrieves basic information about the files that are open on behalf of the SMB client identified as 4415226380393 of the SMB server.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 4: Get information about a file opened for an SMB client on an SMB server</maml:title>
+        <dev:code>PS C:\&gt;Get-SmbOpenFile -ScopeName "Contoso-SO"
+FileId              SessionId           Path                ShareRelativePath   ClientComputerName  ClientUserName 
+------              ---------           ----                -----------------   ------------------  -------------- 
+4415226382229       4415226380377       C:\ClusterStorag... VM4\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226382237       4415226380385       C:\ClusterStorag... VM4\VIRTUAL MACH... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383517       4415226380393       C:\ClusterStorag... VM4\VIRTUAL MACH... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383521       4415226380393       C:\ClusterStorag... VM4\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383529       4415226380393       C:\ClusterStorag... VM4\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383569       4415226380393       C:\ClusterStorag... VM4.VHDX            192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383589       4415226380393       C:\ClusterStorag... VM4.VHDX            192.168.102.14      Contoso\Contoso-HV2$ 
+8813272892105       8813272891457       C:\ClusterStorag... VM3\Virtual Mach... 192.168.101.13      Contoso\Contoso-HV1$ 
+8813272892113       8813272891461       C:\ClusterStorag... VM3\VIRTUAL MACH... 192.168.101.13      Contoso\Contoso-HV1$ 
+8813541328501       8813272891613       C:\ClusterStorag... VM3.VHDX            192.168.101.13      Contoso\Contoso-HV1$ 
+8813541328529       8813272891613       C:\ClusterStorag... VM3.VHDX            192.168.101.13      Contoso\Contoso-HV1$</dev:code>
+        <dev:remarks>
+          <maml:para>This command retrieves basic information about the files that are open on behalf of the SMB client of the SMB server named Contoso-SO.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 5: Get information about files that have a specified file name extension</maml:title>
+        <dev:code>PS C:\&gt;Get-SmbOpenFile | Where-Object -Property ShareRelativePath -Match ".VHDX"
+FileId              SessionId           Path                ShareRelativePath   ClientComputerName  ClientUserName 
+------              ---------           ----                -----------------   ------------------  -------------- 
+4415226383569       4415226380393       C:\ClusterStorag... VM4.VHDX            192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383589       4415226380393       C:\ClusterStorag... VM4.VHDX            192.168.102.14      Contoso\Contoso-HV2$ 
+8813541326993       8813272891469       I:\VMS\VM1.VHDX     VM1.VHDX            192.168.101.13      Contoso\Contoso-HV1$ 
+8813541327109       8813272891469       I:\VMS\VM1.VHDX     VM1.VHDX            192.168.101.13      Contoso\Contoso-HV1$ 
+8813541328213       8813272891517       J:\VMS\VM2.VHDX     VM2.VHDX            192.168.102.14      Contoso\Contoso-HV2$ 
+8813541328225       8813272891517       J:\VMS\VM2.VHDX     VM2.VHDX            192.168.102.14      Contoso\Contoso-HV2$ 
+8813541328501       8813272891613       C:\ClusterStorag... VM3.VHDX            192.168.101.13      Contoso\Contoso-HV1$ 
+8813541328529       8813272891613       C:\ClusterStorag... VM3.VHDX            192.168.101.13      Contoso\Contoso-HV1$</dev:code>
+        <dev:remarks>
+          <maml:para>This command retrieves basic information about the files that have the file name extension of .VHDX that are open on behalf of the SMB client of the SMB server.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/smbshare/get-smbopenfile?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Close-SmbOpenFile</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

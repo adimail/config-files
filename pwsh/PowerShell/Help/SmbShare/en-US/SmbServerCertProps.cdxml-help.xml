@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-SmbServerCertProps</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>SmbServerCertProps</command:noun>
+      <maml:description>
+        <maml:para>Retrieves an SMB over QUIC-mapped certificate’s properties and tests certificate validity.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-SmbServerCertProps cmdlet retrieves the properties of a certificate associated with the SMB server for SMB over QUIC on Windows Server 2022 Datacenter: Azure Edition. It also tests the validity of the certificate. This cmdlet is not used for Windows or other Windows Server editions. For more information, review SMB over QUIC (https://aka.ms/smboverquic).</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-SmbServerCertProps</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies a fully-qualified DNS name or NetBIOS name that must match the certificate’s subject name or an entry in the certificate’s subject alternative names.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para>Forces the command to run without asking for user confirmation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para>Forces the command to run without asking for user confirmation.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies a fully-qualified DNS name or NetBIOS name that must match the certificate’s subject name or an entry in the certificate’s subject alternative names.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>Example 1 - Retrieve the properties of a certificate associated with the SMB server</maml:title>
+        <dev:code>PS C:\&gt; Get-SmbServerCertProps `-Name` 2022-ae-02.corp.contoso.com
+
+Checking Mapping '2022-ae-02.corp.contoso.com'.....
+SMBServerCertificateMappingName : 2022-ae-02.corp.contoso.com 
+SelfSigned                      : True 
+SubjectName                     : System.Security.Cryptography.X509Certificates.X500DistinguishedName 
+Subject                         : CN=2022-ae-02 
+SubjectOid                      : System.Security.Cryptography.Oid 
+SubjectRawData                  : {48, 21, 49, 19...} 
+FriendlyName                    : 
+SignatureAlgorithm              : 1.2.840.113549.1.1.11 sha256RSA 
+Thumbprint                      : 88032B3551FAF7DE26EFFFF814AA086E3DBD2A4F 
+NotBefore                       : 8/20/2021 3:02:16 PM 
+NotAfter                        : 8/20/2022 3:02:16 PM 
+SendAsTrustedIssuer             : False 
+PublicKey                       : System.Security.Cryptography.X509Certificates.PublicKey 
+DnsNameList                     : {2022-ae-02.corp.contoso.com, fs2.contoso.com} 
+
+Test-Certificate result : PASS 
+
+RenewalChain: 
+
+Testing certificates in the RenewalChain.....</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/powershell/module/smbshare/get-smbservercertprops?view=windowsserver2022-ps&amp;wt.mc_id=ps-gethelp</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>
