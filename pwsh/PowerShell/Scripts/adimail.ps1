@@ -1,15 +1,24 @@
-
-function call-figlet-title {
-    figlet "adimail  @  PostgreSQL"
-}
-
 $env:DB_NAME = "tasks"
 
+function set-theme {
+    oh-my-posh init pwsh --config 'C:\Users\pradi\AppData\Local\Programs\oh-my-posh\themes\jblab_2021.omp.json' | Invoke-Expression
+}
+
 function show-commands {
-    Write-Host "Avaliable databases: tasks, main"
+    Clear-Host
+    Write-Host "Available databases: tasks, main"
     Write-Host "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
-    Write-Host "adimail init :                       Initiliase the database connection"
-    Write-Host "view-main-database $ command :       Open the database contents"
+    Write-Host "adimail init :                       Initialize the database connection"
+    Write-Host "view-main-database <database> :      Open the specified database contents"
+    Write-Host "insert-task <task_name> :            Insert a task into the current database"
+    Write-Host "remove-task <task_id> :              Remove a task from the 'tasks' database`n"
+    Write-Host "init :                               Remove a task from the 'tasks' database`n"
+    Write-Host "`n Aliases:"
+    Write-Host "  - addtask <task_name> :            Alias for 'insert-task'"
+    Write-Host "  - at <task_name> :                 Alias for 'insert-task'"
+    Write-Host "  - rt <task_name> :                 Alias for 'remove-task'"
+    Write-Host "  - tasks :                          Alias for 'view-main-database tasks'"
+    Write-Host "`n`n"
 }
 
 function init-passwords {
@@ -20,6 +29,8 @@ function init-passwords {
 }
 
 function init {
+    set-theme
+
     $env:DB_USERNAME = "adimail"
     $env:DB_PASSWORD = "adimail"
     Write-Host "Hi Adi, server login successful"
@@ -27,17 +38,25 @@ function init {
 
 function adimail ($command) {
     Clear-Host
-    call-figlet-title
-    # show-commands
-    oh-my-posh init pwsh --config 'C:\Users\pradi\AppData\Local\Programs\oh-my-posh\themes\jblab_2021.omp.json' | Invoke-Expression
+    figlet -f ogre "adimail  @   postgreSQL"
+
+    Write-Host "`n"
+
+    show-commands
+    
+    set-theme
 
     if ($command -eq "init") {
         init-passwords
     }
 }
 
+function tasks {
+    view-main-database tasks
+}
+
 function view-main-database ($command) {
-    
+    set-theme
     if ($command) {
         $env:DB_NAME = $command
         if ($env:DB_USERNAME) {
@@ -55,8 +74,7 @@ function view-main-database ($command) {
 }
 
 function insert-task ($command) {
-
-    init
+    set-theme
 
     if ($command) {
         $env:TASK_NAME = $command
@@ -75,6 +93,7 @@ function insert-task ($command) {
 }
 
 function remove-task ($command) {
+    set-theme
 
     $env:DB_NAME = "tasks"
 

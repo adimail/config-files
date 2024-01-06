@@ -17,8 +17,8 @@
     Description: PowersShell Profile containing aliases and functions to be loaded when a new PowerShell session is started.
 #>
 
-
 Clear-Host
+$Host.UI.RawUI.WindowTitle = "pwsh - global"
 
 # Variables
 $nvimconfigdir = 'C:\Users\pradi\AppData\Local\nvim'
@@ -36,10 +36,12 @@ Set-Alias gd gotodesktop
 Set-Alias getwifiinmyrange readwifinearme
 Set-Alias viewdb view-main-database
 Set-Alias addtask insert-task
-Set-Alias mac remove-task
+Set-Alias rt remove-task
+Set-Alias at insert-task
 
 # Prompt
 oh-my-posh init pwsh --config 'C:\Users\pradi\Documents\devprofile\adimail.omp.json' | Invoke-Expression
+
 
 # Functions
 Function whereis ($command) {
