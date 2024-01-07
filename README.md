@@ -40,6 +40,7 @@ My personal Windows-friendly dotfiles. Supports automatic installation of depend
 ![image](assets/ss3.png)
 ![image](assets/ss4.png)
 ![image](assets/ss5.png)
+![image](assets/wargames.png)
 
 <hr>
 
