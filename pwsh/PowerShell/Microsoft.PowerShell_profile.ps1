@@ -1,17 +1,10 @@
 <#
-                      7#G~
-                    7BB7J#P~
-                 .?BG!   .?#G!
-                :B@J       .?BB7
-             ::  :Y#P~        7BB?.
-           ^Y#?    :J#G~        !GB?.
-          !&@!       .?#G!        J@B:
-       ~^  ^Y#5^       .7BB7    .PB?.  ~^
-    .!GB7    :Y#5^        !GB7.  ^.    Y#5^
-    7&&~       !@@G~       .P@#J.       J@B^
-     :J#G~   ~P#J^?#G!   .?#G~~P#Y:  .7BB7
-       .?BG7P#J.   .7BB7J#P~    ^5#Y?BG!
-         .?BJ.        7#G~        ^5B!
+            .___.__               .__.__   
+_____     __| _/|__| _____ _____  |__|  |  
+\__  \   / __ | |  |/     \\__  \ |  |  |  
+ / __ \_/ /_/ | |  |  Y Y  \/ __ \|  |  |__
+(____  /\____ | |__|__|_|  (____  /__|____/
+     \/      \/          \/     \/         
 
     Author: Aditya Godse (https://adimail.github.io)
     Description: PowersShell Profile containing aliases and functions to be loaded when a new PowerShell session is started.
@@ -38,6 +31,9 @@ Set-Alias viewdb view-main-database
 Set-Alias addtask insert-task
 Set-Alias rt remove-task
 Set-Alias at insert-task
+Set-Alias q "exit(0)"
+Set-Alias cal Get-Calendar
+Set-Alias entry write-note-for-today 
 
 # Prompt
 oh-my-posh init pwsh --config 'C:\Users\pradi\Documents\devprofile\adimail.omp.json' | Invoke-Expression
@@ -46,29 +42,118 @@ oh-my-posh init pwsh --config 'C:\Users\pradi\Documents\devprofile\adimail.omp.j
 # Functions
 Function whereis ($command) {
     Get-Command -Name $command -ErrorAction SilentlyContinue |
-    Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
+        Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
+}
+
+
+function la {
+    param (
+        [string]$command = ''
+    )
+
+    if ($command -eq 'hidden') {
+        Get-ChildItem -Force -Attributes Hidden
+    }
+    else {
+        Get-ChildItem -Force
+    }
 }
 
 function writenote ($command) {
     $notesPath = "C:\Users\pradi\Desktop\notes"
 
     if ($command) {
-        $targetPath = Join-Path $notesPath "self\$command"
-        if (Test-Path $targetPath -PathType Container) {
-            Set-Location $targetPath
-            ls
+        if ($command -eq "today") {
+            cls
+            write-note-for-today
         }
         else {
-            Write-Host "Error: Folder '$command' not found. Enter an appropriate folder name."
-            Write-Host "Available folders in '$notesPath\self':"
-            ls (Join-Path $notesPath "self") -Directory
+            $targetPath = Join-Path $notesPath "self\$command"
+            if (Test-Path $targetPath -PathType Container) {
+                Set-Location $targetPath
+                ls
+                cal
+            }
+            else {
+                Write-Host "Error: Folder '$command' not found. Enter an appropriate folder name."
+                Write-Host "Available folders in '$notesPath\self':"
+                ls (Join-Path $notesPath "self") -Directory
+            }
         }
     }
     else {
         cd $notesPath
+        cal
         ls
     }
 }
+
+function write-note-for-today {
+    writenote
+
+    $d = Get-Date
+    $month = $d.ToString('MMM', [System.Globalization.CultureInfo]::CurrentCulture).ToLower()
+    $date = $d.ToString('dd', [System.Globalization.CultureInfo]::CurrentCulture)
+    $year = $d.ToString('yyyy', [System.Globalization.CultureInfo]::CurrentCulture)
+    
+    
+    $dirName = $month + $year
+    $dirPath = "C:\Users\pradi\Desktop\notes\self\" + $dirName
+    $fileName = $date + $month + ".txt"
+
+    cd $dirPath
+
+    ls
+    vv $fileName
+}
+
+
+function Get-Calendar($monthName = (Get-Date).Month, $year = (Get-Date).Year) {
+    $monthMap = @{
+        "jan" = 1; "feb" = 2; "mar" = 3; "apr" = 4; "may" = 5; "jun" = 6;
+        "jul" = 7; "aug" = 8; "sep" = 9; "oct" = 10; "nov" = 11; "dec" = 12
+    }
+
+    if ($monthName -is [int]) {
+        if (($monthName - 12) -gt 0 -or ($monthName - 1) -lt 0) {
+            Write-Error "Invalid month name. Please use a valid valid month number (1-12). You can also use month names (e.g. 'jan' for January)"
+            return
+        }
+        $month = $monthName
+    }
+    else {
+        if (!$monthMap.ContainsKey($monthName.ToLower())) {
+            Write-Error "Invalid month name. Please use a valid month abbreviation (e.g., 'jan' for January). You can also use month numbers (e.g. 12 for December)"
+            return
+        }
+        $month = $monthMap[$monthName.ToLower()]
+    }
+
+    $dtfi = New-Object System.Globalization.DateTimeFormatInfo
+    $AbbreviatedDayNames = $dtfi.AbbreviatedDayNames | ForEach-Object { " {0}" -f $_.Substring(0, 2) }
+
+    $header = "$($dtfi.MonthNames[$month-1]) $year"
+    $header = (" " * ([math]::abs(21 - $header.length) / 2)) + $header
+    $header += (" " * (21 - $header.length))
+
+    Write-Host $header -BackgroundColor yellow -ForegroundColor black
+    Write-Host (-join $AbbreviatedDayNames) -BackgroundColor cyan -ForegroundColor black
+    $daysInMonth = [DateTime]::DaysInMonth($year, $month)
+
+    $dayOfWeek = (New-Object DateTime $year, $month, 1).dayOfWeek.value__
+    $today = (Get-Date).Day
+
+    for ($i = 0; $i -lt $dayOfWeek; $i++) { Write-Host (" " * 3) -NoNewline }
+    for ($i = 1; $i -le $daysInMonth; $i++) {
+        if ($today -eq $i) { Write-Host ("{0,3}" -f $i) -NoNewline -BackgroundColor red -ForegroundColor white }
+        else { Write-Host ("{0,3}" -f $i) -NoNewline -BackgroundColor white -ForegroundColor black }
+
+        if ($dayOfWeek -eq 6) { Write-Host }
+        $dayOfWeek = ($dayOfWeek + 1) % 7
+    }
+    if ($dayOfWeek -ne 0) { Write-Host }
+}
+
 
 function nvimconfig {
     Set-Location $nvimconfigdir
@@ -184,8 +269,7 @@ $profileDir = Split-Path $PROFILE
 $profileExitScript = Join-Path $profileDir "ProfileExit.ps1"
 "`n`n Clear-EnvironmentVariables" | Out-File -Append -FilePath $profileExitScript
 
-Clear-Host
+# Clear-Host
 Set-PSReadLineOption -PredictionViewStyle ListView
 figlet Welcome ADI
 Show-StartupInfo
-
