@@ -7,30 +7,48 @@
   </a>
 </p>
 
-My personal Windows-friendly dotfiles. Supports automatic installation of dependencies and configuration of Windows Terminal, Neovim, PowerShell Core and more!
+My personal Windows-friendly dotfiles.Supports configuration of Windows Terminal, Neovim, PowerShell Core and more!
 
-## 🎉 Features
+Before getting started, ensure that you can run PowerShell scripts from your source. Execute the following command in PowerShell:
 
-- **Automated Dependency Installation:** Utilises [Winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/) and [Chocolatey](https://chocolatey.org/) for streamlined installation of required dependencies. Checks and notifies pending software updates with a 📦 icon in the prompt.
-- **Automated Update Checks:** Regularly checks for updates using git. If updates are pending, a notification is displayed when starting a new PowerShell session.
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted
+```
 
-- **Centralized Configuration:** Brings together scattered Windows configuration files into one organized location for easy access and management.
-- **Tailored Colour Scheme:** Powered by my very own [CYBERDREAM](https://github.com/scottmckendry/cyberdream.nvim) colourscheme - high-contrast and vibrant for optimal _Eye Stimulation™_.
+To set up the Neovim text editor, run the following command:
 
-## ✅ Pre-requisites
+```powershell
+winget install --id=Neovim.Neovim  -e
+```
+
+Enhance your command prompt with a customized appearance using Oh My Posh. Install it using the following command:
+
+```powershell
+winget install JanDeDobbeleer.OhMyPosh -s winget
+```
+
+Improve your command line experience with autocompletion by installing PSReadLine. Use the following command:
+
+```powershell
+Install-Module PSReadLine -AllowPrerelease -Force
+```
+
+text function method that allows to create ASCII Art from text on browser and on terminal
+
+```powershell
+npm i figlet
+```
+
+## Requirments
 
 - [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#install-powershell-using-winget-recommended)
-- [Git](https://winget.run/pkg/Git/Git)
+- [Git](https://www.git-scm.com/downloads)
 - [Nerd Fonts](https://www.nerdfonts.com/)
 - [Neovim](https://neovim.io/)
-- [PsReadline](https://github.com/PowerShell/PsReadline)
-- Install using PowerShell: `Install-Module -Name PSReadline -Force -SkipPublisherCheck`
-- [Oh-My-Posh](https://ohmyposh.dev/)
-- Install using PowerShell: `Install-Module oh-my-posh -Scope CurrentUser`
+- [Node.js](https://nodejs.org/en/download)
 
-## 🚀 Installation
+## [!WARNING]
 
-> [!WARNING]\
 > Under _**active development**_, expect changes. Existing configuration files will be overwritten. Please make a backup of any files you wish to keep before proceeding.
 
 ## 📸 Screenshots
@@ -40,7 +58,6 @@ My personal Windows-friendly dotfiles. Supports automatic installation of depend
 ![image](assets/ss3.png)
 ![image](assets/ss4.png)
 ![image](assets/ss5.png)
-![image](assets/wargames.png)
 
 <hr>
 
