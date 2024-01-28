@@ -9,7 +9,6 @@ _____     __| _/|__| _____ _____  |__|  |
     Author: Aditya Godse (https://adimail.github.io)
     Description: PowersShell Profile containing aliases and functions to be loaded when a new PowerShell session is started.
 #>
-
 Clear-Host
 $Host.UI.RawUI.WindowTitle = "pwsh - global"
 
@@ -267,9 +266,9 @@ function Clear-EnvironmentVariables {
 # Register the function to run when PowerShell exits
 $profileDir = Split-Path $PROFILE
 $profileExitScript = Join-Path $profileDir "ProfileExit.ps1"
-"`n`n Clear-EnvironmentVariables" | Out-File -Append -FilePath $profileExitScript
 
 # Clear-Host
 Set-PSReadLineOption -PredictionViewStyle ListView
 figlet Welcome ADI
-Show-StartupInfo
+init
+tasks
