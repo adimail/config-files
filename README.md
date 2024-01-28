@@ -18,7 +18,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted
 ```
 
 <details>
-  <summary>Dependencies </summary>
+  <summary> <h1>Dependencies<h1/> </summary>
 
 Neovim text editor
 
