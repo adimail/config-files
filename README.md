@@ -18,7 +18,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted
 ```
 
 <details>
-  <summary>&#9654; Modules installation</summary>
+  <summary>Dependencies </summary>
 
 Neovim text editor
 
