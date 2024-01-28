@@ -3,11 +3,13 @@
     <picture>
       <img src="assets\favicon.ico" height="100">
     </picture>
-    <h1 align="center">Windots</h1>
+    <h1 align="center">adimail config files</h1>
   </a>
 </p>
 
-My personal Windows-friendly dotfiles.Supports configuration of Windows Terminal, Neovim, PowerShell Core and more!
+A collection of configuration files for powershell, neovim, zsh & vscode
+
+> Also includes scripts fot my personal task managment system build using postgresql and scripts written in GO
 
 Before getting started, ensure that you can run PowerShell scripts from your source. Execute the following command in PowerShell:
 
@@ -15,29 +17,34 @@ Before getting started, ensure that you can run PowerShell scripts from your sou
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted
 ```
 
-To set up the Neovim text editor, run the following command:
+<details>
+  <summary>&#9654; Modules installation</summary>
+
+Neovim text editor
 
 ```powershell
 winget install --id=Neovim.Neovim  -e
 ```
 
-Enhance your command prompt with a customized appearance using Oh My Posh. Install it using the following command:
+Oh My Posh
 
 ```powershell
 winget install JanDeDobbeleer.OhMyPosh -s winget
 ```
 
-Improve your command line experience with autocompletion by installing PSReadLine. Use the following command:
+PSReadLine
 
 ```powershell
 Install-Module PSReadLine -AllowPrerelease -Force
 ```
 
-text function method that allows to create ASCII Art from text on browser and on terminal
+figlet (Requires [npm](https://nodejs.org/en/download))
 
 ```powershell
 npm i figlet
 ```
+
+</details>
 
 ## Requirments
 
@@ -46,14 +53,37 @@ npm i figlet
 - [Nerd Fonts](https://www.nerdfonts.com/)
 - [Neovim](https://neovim.io/)
 - [Node.js](https://nodejs.org/en/download)
+- MySQL/PgAdmin (optional)
 
-## [!WARNING]
+## PowerShell Configuration for Task Management with PostgreSQL
 
-> Under _**active development**_, expect changes. Existing configuration files will be overwritten. Please make a backup of any files you wish to keep before proceeding.
+I have created a set of PowerShell functions and configuration files to interact with a PostgreSQL database for managing my tasks (a todo list that appears everytime I open powershell)
+
+**_The scripts for dbm are written in golang_**
+
+### Command Functions:
+
+- `view-main-database` function: Allows viewing the contents of a specified database.
+- `insert-task` function: Inserts a task into the current database.
+- `remove-task` function: Removes a task from the 'tasks' database.
+
+### Aliases:
+
+| Alias           | Original Command           |
+| --------------- | -------------------------- |
+| `addtask`, `at` | `insert-task`              |
+| `at`            | `insert-task`              |
+| `rt`            | `remove-task`              |
+| `tasks`         | `view-main-database tasks` |
+
+### Task Management with PostgreSQL Overview
+
+The database schema includes a table named `tasks` with columns for task information, and a trigger to automatically update the "Time elapsed" column. Find the schema in [setup.sql](https://github.com/adimail/config-files/blob/main/pwsh/setup.sql). You can setup your username and password for database in `database.ps1` file
 
 ## 📸 Screenshots
 
 ![image](assets/ss1.png)
+![image](assets/ss01.png)
 ![image](assets/ss2.png)
 ![image](assets/ss3.png)
 ![image](assets/ss4.png)

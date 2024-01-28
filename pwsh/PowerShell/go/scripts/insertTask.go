@@ -9,7 +9,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
-func insertTask() {
+func main() {
 	// From the environment
 	username := os.Getenv("DB_USERNAME")
 	password := os.Getenv("DB_PASSWORD")
@@ -30,9 +30,8 @@ func insertTask() {
 	// Inserting a row into the table
 	task := os.Getenv("TASK_NAME")
 	created := time.Now().Format("2006-01-02")
-	currentTime := time.Now().Format("15:04:05-07:00") // Format time with timezone
 
-	_, err = db.Exec("INSERT INTO tasks (\"Task\", \"Created\", \"Time\") VALUES ($1, $2, $3)", task, created, currentTime)
+	_, err = db.Exec("INSERT INTO tasks (\"Task\", \"Created\") VALUES ($1, $2)", task, created)
 
 	if err != nil {
 		fmt.Println("Error inserting row:", err)
