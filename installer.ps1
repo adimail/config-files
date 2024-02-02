@@ -1,74 +1,87 @@
-# Function to clone a Git repository with error handling
-function Clone-Repository {
-    param (
-        [string]$RepoUrl,
-        [string]$TargetDir
-    )
-
-    Write-Host "Cloning $RepoUrl to $TargetDir..."
-    try {
-        git clone $RepoUrl $TargetDir
-        Write-Host "Clone successful."
-    } catch {
-        Write-Host "Error: Could not clone $RepoUrl to $TargetDir."
-        exit 1
+function Install-Chocolatey {
+    if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
+        Write-Host "Chocolatey is not installed. Installing Chocolatey..."
+        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
     }
 }
 
-# Main script
-$configRepo = "https://github.com/adimail/config-files.git"
-$nvimConfig = "$env:LOCALAPPDATA\nvim"
-$ConfigRepo = "https://github.com/Alexis12119/nvim-config.git"
-$ConfigPlugins = "$env:LOCALAPPDATA\nvim-data\lazy"
+function Install-Git {
+    if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+        Write-Host "Git is not installed. Installing Git..."
+        install-chocolaty
+        choco install git -y
+    }
+}
 
-# Check if a Neovim configuration already exists
-if (Test-Path -Path $NvChadConfig) {
-    Write-Host "A Neovim configuration already exists at $NvChadConfig."
+function Install-Neovim {
+    if (-not (Get-Command nvim -ErrorAction SilentlyContinue)) {
+        Write-Host "Neovim is not installed. Installing Neovim..."
+        install-chocolaty
+        choco install neovim -y
+    }
+}
+
+# Check if Git and Neovim are installed
+Install-Git
+Install-Neovim
+
+# Define variables
+$configFilesRepo = "https://github.com/adimail/config-files.git"
+$nvimConfig = "$env:LOCALAPPDATA\nvim"
+$ConfigPlugins = "$env:LOCALAPPDATA\nvim-data"
+
+# Function to remove Neovim plugins
+function Remove-Nvim-Plugins {
+    if (Test-Path -Path $ConfigPlugins) {
+        Write-Host "Removing the existing plugins..."
+        try {
+            Remove-Item $ConfigPlugins -Recurse -Force -ErrorAction Stop
+        } catch {
+            Write-Host "Error removing plugins: $_"
+            return $false
+        }
+    }
+    return $true
+}
+
+# Check if Neovim configuration already exists
+if (Test-Path -Path $nvimConfig) {
+    Write-Host "A Neovim configuration already exists at $nvimConfig."
     $confirmReplace = Read-Host "Do you want to replace it with the new configuration? [Y/N]"
+
     if ($confirmReplace -eq "Y" -or $confirmReplace -eq "y") {
-        $confirmRemovePlugins = Read-Host "Do you want to remove the existing plugins as well? [Y/N]"
-        if ($confirmRemovePlugins -eq "Y" -or $confirmRemovePlugins -eq "y") {
-            Write-Host "Removing the existing plugins..."
-            Remove-Item $ConfigPlugins -Recurse -Force
+        # Remove existing plugins
+        if (-not (Remove-Nvim-Plugins)) {
+            Write-Host "Installation cancelled due to plugin removal error."
+            return
         }
 
         Write-Host "Removing the existing configuration..."
-        Remove-Item $NvChadConfig -Recurse -Force
+        try {
+            Remove-Item $nvimConfig -Recurse -Force -ErrorAction Stop
+            cd $env:LOCALAPPDATA
+        } catch {
+            Write-Host "Error removing configuration: $_"
+            return
+        }
     } else {
         Write-Host "Installation cancelled."
         return
     }
+} else {
+    cd $env:LOCALAPPDATA
 }
 
-# Clone the Git repositories
-Clone-Repository -RepoUrl $NvChadRepo -TargetDir $NvChadConfig
-Clone-Repository -RepoUrl $ConfigRepo -TargetDir "$NvChadConfig\lua\custom"
-nvim
+try {
+    git clone --depth 1 --no-checkout $configFilesRepo nvim
+    cd nvim
+    git sparse-checkout set nvim
+    git checkout
 
-Write-Host "Installation complete. Your Neovim configuration is now set up."
-
-
-
-
-# Clone the repository with a depth of 1 and sparse-checkout
-git clone --depth 1 --filter=blob:none --sparse https://github.com/adimail/config-files.git nvim
-
-# Change into the cloned directory
-cd nvim
-
-# Enable sparse-checkout and include only the "nvim" subdirectory
-git sparse-checkout init --cone
-git sparse-checkout set nvim
-
-
-
-# Clone the repository with a depth of 1 and sparse-checkout
-git clone --depth 1 --filter=blob:none --sparse https://github.com/adimail/config-files.git
-
-# Change into the cloned directory
-cd config-files
-
-# Enable sparse-checkout and include only specific files from the "nvim" subdirectory
-git sparse-checkout init --cone
-git sparse-checkout set nvim/lua
-
+    Remove-Item -Path .git, .gitignore, LICENSE, installer.ps1 -Recurse -Force
+    Move-Item -Path nvim/init.lua, nvim/lua, nvim/lazy-lock.json -Destination .
+    
+    nvim
+} catch {
+    Write-Host "Error during configuration setup: $_"
+}

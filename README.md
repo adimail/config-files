@@ -46,6 +46,18 @@ npm i figlet
 
 </details>
 
+## 💻 Installation
+
+Please follow these steps:
+
+1. Ensure that Neovim is not running.
+
+2. Run following command (Powershell)
+
+```ps1
+Invoke-WebRequest https://raw.githubusercontent.com/adimail/config-files/main/installer.ps1 -UseBasicParsing | Invoke-Expression
+```
+
 ## Requirments
 
 - [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#install-powershell-using-winget-recommended)
@@ -88,11 +100,3 @@ The database schema includes a table named `tasks` with columns for task informa
 ![image](assets/ss04.png)
 ![image](assets/ss05.png)
 ![image](assets/ss06.png)
-
-<hr>
-
-<p align="center">
-  <a href="https://adimail.github.io">
-    <img alt="Static Badge" src="https://img.shields.io/badge/Blog_Post-Go?style=for-the-badge&label=%F0%9F%92%ADRead&color=%237aa2f7">
-  </a>
-</p>
