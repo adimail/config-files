@@ -82,12 +82,12 @@ The database schema includes a table named `tasks` with columns for task informa
 
 ## 📸 Screenshots
 
-![image](assets/ss1.png)
 ![image](assets/ss01.png)
-![image](assets/ss2.png)
-![image](assets/ss3.png)
-![image](assets/ss4.png)
-![image](assets/ss5.png)
+![image](assets/ss02.png)
+![image](assets/ss03.png)
+![image](assets/ss04.png)
+![image](assets/ss05.png)
+![image](assets/ss06.png)
 
 <hr>
 
