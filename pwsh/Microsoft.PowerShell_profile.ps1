@@ -162,6 +162,32 @@ function nvimconfig {
     ls
 }
 
+Function remove ($command) {
+    try {
+        if ($command) {
+            Remove-Item -Path $command -Recurse -Force -ErrorAction Stop
+            Write-Host "Successfully removed $command"
+        }
+        else {
+            throw "Please enter the name of the file/folder you would like to remove"
+        }
+    }
+    catch {
+        Write-Host "Error: $_"
+    }
+}
+
+Function proj ($command) {
+    if ($command -eq "start") {
+        code .
+        npm run start
+    }
+    if ( $command -eq "dev") {
+        code .
+        npm run dev
+    }
+}
+
 Function classroom {
     code $classroom
 }
@@ -220,6 +246,7 @@ function Clear-EnvironmentVariables {
     Write-Host "Environment variables cleared."
 }
 
+
 # Register the function to run when PowerShell exits
 $profileDir = Split-Path $PROFILE
 $profileExitScript = Join-Path $profileDir "ProfileExit.ps1"
@@ -228,4 +255,4 @@ $profileExitScript = Join-Path $profileDir "ProfileExit.ps1"
 Set-PSReadLineOption -PredictionViewStyle ListView
 init
 tasks
-
+cal
